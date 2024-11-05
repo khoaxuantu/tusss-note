@@ -1,0 +1,82 @@
+
+/* all reset/normalization you need */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* consistent whitespace */
+ul, ol ,figure, pre {
+  margin: 2em 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* page layout */
+body {
+  margin: 0 auto;
+
+  > header nav {
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    display: flex;
+    padding: 0 2rem;
+
+    a { padding: 1em 0 }
+  }
+
+  main {
+    /* content area: hero and sections */
+    article {
+      margin: 0 1rem;
+      max-width: 720px;
+
+      > header { margin-bottom: 2rem }
+
+      > section {
+        max-width: 650px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+
+  /* global footer */
+  > footer {
+    border-top: 1px solid var(--gray-200);
+    justify-content: space-between;
+    margin-top: 6rem;
+    padding: 1rem 2rem;
+    display: flex;
+
+    /* social icons */
+    > :last-child {
+      display: flex;
+      gap: .5em;
+      a:hover {
+        transform: scale(1.1)
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    main {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+
+      aside {
+        grid-column-start: span 2;
+      }
+
+      article {
+        grid-column-start: 4;
+        grid-column-end: 10;
+        margin: 0 auto;
+      }
+    }
+  }
+}

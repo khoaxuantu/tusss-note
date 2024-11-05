@@ -1,0 +1,41 @@
+
+include: [ content, motion ]
+
+sidenav:
+  Data Structures:
+    - Basic: /dsa
+    - Linked List: /dsa
+    - Hash Table: /dsa
+    - Graph & Tree: /dsa
+    - Queue: /dsa
+    - Stack: /dsa
+    - Heap: /dsa
+    - Trie: /dsa
+    - Custom: /dsa
+    - Disjoint Set: /dsa
+
+  Algorithms:
+    - Two Pointers: /dsa
+    - Fast & Slow Pointers: /dsa
+    - Sliding Window: /dsa
+    - Merge Intervals: /dsa
+    - Linked List's In-place Reversal: /dsa
+    - BFS: /dsa
+    - DFS: /dsa
+    - Two Heaps: /dsa
+    - K-way Merge: /dsa
+    - Top K Elements: /dsa
+    - Binary Search: /dsa
+    - Subsets: /dsa
+    - Greedy: /dsa
+    - Backtracking: /dsa
+    - Dynamic Programming: /dsa
+    - Cyclic Sort: /dsa
+    - Topological Sort: /dsa
+    - Stack: /dsa
+    - Trie: /dsa
+    - Hash Map: /dsa
+    - Frequency Tracking: /dsa
+    - Union Find: /dsa
+    - Bitwise Operation: /dsa
+    - Custom Data Structure: /dsa

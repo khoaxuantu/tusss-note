@@ -1,0 +1,46 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); */
+
+body {
+  font-family: "Inter", system-ui;
+}
+
+/* heading and subtitle */
+h1 {
+  letter-spacing: -0.03em;
+  font-size: 2.6rem;
+
+  &,
+  + p {
+    text-align: center;
+    text-wrap: balance;
+    max-width: 40rem;
+    margin: 0 auto 0.2em;
+  }
+
+  + p {
+    font-size: 1.15em;
+    margin-bottom: 2em;
+  }
+}
+
+/* links */
+a {
+  text-decoration: none;
+
+  /* navigational links */
+  nav & {
+    font-weight: 500;
+    color: var(--gray-900);
+
+    &[aria-selected] {
+      text-decoration: 2px underline var(--main-500);
+      text-underline-offset: 8px;
+    }
+  }
+}
+
+/* bulk content */
+p,
+li {
+  line-height: 1.65;
+}

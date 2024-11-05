@@ -1,0 +1,17 @@
+<nav @name="subheader">
+  <button popovertarget="sidebar">{ title }</button>
+</nav>
+
+<aside id="sidebar" popover>
+  <button popovertarget="sidebar">&times;</button>
+  <navi :items="sidenav"/>
+  <div>
+    { console.log(sidenav) }
+  </div>
+</aside>
+
+<div @name="bottom">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</div>
