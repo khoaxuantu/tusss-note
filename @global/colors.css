@@ -1,3 +1,8 @@
+:root {
+  --glow-bg-color: #282c34;
+  --glow-base-color: #abb2bf;
+}
+
 .dark {
   --md-sys-color-primary: rgb(154 204 250);
   --md-sys-color-surface-tint: rgb(154 204 250);

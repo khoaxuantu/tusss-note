@@ -1,6 +1,26 @@
 li {
-  text-wrap: balance;
   margin-bottom: 1em;
+}
+
+/* Code tabs */
+div[is="aria-tabs"] {
+  ul {
+    padding-inline-start: 0;
+  }
+
+  li[role=tabpanel] {
+    list-style: none;
+  }
+
+  a[role=tab] {
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+  }
+
+  a[aria-selected=true] {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+  }
 }
 
 /* syntax highligted code */
@@ -17,13 +37,13 @@ img, pre {
 blockquote {
   border-left: 5px solid var(--md-sys-color-outline-variant);
   text-wrap: balance;
-  padding-left: 1.5em;
+  padding: 1em 0.5rem 0.5rem 1.5rem;
   margin: 2.5em 0;
+  font-style: italic;
 
   p {
     font-weight: 600;
     line-height: 1.5;
-    font-size: 140%;
   }
 
   strong {
@@ -32,4 +52,26 @@ blockquote {
     padding: .1em .2em;
     margin-inline: -.2em;
   }
+}
+
+figure {
+  figcaption {
+    font-size: smaller;
+    font-style: italic;
+    text-align: center;
+  }
+}
+
+code, pre {
+  background-color: #282c34;
+  color: #abb2bf;
+  border-radius: 5px;
+}
+
+code {
+  padding: 0.2em 0.4em;
+  line-break: anywhere;
+  display: inline-block;
+  line-height: 1.35;
+  font-size: 13px;
 }

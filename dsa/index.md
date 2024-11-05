@@ -14,11 +14,10 @@ trình code cũng lên nhiều as fuck 🐧
 
 ### Data Structure
 
-- [Basic cheat sheets](#)
-- [Linked List](#)
-- [Hash Table](#)
-- [Graph & Trees](#)
-- [Queue](#)
+- [Linked List](linked-list)
+- [Hash Table](hash-table)
+- [Graphs & Trees](graphs-and-trees)
+- [Queue](queue)
 - [Stack](#)
 - [Heap](#)
 - [Trie](#)

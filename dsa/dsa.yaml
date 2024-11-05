@@ -3,11 +3,10 @@ include: [ content, motion ]
 
 sidenav:
   Data Structures:
-    - Basic: /dsa
-    - Linked List: /dsa
-    - Hash Table: /dsa
-    - Graph & Tree: /dsa
-    - Queue: /dsa
+    - Linked List: /dsa/linked-list
+    - Hash Table: /dsa/hash-table
+    - Graphs & Trees: /dsa/graphs-and-trees
+    - Queue: /dsa/queue
     - Stack: /dsa
     - Heap: /dsa
     - Trie: /dsa
