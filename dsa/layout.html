@@ -1,13 +1,5 @@
-<nav @name="subheader">
-  <button popovertarget="sidebar">{ title }</button>
-</nav>
-
-<aside id="sidebar" popover>
-  <button popovertarget="sidebar">&times;</button>
+<aside id="sidebar">
   <navi :items="sidenav"/>
-  <div>
-    { console.log(sidenav) }
-  </div>
 </aside>
 
 <div @name="bottom">

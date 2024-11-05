@@ -28,24 +28,30 @@ body {
   }
 
   main {
+    margin: 0 1rem;
+
     /* content area: hero and sections */
     article {
-      margin: 0 1rem;
       max-width: 720px;
 
       > header { margin-bottom: 2rem }
 
       > section {
-        max-width: 650px;
         margin: 0 auto;
       }
+    }
+
+    aside#sidebar {
+      position: sticky;
+      display: none;
+      top: 0;
     }
   }
 
 
   /* global footer */
   > footer {
-    border-top: 1px solid var(--gray-200);
+    border-top: 1px solid var(--md-sys-color-outline-variant);
     justify-content: space-between;
     margin-top: 6rem;
     padding: 1rem 2rem;
@@ -68,8 +74,9 @@ body {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
 
-      aside {
+      aside#sidebar {
         grid-column-start: span 2;
+        display: block;
       }
 
       article {

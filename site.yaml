@@ -19,6 +19,8 @@ port: 2908
 origin: //notes.xuankhoatu.com
 og: /img/og.jpg
 
+class: light
+
 header:
   navigation:
     - Tusss Notes: /
