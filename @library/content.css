@@ -55,6 +55,8 @@ blockquote {
 }
 
 figure {
+  text-align: center;
+
   figcaption {
     font-size: smaller;
     font-style: italic;

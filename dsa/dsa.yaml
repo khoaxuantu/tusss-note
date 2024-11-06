@@ -7,11 +7,11 @@ sidenav:
     - Hash Table: /dsa/hash-table
     - Graphs & Trees: /dsa/graphs-and-trees
     - Queue: /dsa/queue
-    - Stack: /dsa
-    - Heap: /dsa
-    - Trie: /dsa
-    - Custom: /dsa
-    - Disjoint Set: /dsa
+    - Stack: /dsa/stack
+    - Heap: /dsa/heap
+    - Trie: /dsa/trie
+    - Custom: /dsa/custom-data-structure
+    - Disjoint Set: /dsa/union-find
 
   Algorithms:
     - Two Pointers: /dsa
@@ -35,6 +35,6 @@ sidenav:
     - Trie: /dsa
     - Hash Map: /dsa
     - Frequency Tracking: /dsa
-    - Union Find: /dsa
+    - Union Find: /dsa/union-find
     - Bitwise Operation: /dsa
     - Custom Data Structure: /dsa

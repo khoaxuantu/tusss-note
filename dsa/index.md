@@ -18,11 +18,11 @@ trình code cũng lên nhiều as fuck 🐧
 - [Hash Table](hash-table)
 - [Graphs & Trees](graphs-and-trees)
 - [Queue](queue)
-- [Stack](#)
-- [Heap](#)
-- [Trie](#)
-- [Custom](#)
-- [Disjoint Set](#)
+- [Stack](stack)
+- [Heap](heap)
+- [Trie](trie)
+- [Custom](custom-data-structure)
+- [Disjoint Set](union-find)
 
 ### Algorithms
 
@@ -52,6 +52,6 @@ trình code cũng lên nhiều as fuck 🐧
 - [Trie](#)
 - [Hash map](#)
 - [Frequency Tracking](#)
-- [Union Find](#)
+- [Union Find](union-find)
 - [Bitwise Operation](#)
 - [Custom Data Structure](#)
