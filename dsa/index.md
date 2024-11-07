@@ -26,13 +26,13 @@ trình code cũng lên nhiều as fuck 🐧
 
 ### Algorithms
 
-- [Two Pointers](#)
-- [Fast & Slow Pointers](#)
-- [Sliding Window](#)
-- [Merge Intervals](#)
-- [Linked List's In-place Reversal](#)
-- [BFS](#)
-- [DFS](#)
+- [Two Pointers](two-pointers)
+- [Fast & Slow Pointers](fast-and-slow-pointers)
+- [Sliding Window](sliding-window)
+- [Merge Intervals](merge-intervals)
+- [Linked List's In-place Reversal](linked-list-in-place-reversal)
+- [BFS](bfs)
+- [DFS](dfs)
 - [Two Heaps](#)
 - [K-way Merge](#)
 - [Top K Elements](#)

@@ -14,13 +14,13 @@ sidenav:
     - Disjoint Set: /dsa/union-find
 
   Algorithms:
-    - Two Pointers: /dsa
-    - Fast & Slow Pointers: /dsa
-    - Sliding Window: /dsa
-    - Merge Intervals: /dsa
-    - Linked List's In-place Reversal: /dsa
-    - BFS: /dsa
-    - DFS: /dsa
+    - Two Pointers: /dsa/two-pointers
+    - Fast & Slow Pointers: /dsa/fast-and-slow-pointers
+    - Sliding Window: /dsa/sliding-window
+    - Merge Intervals: /dsa/merge-intervals
+    - Linked List's In-place Reversal: /dsa/linked-list-in-place-reversal
+    - BFS: /dsa/bfs
+    - DFS: /dsa/dfs
     - Two Heaps: /dsa
     - K-way Merge: /dsa
     - Top K Elements: /dsa

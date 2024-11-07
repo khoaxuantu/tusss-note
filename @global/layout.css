@@ -37,12 +37,10 @@ body {
     /* content area: hero and sections */
     article {
       max-width: 40rem;
+      width: 100%;
+      margin: 0 auto;
 
       > header { margin-bottom: 2rem }
-
-      > section {
-        margin: 0 auto;
-      }
     }
 
     aside#sidebar {
@@ -86,7 +84,6 @@ body {
       article {
         grid-column-start: 4;
         grid-column-end: 10;
-        margin: 0 auto;
       }
     }
   }
