@@ -2,6 +2,8 @@
 include: [ content, motion ]
 
 sidenav:
+  DSA:
+    - "Lời Mở Đầu": /dsa
   Data Structures:
     - Linked List: /dsa/linked-list
     - Hash Table: /dsa/hash-table
@@ -21,14 +23,14 @@ sidenav:
     - Linked List's In-place Reversal: /dsa/linked-list-in-place-reversal
     - BFS: /dsa/bfs
     - DFS: /dsa/dfs
-    - Two Heaps: /dsa
-    - K-way Merge: /dsa
-    - Top K Elements: /dsa
-    - Binary Search: /dsa
-    - Subsets: /dsa
-    - Greedy: /dsa
-    - Backtracking: /dsa
-    - Dynamic Programming: /dsa
+    - Two Heaps: /dsa/two-heaps
+    - K-way Merge: /dsa/k-way-merge
+    - Top K Elements: /dsa/top-k-elements
+    - Binary Search: /dsa/binary-search
+    - Subsets: /dsa/subsets
+    - Greedy: /dsa/greedy
+    - Backtracking: /dsa/backtracking
+    - Dynamic Programming: /dsa/dynamic-programming
     - Cyclic Sort: /dsa
     - Topological Sort: /dsa
     - Stack: /dsa
