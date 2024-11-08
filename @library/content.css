@@ -77,3 +77,8 @@ code {
   line-height: 1.35;
   font-size: 13px;
 }
+
+img {
+  width: unset;
+  max-width: 100%;
+}

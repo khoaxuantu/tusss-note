@@ -1,30 +1,50 @@
-
-/* motion setup */
-header, h1, h1 + p, h1 + p + * {
-  transition: opacity .5s, filter .7s;
-  filter: none;
-  opacity: 1;
-
-  @starting-style {
-    filter: blur(10px);
+@keyframes fadeOutDown {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(0, 24px, 0);
     opacity: 0;
   }
 }
 
-/* apply motion in sequence */
-h1          { transition-delay: .1s }
-h1 + p      { transition-delay: .2s }
-h1 + p + *  { transition-delay: .4s }
+@keyframes fadeOutUp {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(0, -24px, 0);
+    opacity: 0;
+  }
+}
 
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 24px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    transform: translate3d(0, -24px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
 
 /* view transitions */
 article {
-  view-transition-name: article;
+  animation: fadeInUp;
+  animation-duration: 500ms;
 }
-
-/* view transition (scales down the old page) */
-::view-transition-old(article) {
-  transform: scale(1.2) translateY(2em);
-  transition: .8s;
-}
-
