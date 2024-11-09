@@ -1,11 +1,25 @@
-
 /* all reset/normalization you need */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+:root {
+  --z-index-0: 0;
+  --z-index-1: 10;
+  --z-index-2: 20;
+  --z-index-3: 30;
+  --z-index-4: 40;
+  --z-index-5: 50;
+  --z-index-max: 9999;
+}
+
 /* consistent whitespace */
-ul, ol ,figure, pre {
+ul,
+ol,
+figure,
+pre {
   margin: 2em 0;
 }
 
@@ -14,25 +28,45 @@ img {
   height: auto;
 }
 
-a {
+a,
+button {
   cursor: pointer;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
 }
 
 /* page layout */
 body {
-  margin: 0 auto;
+  margin: 0;
 
   > header nav {
+    padding: 0 1rem;
     justify-content: space-between;
-    margin-bottom: 4rem;
     display: flex;
-    padding: 0 2rem;
+    flex-wrap: wrap;
 
-    a { padding: 1em 0 }
+    a {
+      padding: 1em 0;
+    }
+  }
+
+  /* Style for subheader */
+  section[is="subheader"] {
+    padding: 0 1rem;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-index-5);
+    background-color: inherit;
+    background-color: var(--md-sys-color-surface-container-highest);
+    color: var(--md-sys-color-on-surface);
   }
 
   main {
-    margin: 0 1rem;
+    margin-top: 4rem;
+    padding: 0 1rem;
 
     /* content area: hero and sections */
     article {
@@ -40,16 +74,18 @@ body {
       width: 100%;
       margin: 0 auto;
 
-      > header { margin-bottom: 2rem }
+      > header {
+        margin-bottom: 2rem;
+      }
     }
 
-    aside#sidebar {
+    aside#sidebar,
+    aside#toc {
       position: sticky;
       display: none;
       top: 0;
     }
   }
-
 
   /* global footer */
   > footer {
@@ -62,23 +98,46 @@ body {
     /* social icons */
     > :last-child {
       display: flex;
-      gap: .5em;
+      gap: 0.5em;
       a:hover {
-        transform: scale(1.1)
+        transform: scale(1.1);
       }
     }
   }
 }
 
-@media (min-width: 768px) {
+[popover] {
+  z-index: var(--z-index-max);
+
+  &::backdrop {
+    z-index: calc(var(--z-index-max) - 1);
+    background-color: rgba(0,0,0,.333);
+    backdrop-filter: blur(4px);
+  }
+}
+
+#mobile {
+  display: block;
+}
+
+@media (min-width: 900px) {
   body {
     main {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
 
+      aside#sidebar,
+      aside#toc {
+        display: block;
+      }
+
       aside#sidebar {
         grid-column-start: span 2;
-        display: block;
+      }
+
+      aside#toc {
+        grid-column-start: 11;
+        grid-column-end: 13;
       }
 
       article {
@@ -86,5 +145,9 @@ body {
         grid-column-end: 10;
       }
     }
+  }
+
+  #mobile {
+    display: none;
   }
 }

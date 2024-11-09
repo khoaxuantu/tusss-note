@@ -1,5 +1,20 @@
+<section @name="subheader" is="subheader">
+  <nav id="mobile">
+    <button popovertarget="sidebar" role="open">{ title }</button>
+    <aside id="sidebar" popover>
+      <button popovertarget="sidebar" role="close">&times;</button>
+      <navi :items="sidenav"/>
+    </aside>
+  </nav>
+</section>
+
 <aside id="sidebar">
   <navi :items="sidenav"/>
+</aside>
+
+<aside id="toc" @name="complementary">
+  <h3>On this page</h3>
+  <toc is="observing-nav"/>
 </aside>
 
 <div @name="bottom">

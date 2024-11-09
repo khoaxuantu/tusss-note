@@ -1,5 +1,5 @@
 
-include: [ content, motion ]
+include: [ content, motion, sidebar ]
 
 sidenav:
   DSA:

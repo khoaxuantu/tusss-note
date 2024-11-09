@@ -1,0 +1,60 @@
+#sidebar,
+#toc {
+  max-height: calc(100dvh - 7rem);
+  overflow: auto;
+  border: none;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+  }
+
+  a {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+
+    &:hover {
+      background-color: var(--md-sys-color-surface-container-highest);
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}
+
+#mobile {
+  #sidebar {
+    width: 100dvw;
+    max-width: 425px;
+    max-height: 100dvh;
+    margin: 0;
+    padding: 0 1rem 1rem 1rem;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+
+    button[role="close"] {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 24px;
+      padding: 0.5rem 1rem;
+      background-color: var(--md-sys-color-primary-container);
+      color: var(--md-sys-color-on-primary-container);
+    }
+  }
+
+  button[role="open"] {
+    padding: 1rem 0;
+    background: none;
+    font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    color: var(--md-sys-color-on-surface);
+
+    &::before {
+      content: url(/img/menu-light.svg);
+    }
+  }
+}

@@ -43,8 +43,38 @@
   }
 }
 
+@keyframes fadeInLeft {
+  from {
+    transform: translate3d(-24px, 0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    transform: translate3d(24px, 0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
 /* view transitions */
 article {
   animation: fadeInUp;
   animation-duration: 500ms;
+}
+
+#sidebar {
+  animation: fadeInLeft 500ms;
+}
+
+#toc {
+  animation: fadeInRight 500ms;
 }
