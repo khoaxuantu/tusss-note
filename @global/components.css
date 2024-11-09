@@ -1,0 +1,19 @@
+blockquote {
+  border-left: 5px solid var(--md-sys-color-outline-variant);
+  text-wrap: balance;
+  padding: 1em 0.5rem 0.5rem 1.5rem;
+  margin: 2.5em 0;
+  font-style: italic;
+
+  p {
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  strong {
+    background-color: var(--marker);
+    font-weight: inherit;
+    padding: .1em .2em;
+    margin-inline: -.2em;
+  }
+}

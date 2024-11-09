@@ -74,7 +74,7 @@ Câu trả lời đầu tiên: Vẫn cứ là luyện nhiều thoy :v
 Câu trả lời tiếp theo: thông qua luyện nhiều như trên, ta nhận ra sẽ có nhiều mẫu code chung mà ta
 có thể đưa về các typical Big O như đã liệt kê, chẳng hạn:
 
-### Check các vòng lặp `for`, `while`:
+### Check các vòng lặp `for`, `while`
 
 Ta biết rằng mỗi vòng lặp với n phần tử sẽ tốn O(n) time.
 
