@@ -9,15 +9,14 @@ inline_css: true
 language: vi
 
 title_template: "Tusss Notes | %s"
-og_image: /img/og_emma.png
+og_image: /img/seo/og.webp
 author: Xuan Khoa Tu Nguyen
 favicon: /img/favicon.ico
 description: I am Tu, a software engineer specialized in web development. And here is my notes for all the knowledge I have learned
 port: 2908
 
 # OG image
-origin: //notes.xuankhoatu.com
-og: /img/og.jpg
+og: /img/seo/og.webp
 
 class: light
 

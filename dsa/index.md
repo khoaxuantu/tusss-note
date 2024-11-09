@@ -12,6 +12,10 @@ trình code cũng lên nhiều as fuck 🐧
 
 ## Catalog
 
+### Before we start
+
+- [Complexity - Big O Notation](/dsa/big-o-notation)
+
 ### Data Structure
 
 - [Linked List](/dsa/linked-list)
@@ -46,12 +50,8 @@ trình code cũng lên nhiều as fuck 🐧
   + [Unbounded Knapsack](/dsa/dynamic-programming/unbounded-knapsack)
   + [Longest common substring](/dsa/dynamic-programming/longest-common-substring)
   + [Longest palindromic subsequence](/dsa/dynamic-programming/palindromic-subsequence)
-- [Cyclic sort](#)
-- [Topological Sort](#)
-- [Stack](#)
-- [Trie](#)
-- [Hash map](#)
-- [Frequency Tracking](#)
-- [Union Find](union-find)
-- [Bitwise Operation](#)
-- [Custom Data Structure](#)
+- [Cyclic sort](/dsa/cyclic-sort)
+- [Topological Sort](/dsa/topological-sort)
+- [Frequency Tracking](/dsa/frequency-tracking)
+- [Union Find](/dsa/union-find)
+- [Bitwise Operation](/dsa/bitwise-operation)

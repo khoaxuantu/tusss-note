@@ -1,5 +1,5 @@
 #sidebar {
-  max-height: 100dvh;
+  max-height: calc(100dvh - 7rem);
   overflow: auto;
 
   nav {

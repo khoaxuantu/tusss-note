@@ -85,3 +85,12 @@ https://www.geeksforgeeks.org/hash-functions-and-list-types-of-hash-functions/
     // Dùng object và Set
     const map = {key: value};
     const set = new Set()
+
+## Sample questions
+
+- [Design hashmap](https://leetcode.com/problems/design-hashmap)
+- [Fraction to recurring decimal](https://leetcode.com/problems/fraction-to-recurring-decimal)
+- [Logger rate limiter (premium)](https://leetcode.com/problems/logger-rate-limiter) / [(free)](https://www.lintcode.com/problem/3620/)
+- [Next greater elemernt](https://leetcode.com/problems/next-greater-element-i)
+- [Isomorphic strings](https://leetcode.com/problems/isomorphic-strings)
+- [Longest palindrome](https://leetcode.com/problems/longest-palindrome)

@@ -31,12 +31,11 @@ sidenav:
     - Greedy: /dsa/greedy
     - Backtracking: /dsa/backtracking
     - Dynamic Programming: /dsa/dynamic-programming
-    - Cyclic Sort: /dsa
-    - Topological Sort: /dsa
-    - Stack: /dsa
-    - Trie: /dsa
-    - Hash Map: /dsa
-    - Frequency Tracking: /dsa
+    - Cyclic Sort: /dsa/cyclic-sort
+    - Topological Sort: /dsa/topological-sort
+    - Frequency Tracking: /dsa/frequency-tracking
     - Union Find: /dsa/union-find
-    - Bitwise Operation: /dsa
-    - Custom Data Structure: /dsa
+    - Bitwise Operation: /dsa/bitwise-operation
+
+  Miscellaneous:
+    - Complexity: /dsa/big-o-notation
