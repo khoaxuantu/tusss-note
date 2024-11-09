@@ -1,5 +1,5 @@
 ---
-include: [ gallery, motion ]
+include: [ gallery, motion, layout/single-container ]
 content_collection: .
 collection_name: topics
 unlisted: true

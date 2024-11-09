@@ -1,0 +1,13 @@
+@media (min-width: 900px) {
+  body {
+    main {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+
+      article {
+        grid-column-start: 4;
+        grid-column-end: 10;
+      }
+    }
+  }
+}
