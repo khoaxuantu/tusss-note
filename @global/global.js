@@ -1,12 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const theme = getTheme();
-  if (theme) {
-    const body = getBody();
-    body.classList.remove("light", "dark");
-    body.classList.add(theme);
-  }
-});
-
 class ThemeButton extends HTMLButtonElement {
   constructor() {
     super();
@@ -20,9 +11,23 @@ class ThemeButton extends HTMLButtonElement {
       else setTheme("light");
     };
   }
+
+  connectedCallback() {
+    toggleTheme();
+  }
 }
 
 customElements.define("theme-button", ThemeButton, { extends: "button" })
+
+function toggleTheme() {
+  const theme = getTheme();
+  if (theme) {
+    const body = getBody();
+    if (body.classList.contains(theme)) return;
+    body.classList.toggle("light", theme == "light")
+    body.classList.toggle("dark", theme == "dark");
+  }
+}
 
 function getTheme() {
   return localStorage.getItem("theme");
