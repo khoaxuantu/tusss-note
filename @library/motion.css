@@ -71,6 +71,10 @@ article {
   animation-duration: 500ms;
 }
 
+body {
+  transition: all 300ms;
+}
+
 #sidebar {
   animation: fadeInLeft 500ms;
 }

@@ -127,3 +127,26 @@ a {
     text-decoration: underline;
   }
 }
+
+button {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+[is="theme-button"] {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+}
+
+#for-dark {
+  .light & {
+    display: none;
+  }
+}
+
+#for-light {
+  .dark & {
+    display: none;
+  }
+}
+
