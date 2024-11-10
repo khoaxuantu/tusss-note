@@ -45,6 +45,12 @@
   }
 }
 
+#toc {
+  .level-3 {
+    padding-left: 1rem;
+  }
+}
+
 #mobile {
   #sidebar {
     width: 100dvw;

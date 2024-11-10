@@ -10,6 +10,10 @@ thức và dạng câu hỏi (me too). Thế nên tôi đã tổng hợp lại c
 dễ dàng hơn, anh em hiểu được đống pattern ấy thì cũng giải được kha khá bài thuật toán rồi, và
 trình code cũng lên nhiều as fuck 🐧
 
+## Acknowledgement
+
+- educative.io - [Grokking the Coding Interview Patterns](https://www.educative.io/courses/grokking-coding-interview)
+
 ## Catalog
 
 ### Before we start

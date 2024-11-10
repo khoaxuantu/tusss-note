@@ -1,0 +1,46 @@
+include: [ content, motion, sidebar, layout/document, components/sidebar ]
+
+sidenav:
+  OOP:
+    - Lời mở đầu
+
+  Basic:
+    - Objects & Classes: /oop/objects-and-classes
+    - 4 Pillars:
+      - Abstraction: /oop/4-pillars/abstraction
+      - Encapsulation: /oop/4-pillars/encapsulation
+      - Inheritance: /oop/4-pillars/inheritance
+      - Polymorphism: /oop/4-pillars/polymorphism
+    - Objects relationship
+    - Principles
+
+  Design Patterns:
+    - Creational Patterns:
+      - Factory Method
+      - Abstract Factory
+      - Builder
+      - Prototype
+      - Singleton
+
+    - Structural Patterns:
+      - Adapter
+      - Bridge
+      - Composite
+      - Decorator
+      - Facade
+      - Flyweight
+      - Proxy
+
+    - Behavioral Patterns:
+      - Chain of Responsibility
+      - Command
+      - Iterator
+      - Mediator
+      - Memento
+      - Observer
+      - State
+      - Strategy
+      - Template Method
+      - Visitor
+
+
