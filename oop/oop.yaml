@@ -2,7 +2,7 @@ include: [ content, motion, sidebar, layout/document, components/sidebar ]
 
 sidenav:
   OOP:
-    - Lời mở đầu
+    - Lời mở đầu: /oop
 
   Basic:
     - Objects & Classes: /oop/objects-and-classes

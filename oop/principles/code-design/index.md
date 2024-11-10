@@ -175,7 +175,7 @@ class Company {
 
 `Company` đang lệ thuộc vào các class riêng rẽ, mỗi class lại cung cấp 1 method khác nhau, thành ra code khá rối. Sau công ty lại thêm 1 role employee mới thì lại tốn công sửa phức tạp.
 
-Ta tối ưu đoạn code trên cho nó clean hơn bằng cách tạo 1 interface chung cho `Designer`, `Developer` và `Tester`. Họ đề "làm việc" mà ~
+Ta tối ưu đoạn code trên cho nó clean hơn bằng cách tạo 1 interface chung cho `Designer`, `Developer` và `Tester`. Họ đều "làm việc" mà ~
 
 ```ts
 interface Employee {

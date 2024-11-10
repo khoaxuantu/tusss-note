@@ -59,7 +59,7 @@ các `Subclass` của `Class`.
 [image]
   src: /img/oop/encapsulation.webp
   alt: Encapsulation airport example diagram
-  caption: "Encapsulation airport example diagram (Source: Refactoring Guru)"
+  caption: "Encapsulation airport example diagram"
 
 Để khởi động 1 con ô tô, ta cần cắm cái chìa hoặc bầm nút khởi động xe, đấy là hành động từ phía ta,
 hay nói cách khác là tác động từ bên ngoài lên object ô tô. Thông qua nó, dòng điện, động cơ

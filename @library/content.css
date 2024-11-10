@@ -27,6 +27,13 @@ div[is="aria-tabs"] {
 pre {
   --glow-padding: 2em;
   font-size: 105%;
+  background-color: #282c34;
+  color: #abb2bf;
+
+  code {
+    background-color: inherit;
+    color: inherit;
+  }
 }
 
 /* images and code blocks */
@@ -44,18 +51,15 @@ figure {
   }
 }
 
-code, pre {
-  background-color: #282c34;
-  color: #abb2bf;
-  border-radius: 5px;
-}
-
 code {
   padding: 0.2em 0.4em;
   line-break: anywhere;
   display: inline-block;
   line-height: 1.35;
   font-size: 13px;
+  border-radius: 4px;
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
 }
 
 img {
