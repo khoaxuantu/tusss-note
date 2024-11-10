@@ -1,14 +1,14 @@
 <section @name="subheader" is="subheader">
   <nav id="mobile">
     <button popovertarget="sidebar" role="open">{ title }</button>
-    <aside id="sidebar" popover>
+    <aside id="sidebar" is="sidebar-menu" popover>
       <button popovertarget="sidebar" role="close">&times;</button>
       <navi :items="sidenav"/>
     </aside>
   </nav>
 </section>
 
-<aside id="sidebar">
+<aside id="sidebar" is="sidebar-menu">
   <navi :items="sidenav"/>
 </aside>
 

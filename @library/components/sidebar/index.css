@@ -23,6 +23,28 @@
   }
 }
 
+#sidebar {
+  [aria-haspopup] {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    a[aria-expanded=true] + nav {
+      display: flex;
+    }
+
+    a[aria-expanded=false] + nav {
+      display: none;
+    }
+
+    nav {
+      padding-left: 1rem;
+      padding-bottom: 0;
+      padding-top: 0.5rem;
+      animation: fadeInDown 200ms;
+    }
+  }
+}
+
 #mobile {
   #sidebar {
     width: 100dvw;
