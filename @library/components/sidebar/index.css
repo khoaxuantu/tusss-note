@@ -24,21 +24,33 @@
 }
 
 #sidebar {
-  [aria-haspopup] {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+  a {
+    display: block;
+  }
 
-    a[aria-expanded=true] + nav {
-      display: flex;
+  [aria-haspopup] {
+    a[aria-expanded=true] {
+      & + nav {
+        display: flex;
+      }
+
+      &::after {
+        content: " -"
+      }
     }
 
-    a[aria-expanded=false] + nav {
-      display: none;
+    a[aria-expanded=false] {
+      & + nav {
+        display: none;
+      }
+
+      &::after {
+        content: " +"
+      }
     }
 
     nav {
       padding-left: 1rem;
-      padding-bottom: 0;
       padding-top: 0.5rem;
       animation: fadeInDown 200ms;
     }

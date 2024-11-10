@@ -35,7 +35,10 @@ tham khảo tra cứu gì thì cũng có thể qua đây check:
   + [Encapsulation](/oop/4-pillars/encapsulation)
   + [Inheritance](/oop/4-pillars/inheritance)
   + [Polymorphism](/oop/4-pillars/polymorphism)
-- [Objects Relationship](#)
+- [Objects Relationship](/oop/objects-relationship)
 - [Principles](#)
+  + [Software design principles](/oop/principles/software-design)
+  + [Code design principles](/oop/principles/design)
+  + [SOLID principles](/oop/principles/solid)
 
 ###

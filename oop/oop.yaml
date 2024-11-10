@@ -11,8 +11,11 @@ sidenav:
       - Encapsulation: /oop/4-pillars/encapsulation
       - Inheritance: /oop/4-pillars/inheritance
       - Polymorphism: /oop/4-pillars/polymorphism
-    - Objects relationship
-    - Principles
+    - Objects relationship: /oop/objects-relationship
+    - Principles:
+      - Software design principles: /oop/principles/software-design
+      - Code design principles: /oop/principles/code-design
+      - SOLID principles: /oop/principles/solid
 
   Design Patterns:
     - Creational Patterns:
