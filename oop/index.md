@@ -38,7 +38,7 @@ tham khảo tra cứu gì thì cũng có thể qua đây check:
 - [Objects Relationship](/oop/objects-relationship)
 - [Principles](#)
   + [Software design principles](/oop/principles/software-design)
-  + [Code design principles](/oop/principles/design)
+  + [Code design principles](/oop/principles/code-design)
   + [SOLID principles](/oop/principles/solid)
 
 ###
