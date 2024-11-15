@@ -1,6 +1,12 @@
 :root {
   --glow-bg-color: #282c34;
   --glow-base-color: #abb2bf;
+  --glow-special-color: #d19a66;
+  --glow-primary-color: #61aeee;
+  --glow-comment-color: #5c6370;
+  --glow-secondary-color: #98c379;
+  --glow-char-color: #abb2bf;
+  --glow-accent-color: #c678dd;
 }
 
 .dark {

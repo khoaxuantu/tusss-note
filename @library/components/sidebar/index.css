@@ -67,7 +67,7 @@
   #sidebar {
     width: 100dvw;
     max-width: 425px;
-    max-height: 100dvh;
+    min-height: 100dvh;
     margin: 0;
     padding: 0 1rem 1rem 1rem;
     background-color: var(--md-sys-color-surface);

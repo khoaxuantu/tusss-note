@@ -25,11 +25,6 @@ div[is="aria-tabs"] {
 
 /* syntax highligted code */
 pre {
-  --glow-padding: 2em;
-  font-size: 105%;
-  background-color: #282c34;
-  color: #abb2bf;
-
   code {
     background-color: inherit;
     color: inherit;
