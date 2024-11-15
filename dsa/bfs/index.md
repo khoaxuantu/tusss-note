@@ -100,5 +100,5 @@ while not q.empty():
     for node in cur_node.child_node:
       if node not in visit:
         q.put(node)
-        set.add(node)
+        visit.add(node)
 ```

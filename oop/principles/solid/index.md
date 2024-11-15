@@ -117,7 +117,7 @@ Nguyên lý này liệt kê ra các yêu cầu formal như sau:
 - 1 method ở class con không nên throw những exceptions mà base method không có throw
 - 1 class con không nên tăng cường pre-conditions. Ví dụ, base method có 1 parameter với kiểu `int`. Nếu 1 class con override method này và yêu cầu input phải là số dương (handle điều kiện bằng cách throw thêm 1 exception nếu input là số âm), thì đây được gọi là tăng cường pre-conditions. Client code khi đang sử dụng tốt với base class cùng số âm, thì lại không sử dụng được class con nữa.
 - 1 class con không nên giảm nhẹ post-conditions.
-- Nhưng tính chất bất biến của class cha phải được bảo toàn
+- Những tính chất bất biến của class cha phải được bảo toàn.
 - 1 class con không nên thay đổi giá trị private fields của class cha.
 
 ## Interface Segregation Principle

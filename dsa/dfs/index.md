@@ -67,8 +67,6 @@ def dfs(node):
   # Call to recursive function
   dfs(node.child1)
   dfs(node.child2)
-
-  return
 ```
 
 ### Follow up
@@ -94,5 +92,4 @@ def dfs(node):
   dfs(node.child2)
 
   visit.put(node)
-  return
 ```

@@ -13,7 +13,7 @@ tử khác nhau trong 1 hoặc nhiều mảng thì two pointers nên là thứ �
 
 Cách giải sử dụng two pointers phổ biến nhất:
 
-```
+```md
 Initialize start and end index placed at the start and the end of the array
 
 For each iteration, do something with the array[start] and array[end], then depend on the
@@ -24,14 +24,15 @@ Snippet:
 
 ```py
 array = ["""A list"""]
-start, end = 0, len(array)-1
-while(start < end):
+left_index = 0
+right_index = len(array)-1
+
+while(left_index < right_index):
   """Do something"""
 
   """Check the conditions to change start and end"""
-  start += 1
-  end -= 1
-return
+  left_index += 1
+  right_index -= 1
 ```
 
 Follow up:

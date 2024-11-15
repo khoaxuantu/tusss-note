@@ -15,9 +15,9 @@ Như đã nói ở ⁠Basic. Objects, Classes, `objects` thì muôn hình vạn 
 
 Với việc nhiều class con thừa hưởng 1 base class từ `Inheritance`, các đặc tính trong base class cũng sẽ có ở trong các class con, nhưng những đặc tính đó sẽ không thể nào giống nhau về chi tiết được (giống nhau thì tạo ra các class con khác nhau làm chi 😐), `size` giữa chó và mèo ko thể nào giống nhau, `số chân` giữa gà và lợn ko thể nào giống nhau, các `method` tuy giống nhau về tên nhưng sẽ khác nhau về code bên trong.
 
-Từ cái sự nhập nhằng này, làm sao để máy tính có thể nhận biết được đúng `method` và trả về kết quả đúng? Đây là lý do ta có `Polymorphism`.
+Từ cái sự nhập nhằng này, làm sao để máy tính có thể nhận biết được đúng `method` và trả về kết quả đúng? Đây là lý do ta có **Polymorphism**.
 
-`Polymorphysim` là khả năng xác định loại `Class` chính xác của 1 `object` của máy tính. Từ việc nhận ra đúng loại `Class`, máy tính mới có thể gọi tới đúng cái `implementation method`được
+**Polymorphysim** là khả năng xác định loại `Class` chính xác của 1 `object` của máy tính. Từ việc nhận ra đúng loại `Class`, máy tính mới có thể gọi tới đúng cái **implementation method** được
 
 Ở concept này, ta sẽ được giới thiệu 1 keyword mới là `override`. Đây là keyword có sẵn trong hầu hết các nnlt oop, nhằm mục đích để cả người code lẫn compiler hiểu rằng đang override 1 method ở base class, giúp đảm bảo code chạy đúng và dễ debug hơn. Từ phía compiler, với keyword này nó sẽ giúp ta check xem ta có đang thực sự viết lại method của base class ko.
 
@@ -70,11 +70,11 @@ Meo Meo
 Gau Gau
 ```
 
-Dễ thấy là nhờ có `Polymorphism`, máy đã truy ra đúng implementation của method `makeSound()` và trả về kết quả ta mong muốn.
+Dễ thấy là nhờ có **Polymorphism**, máy đã truy ra đúng implementation của method `makeSound()` và trả về kết quả ta mong muốn.
 
 ## Caution
 
-Khi học về concept này, ta hay nghĩ theo kiểu "shorthand" như "Polymorphism - viết lại các method thừa hưởng từ class cha". Cách nghĩ này dễ gây nhầm lẫn, nó sẽ dễ khiến ta nghĩ `Polymorphism` là việc ta có thể viết lại các method thừa hưởng. Nhưng về bản chất thì `Polymorphism` là cơ chế phục vụ cho việc viết lại các method được thừa hưởng từ class cha.
+Khi học về concept này, ta hay nghĩ theo kiểu "shorthand" như "Polymorphism - viết lại các method thừa hưởng từ class cha". Cách nghĩ này dễ gây nhầm lẫn, nó sẽ dễ khiến ta nghĩ **Polymorphism** là việc ta có thể viết lại các method thừa hưởng. Nhưng về bản chất thì **Polymorphism** là cơ chế phục vụ cho việc viết lại các method được thừa hưởng từ class cha.
 
 Trong các tài liệu, họ đều định nghĩa concept này như 1 cơ chế của `program`, nên việc bị "conflict" giữa hướng giải thích của tài liệu với cái trong đầu mình đang tưởng có thể là nguyên nhân khiến nhiều người thấy khó hiểu phần này
 
@@ -97,7 +97,7 @@ Trong các tài liệu, họ đều định nghĩa concept này như 1 cơ chế
 
 Nó sẽ liên quan tới `pointer`. Để nhận biết được đúng loại `Class` và truy tới đúng fields của nó, địa chỉ sẽ đóng vai trò quan trọng nhất.
 
-Tưởng tượng khi ta declare 1 `Class`, thì trong bộ nhớ của máy tính sẽ tạo 1 `pointer` mang kiểu `Class` đó trỏ tới 1 địa chỉ bất kỳ. Vì ta design cái `Class` đó bao hàm nhiều fields và methods, để giữ connect tới chúng, máy tính sẽ bắt đầu từ cái địa chị đc trỏ bởi pointer `Class` đó, tạo ra nhiều `pointer` tương ứng với các fields/methods, và trỏ tới các địa chỉ bất kỳ khác nhau.
+Tưởng tượng khi ta declare 1 `Class`, thì trong bộ nhớ của máy tính sẽ tạo 1 `pointer` mang kiểu `Class` đó trỏ tới 1 địa chỉ bất kỳ. Vì ta design cái `Class` đó bao hàm nhiều fields và methods, để giữ connect tới chúng, máy tính sẽ bắt đầu từ cái địa chỉ đc trỏ bởi pointer `Class` đó, tạo ra nhiều `pointer` tương ứng với các fields/methods, và trỏ tới các địa chỉ bất kỳ khác nhau.
 
 Khi ta khởi tạo các `objects` từ `Class`, có thể hiểu rằng ta sẽ tạo các `pointer` mang kiểu `Class` đó trỏ tới các địa chỉ khác nhau (keyword `new`), và từ các địa chỉ đó sẽ trỏ tới các địa chỉ fields/methods tương tự ~
 

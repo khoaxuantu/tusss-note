@@ -134,7 +134,7 @@ class TaxCalulator {
 
 ## Program to an Interface, not an Implementation
 
-1 design sẽ được gọi là đủ tính ling hoạt khi ta có thể dễ dàng mở rộng nó mà không sợ phải thay đổi full bộ code cũ.
+1 design sẽ được gọi là đủ tính linh hoạt khi ta có thể dễ dàng mở rộng nó mà không sợ phải thay đổi full bộ code cũ.
 
 Khi ta setup cho 2 classes liên kết với nhau, ta có thể cho 1 đứa phụ thuộc vào đứa còn lại. 1 cách khá đơn giản, và có phần "lười biếng". Ở cách này, ta chỉ đang gói gọn mọi thứ xoay quanh 2 classes, hoàn toàn ko có gì liên quan tới mở rộng ở đây.
 
@@ -145,7 +145,7 @@ Khi ta setup cho 2 classes liên kết với nhau, ta có thể cho 1 đứa ph�
 - Tạo 1 class mới implement interface trên
 - Tạo class thứ 2, phụ thuộc vào interface thay vì phụ thuộc trực tiếp vào class riêng rẽ.
 
-Ví du, ta đang phát triển 1 phần mềm mô phỏng 1 công ty phần mềm.
+Ví dụ, ta đang phát triển 1 phần mềm mô phỏng 1 công ty phần mềm.
 
 ```ts
 class Designer {
@@ -239,13 +239,13 @@ class Tester implements Employee {
 }
 
 class CompanyA extends Company {
-  getEmployees() {
+  override getEmployees() {
     return [new Developer(), new Tester()];
   }
 }
 
 class CompanyB extends Company {
-  getEmployees() {
+  override getEmployees() {
     return [new Designer(), new Developer(), new Tester()];
   }
 }

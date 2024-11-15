@@ -19,7 +19,7 @@ sidenav:
 
   Design Patterns:
     - Creational Patterns:
-      - Factory Method
+      - Factory Method: /oop/design-patterns/factory-method
       - Abstract Factory
       - Builder
       - Prototype
