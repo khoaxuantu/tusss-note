@@ -61,30 +61,40 @@ https://www.geeksforgeeks.org/hash-functions-and-list-types-of-hash-functions/
 
 **Các cách sử dụng hash table với một số ngôn ngữ lập trình**
 
-[codetabs "C++ | Java | Python | JavaScript" languages="cpp | java | python | js"]
+<!-- [codetabs "C++ | Java | Python | JavaScript" languages="cpp | java | python | js"] -->
+[accordion.tabs name="tabs" open]
 
-    unordered_map<KeyType, ValType> map;
-    map<KeyType, ValType> map;
-    unordered_set<KeyType> set;
-    set<KeyType> set;
+  ## C++
 
-    ---
+  ```cpp
+  unordered_map<KeyType, ValType> map;
+  map<KeyType, ValType> map;
+  unordered_set<KeyType> set;
+  set<KeyType> set;
+  ```
 
-    // Theo giới giang hồ
-    Map<KeyType, ValType> map = new HashMap<KeyType, ValType>();
-    Set<KeyType> set = new HashSet<KeyType>();
+  ## Java
 
-    ---
+  ```java
+  // Theo giới giang hồ
+  Map<KeyType, ValType> map = new HashMap<KeyType, ValType>();
+  Set<KeyType> set = new HashSet<KeyType>();
+  ```
 
-    # Dùng dict và set
-    map = {key: value}
-    set = set()
+  ## Python
 
-    ---
+  ```py
+  # Dùng dict và set
+  map = {key: value}
+  set = set()
+  ```
 
-    // Dùng object và Set
-    const map = {key: value};
-    const set = new Set()
+  ## JavaScript
+  ```js
+  // Dùng object và Set
+  const map = {key: value};
+  const set = new Set()
+  ```
 
 ## Sample questions
 

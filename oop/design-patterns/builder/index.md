@@ -1,5 +1,5 @@
 ---
-title: Creational Design Patterns | Builder
+title: Builder
 tags:
   - OOP
   - DesignPattern

@@ -1,7 +1,7 @@
 ---
 id:
 date: 2023-04-07
-title: 4 Pillars | Polymorphism
+title: Polymorphism
 tags:
   - OOP
 unlisted: true

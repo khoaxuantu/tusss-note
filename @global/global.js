@@ -21,11 +21,16 @@ customElements.define("theme-button", ThemeButton, { extends: "button" })
 
 function toggleTheme() {
   const theme = getTheme();
+  const body = getBody();
+
   if (theme) {
-    const body = getBody();
     if (body.classList.contains(theme)) return;
     body.classList.toggle("light", theme == "light")
     body.classList.toggle("dark", theme == "dark");
+  } else {
+    setTheme("dark");
+    body.classList.add("dark");
+    body.classList.remove("light");
   }
 }
 
@@ -38,5 +43,5 @@ function setTheme(theme) {
 }
 
 function getBody() {
-  return document.getElementsByTagName("body")[0];
+  return document.getElementsByTagName("html")[0];
 }

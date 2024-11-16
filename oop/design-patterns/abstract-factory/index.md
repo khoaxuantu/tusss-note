@@ -1,5 +1,5 @@
 ---
-title: Creational Design Patterns | Abstract Factory
+title: Abstract Factory
 tags:
   - OOP
   - DesignPattern

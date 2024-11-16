@@ -1,5 +1,6 @@
 ---
-title: Lời mở đầu
+title: OOP | Lời mở đầu
+title_template: Tusss Notes | %s
 date: 2023-04-03
 ---
 
