@@ -1,8 +1,8 @@
 ---
-title: OOP | Software Design Principles
+title: Software Design Principles
 tags:
   - OOP
-id: 
+id:
 unlisted: true
 date: 2024-11-10
 ---
@@ -11,7 +11,7 @@ date: 2024-11-10
 
 Trước khi ta bắt đầu bước vào tìm hiểu từng pattern một, có lẽ ta nên điểm lại các điểm cần lưu ý trong thiết kế cấu trúc phần mềm: thứ ta cần đạt được và thứ ta cần tránh.
 
-## Code reuse 
+## Code reuse
 
 Chi phí và thời gian là 2 đại lượng có giá trị nhất để đo lường quá trình phát triển phần mềm.
 

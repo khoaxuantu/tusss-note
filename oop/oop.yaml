@@ -1,5 +1,7 @@
 include: [ content, motion, sidebar, layout/document, components/sidebar ]
 
+title_template: "Tusss Notes | OOP | %s"
+
 sidenav:
   OOP:
     - Lời mở đầu: /oop
@@ -20,8 +22,8 @@ sidenav:
   Design Patterns:
     - Creational Patterns:
       - Factory Method: /oop/design-patterns/factory-method
-      - Abstract Factory
-      - Builder
+      - Abstract Factory: /oop/design-patterns/abstract-factory
+      - Builder: /oop/design-patterns/builder
       - Prototype
       - Singleton
 

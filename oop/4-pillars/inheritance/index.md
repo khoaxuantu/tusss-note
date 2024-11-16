@@ -1,5 +1,5 @@
 ---
-title: OOP | 4 Pillars | Inheritance
+title: 4 Pillars | Inheritance
 tags:
   - OOP
 id:

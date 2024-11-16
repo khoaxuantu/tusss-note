@@ -3,16 +3,16 @@
     <button popovertarget="sidebar" role="open">{ title }</button>
     <aside id="sidebar" is="sidebar-menu" popover>
       <button popovertarget="sidebar" role="close">&times;</button>
-      <navi :items="sidenav"/>
+      <custom-navi :items="sidenav" />
     </aside>
   </nav>
 </section>
 
 <aside id="sidebar" is="sidebar-menu">
-  <navi :items="sidenav"/>
+  <custom-navi :items="sidenav" />
 </aside>
 
-<aside id="toc" @name="complementary">
+<aside id="toc" @name="beside">
   <h3>On this page</h3>
   <toc is="observing-nav"/>
 </aside>

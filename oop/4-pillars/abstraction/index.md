@@ -1,5 +1,5 @@
 ---
-title: OOP | 4 Pillars | Objects & Classes
+title: 4 Pillars | Objects & Classes
 tags:
   - OOP
 unlisted: true

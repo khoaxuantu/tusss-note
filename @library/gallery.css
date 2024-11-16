@@ -1,25 +1,23 @@
-
-
-
 ul:has(time) {
   list-style: none;
-  margin: 4em 0;
-  padding: 0;;
-
+  margin: 2em 0;
+  padding: 0;
 
   li {
     margin-bottom: 3em;
   }
 
   figure {
-    transition: transform .1s;
+    transition: transform 0.1s;
     align-items: center;
     display: flex;
     flex-wrap: wrap;
     margin: 1em 0;
     gap: 1rem;
     margin: 0;
-    &:hover { transform: scale(1.01) }
+    &:hover {
+      transform: scale(1.01);
+    }
     text-align: center;
     justify-content: center;
   }
@@ -33,7 +31,7 @@ ul:has(time) {
     text-wrap: balance;
     font-size: 1.05em;
     line-height: 1.5;
-    margin: .3em 0 0;
+    margin: 0.3em 0 0;
   }
 
   img {
@@ -52,4 +50,3 @@ ul:has(time) {
     }
   }
 }
-

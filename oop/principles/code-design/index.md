@@ -1,5 +1,5 @@
 ---
-title: OOP | Code Design Principles
+title: Code Design Principles
 tags:
   - OOP
 id:

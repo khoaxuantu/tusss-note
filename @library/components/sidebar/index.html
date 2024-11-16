@@ -1,0 +1,21 @@
+<div @name="custom-navi">
+  <nav :for="[key, group] in Object.entries(items)">
+    <h3>{ key }</h3>
+    <div :for="item in group">
+      <a :if="typeof Object.values(item)[0] == 'string'" href="{ Object.values(item)[0] }">
+        { Object.keys(item)[0] }
+      </a>
+      <span aria-haspopup :if="Array.isArray(Object.values(item)[0])">
+        <a aria-expanded="false">{ Object.keys(item)[0] }</a>
+        <nav>
+          <a
+            :for="obj in Object.values(item)[0]"
+            href="{ typeof obj == 'object' ? Object.values(obj)[0] : '' }"
+          >
+            { typeof obj == 'object' ? Object.keys(obj)[0] : obj }
+          </a>
+        </nav>
+      </span>
+    </div>
+  </nav>
+</div>

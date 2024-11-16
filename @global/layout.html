@@ -4,6 +4,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
 </head>
 
+<header>
+  <navi :items="navigation.header"/>
+</header>
+
 <section is="pagehead" @name="pagehead">
   <button is="theme-button">
     <svg
@@ -31,3 +35,7 @@
     </svg>
   </button>
 </section>
+
+<footer>
+  <navi :items="navigation.footer" />
+</footer>

@@ -1,5 +1,5 @@
 ---
-title: OOP | Objects Relationship
+title: Objects Relationship
 tags:
   - OOP
 id:

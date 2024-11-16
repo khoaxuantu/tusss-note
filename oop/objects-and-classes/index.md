@@ -1,5 +1,5 @@
 ---
-title: OOP | Objects & Classes
+title: Objects & Classes
 tags:
   - OOP
 unlisted: true

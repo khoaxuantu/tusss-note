@@ -1,5 +1,5 @@
 ---
-title: OOP | 4 Pillars | Encapsulation
+title: 4 Pillars | Encapsulation
 tags:
   - OOP
 date: 2023-04-06

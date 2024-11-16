@@ -138,6 +138,9 @@ class Logistics {
 
 Cấu trúc chung của factory được diễn tả theo sơ đồ như sau
 
-![Factory Method structure diagram](https://refactoring.guru/images/patterns/diagrams/factory-method/structure.png?id=4cba0803f42517cfe8548c9bc7dc4c9b)
+[image]
+  src: /img/oop/factory-method.webp
+  alt: Factory Method structure diagram
+  caption: Factory Method structure diagram
 
 Tham khảo về **Factory Method** kỹ hơn tại [https://refactoring.guru/design-patterns/factory-method](https://refactoring.guru/design-patterns/factory-method "Factory Method (Refactoring Guru)")

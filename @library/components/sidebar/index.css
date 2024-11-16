@@ -58,7 +58,7 @@
 }
 
 #toc {
-  .level-3 {
+  a:not(:has(strong)) {
     padding-left: 1rem;
   }
 }
@@ -87,7 +87,6 @@
     background: none;
     font-weight: bold;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
     color: var(--md-sys-color-on-surface);

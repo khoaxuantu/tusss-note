@@ -5,6 +5,7 @@ libs: ["@library"]
 view_transitions: true
 native_css_nesting: true
 inline_css: true
+heading_ids: true
 
 language: vi
 
@@ -19,11 +20,10 @@ og: /img/seo/og.webp
 
 class: dark
 
-header:
-  navigation:
+navigation:
+  header:
     - Tusss Notes: /
     - About Me: //xuankhoatu.com/about
 
-footer:
-  copyright:
+  footer:
     - © Xuan Khoa Tu Nguyen: //xuankhoatu.com/about

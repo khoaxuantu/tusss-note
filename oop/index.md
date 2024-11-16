@@ -1,5 +1,5 @@
 ---
-title: OOP | Lời mở đầu
+title: Lời mở đầu
 date: 2023-04-03
 ---
 
@@ -18,12 +18,12 @@ bắt buộc phải nghiền ngẫm, còn muốn zô ứng dụng thực tế th
 Tài liệu thì trên mạng nhan nhản, nhưng tôi có thể suggest 1 số nguồn đọc khá được, anh em sau cần
 tham khảo tra cứu gì thì cũng có thể qua đây check:
 
-+ [Gang of Four Design Patterns](https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8)
-+ [Head First Design Patterns](https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124)
+- [Gang of Four Design Patterns](https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8)
+- [Head First Design Patterns](https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124)
 
 ## Acknowledgement
 
-- *Alexander Shvets - [Refactoring Guru](https://refactoring.guru) - [Dive Into Design Patterns](https://refactoring.guru/design-patterns/book)*
+*Alexander Shvets - [Refactoring Guru](https://refactoring.guru) - [Dive Into Design Patterns](https://refactoring.guru/design-patterns/book)*
 
 ## Catalog
 
@@ -31,40 +31,40 @@ tham khảo tra cứu gì thì cũng có thể qua đây check:
 
 - [Objects & Classes](/oop/objects-and-classes)
 - [4 Pillars](#)
-  + [Abstraction](/oop/4-pillars/abstraction)
-  + [Encapsulation](/oop/4-pillars/encapsulation)
-  + [Inheritance](/oop/4-pillars/inheritance)
-  + [Polymorphism](/oop/4-pillars/polymorphism)
+  - [Abstraction](/oop/4-pillars/abstraction)
+  - [Encapsulation](/oop/4-pillars/encapsulation)
+  - [Inheritance](/oop/4-pillars/inheritance)
+  - [Polymorphism](/oop/4-pillars/polymorphism)
 - [Objects Relationship](/oop/objects-relationship)
 - [Principles](#)
-  + [Software design principles](/oop/principles/software-design)
-  + [Code design principles](/oop/principles/code-design)
-  + [SOLID principles](/oop/principles/solid)
+  - [Software design principles](/oop/principles/software-design)
+  - [Code design principles](/oop/principles/code-design)
+  - [SOLID principles](/oop/principles/solid)
 
 ### Design Patterns
 
 - [Creational Design Patterns](#)
-  + [Factory Method](/oop/design-patterns/factory-method)
-  + [Abstract Factory](#)
-  + [Builder](#)
-  + [Prototype](#)
-  + [Singleton](#)
+  - [Factory Method](/oop/design-patterns/factory-method)
+  - [Abstract Factory](/oop/design-patterns/abstract-factory)
+  - [Builder](/oop/design-patterns/builder)
+  - [Prototype](#)
+  - [Singleton](#)
 - [Structural Design Patterns](#)
-  + [Adapter](#)
-  + [Bridge](#)
-  + [Composite](#)
-  + [Decorator](#)
-  + [Facade](#)
-  + [Flyweight](#)
-  + [Proxy](#)
+  - [Adapter](#)
+  - [Bridge](#)
+  - [Composite](#)
+  - [Decorator](#)
+  - [Facade](#)
+  - [Flyweight](#)
+  - [Proxy](#)
 - [Behavioral Design Patterns](#)
-  + [Chain of Responsibility](#)
-  + [Command](#)
-  + [Iterator](#)
-  + [Mediator](#)
-  + [Memento](#)
-  + [Observer](#)
-  + [State](#)
-  + [Strategy](#)
-  + [Template Method](#)
-  + [Visitor](#)
+  - [Chain of Responsibility](#)
+  - [Command](#)
+  - [Iterator](#)
+  - [Mediator](#)
+  - [Memento](#)
+  - [Observer](#)
+  - [State](#)
+  - [Strategy](#)
+  - [Template Method](#)
+  - [Visitor](#)

@@ -16,12 +16,10 @@ ___
 
 ## Rào trước
 
-- Các notes ở đây được viết trong tâm trạng thất thường của tôi, ngôn ngữ nửa tây nửa ta, câu từ lộn
-xộn, lủng củng, lmao, không phù hợp cho trẻ nít bông tuyết hay đàn ông đang cho con bú 🙂
+- Các notes ở đây được viết trong tâm trạng thất thường của tôi, ngôn ngữ nửa tây nửa ta, câu từ lộn xộn, lủng củng, lmao, không phù hợp cho trẻ nít bông tuyết hay đàn ông đang cho con bú 🙂
 - Việc đưa notes lên đây chỉ là sở thích cá nhân, không nhằm mục đích kinh doanh hay fomo nào.
 - Tất cả đều là kiến thức, không có bài nào là xàm. Trust me bro!
-- Vì lĩnh vực chính của tôi là IT, nên tất cả chủ đề của cái site này cũng chỉ liên quan tới IT thoy
-nhé.
+- Vì lĩnh vực chính của tôi là IT, nên tất cả chủ đề của cái site này cũng chỉ liên quan tới IT thoy nhé.
 - Tailwind rất lỏ. Close topic! Mấy thằng frontend dev biết điều thì nên học tý design cho tôi nhờ 🙂
 - [motherfuckingwebsite.com](https://motherfuckingwebsite.com/)
 
@@ -29,7 +27,7 @@ ___
 
 ## Topics
 
-[gallery]
+[page-list]
 
 ___
 

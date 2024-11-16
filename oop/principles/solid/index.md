@@ -4,7 +4,7 @@ tags:
   - OOP
 unlisted: true
 date: 2024-11-10
-title: OOP | SOLID Principles
+title: SOLID Principles
 ---
 
 # SOLID Principles
