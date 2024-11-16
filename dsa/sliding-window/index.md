@@ -40,9 +40,7 @@ while slow < len(arr):
 ```
 
 Follow up:
-- Trong 1 số advanced problem, ta thường sẽ phải tính tới các giá trị ngoài lề liên quan tới các giá
-trị trong mảng, chẳng hạn như số lần xuất hiện của các giá trị. Khi đó, ta thường áp dụng thêm các
-cấu trúc dữ liệu khác nhau để hỗ trợ giải quyết.
+- Trong 1 số advanced problem, ta thường sẽ phải tính tới các giá trị ngoài lề liên quan tới các giá trị trong mảng, chẳng hạn như số lần xuất hiện của các giá trị. Khi đó, ta thường áp dụng thêm các cấu trúc dữ liệu khác nhau để hỗ trợ giải quyết.
 
   Phổ biến nhất hiện tại ta có thể tính tới hash table. Để ôn lại về hash table, mời ae qua
   [Luận bàn về Hash Table](/dsa/hash-table)

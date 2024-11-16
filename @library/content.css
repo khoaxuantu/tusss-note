@@ -61,3 +61,17 @@ img {
   width: unset;
   max-width: 100%;
 }
+
+table {
+  padding: 1rem 0;
+
+  caption {
+    font-style: italic;
+    font-size: smaller;
+  }
+}
+
+th, td {
+  padding: 6px 13px;
+  border: 1px solid var(--md-sys-color-outline);
+}

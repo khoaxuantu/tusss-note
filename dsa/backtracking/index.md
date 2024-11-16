@@ -25,7 +25,7 @@ thông qua các ràng buộc xóa đi những giá trị/lựa chọn ko còn c�
 Cho 1 tree như sau, liệt kê các nhánh cây của nó, mỗi nhánh cây tương đương với 1 list.
 
 ```md
-\      1
+      1
     /   \
    4     5
   / \   / \

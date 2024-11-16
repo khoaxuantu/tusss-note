@@ -5,10 +5,10 @@ author: Xuan Khoa Tu Nguyen
 unlisted: true
 ---
 
+# Luận bàn về Stack
+
 [image //cdn.programiz.com/sites/tutorial2program/files/stack.png]
     Stack illustration (credit: Programiz)
-
-# Luận bàn về Stack
 
 Stack là 1 cấu trúc dự liệu dạng thẳng tuân theo quy luật last in, first out (LIFO), có nghĩa là
 phần tử được đưa vào stack mới nhất sẽ là phần tử đầu tiên đc đưa ra khỏi stack.
@@ -25,12 +25,21 @@ Stack có các operation chính sau:
 
 ***Ví dụ***
 
-[codetabs "C++ | Python | Java | JS/TS" languages="cpp | python | java | ts"]
+```md
+Stack st
+```
 
+[accordion.tabs name="tabs"]
+
+    ## C++
+
+    ```cpp
     stack<T> st;
+    ```
 
-    ---
+    ## Python
 
+    ```py
     stack = [] # Use list
 
     from collections import deque # Use collections.deque
@@ -38,14 +47,19 @@ Stack có các operation chính sau:
 
     from queue import LifoQueue # Use queue module
     stack = LifoQueue()
+    ```
 
-    ---
+    ## Java
 
+    ```java
     Stack<T> stack = new Stack<T>();
+    ```
 
-    ---
+    ## JS/TS
 
+    ```js
     const stack = [] // Use array
+    ```
 
 ## Solving problems using stack
 

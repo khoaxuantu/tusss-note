@@ -56,8 +56,7 @@ Nói khái quát thế là đc rồi ,bây giờ, ta sẽ đi vào chi tiết v�
 Về **Name**:
 
 - Tên cho cái class thoy :v
-- Quy chuẩn đặt tên thường thấy thì là 1 cụm danh từ liền nhau, viết hoa các chữ cái đầu, (vd:
-HomeButton, NavigateButton, v.v...)
+- Quy chuẩn đặt tên thường thấy thì là 1 cụm danh từ liền nhau, viết hoa các chữ cái đầu, (vd: HomeButton, NavigateButton, v.v...)
 
 Về **Fields (state)**:
 
@@ -76,7 +75,7 @@ Về **Methods (behavior)**:
 > - `meomeo()`
 
 - Ví dụ thực tế trong lập trình hơn thì như 1 object `App`:
-	+ Nếu muốn khởi động `App`, ta có thể tạo 1 method `start()`
+	- Nếu muốn khởi động `App`, ta có thể tạo 1 method `start()`
 	- Nếu muốn đóng `App`, ta có thể tạo 1 method `close()`
 	- Nếu muốn reset `App`, ta có thể tạo 1 method `open()` etc...
 

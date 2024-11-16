@@ -59,7 +59,5 @@ while tail.next:
 ### Follow up
 
 - Ta cần chú ý node *tail*, node `nextNode` và *head* cho pattern này
-- Nhiều bài ta chỉ phải đảo 1 đoạn trong linked list, khi đó thay vì *head*, ta cần có 1 pointer
-thay thế đảm nhiệm chức năng tương tự cho *head*. Ví dụ:
-  + Ta cần đảo đoạn 2->3->4 trong đoạn 1->2->3->4->5. Ta sẽ phải tạo 1 ptr `firstNode` trỏ vào node
-  ở trước node 2 (node 1), khi đó `firstNode.next` sẽ có chức năng tương tự với *head*
+- Nhiều bài ta chỉ phải đảo 1 đoạn trong linked list, khi đó thay vì *head*, ta cần có 1 pointer thay thế đảm nhiệm chức năng tương tự cho *head*. Ví dụ:
+  - Ta cần đảo đoạn 2->3->4 trong đoạn 1->2->3->4->5. Ta sẽ phải tạo 1 ptr `firstNode` trỏ vào node ở trước node 2 (node 1), khi đó `firstNode.next` sẽ có chức năng tương tự với *head*

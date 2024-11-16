@@ -20,12 +20,9 @@ state/subproblem và tái sử dụng nó khi phải lặp lại 1 state/problem
 Chẳng hạn, ta có 1 state gọi là `f("Tuslipid")`, ta giải nó tốn 69 bước, đc giá trị `khoaxuantu`,
 ta lưu nó lại trong "bộ nhớ"
 
-```md
-Memory table
-\| key      | value      |
-\| -------- | ---------- |
-\| Tuslipid | khoaxuantu |
-```
+[table caption="Memory table"]
+    key      | value     
+    Tuslipid | khoaxuantu
 
 Chương trình của ta sau khi tính đc state đó, chạy tiếp vài bước, thì lại bắt gặp 1 state y hệt
 `f("Tuslipid")`, bình thường nếu muốn giải quyết tiếp bước này, chương trình ta phải chạy tới 69
@@ -47,8 +44,7 @@ smaller sub,... đến khi ko thể chia tiếp đc nữa, ta đến base case.
 **Divide & conquer** có hạn chế đó là độ phức tạp lớn khủng khiếp:
 
 - 1 tập N phần tử có thể phải gọi tới O(k^n) hàm đệ quy
-- Đồng thời trong đó sẽ có thể gọi tới rất nhiều hàm trùng nhau, tưởng tượng duyệt các tập hợp trong
-list [1,2,3,2,1], ta dễ dàng sẽ gọi tời hàm f(1,2,3) >2 lần
+- Đồng thời trong đó sẽ có thể gọi tới rất nhiều hàm trùng nhau, tưởng tượng duyệt các tập hợp trong list [1,2,3,2,1], ta dễ dàng sẽ gọi tời hàm f(1,2,3) >2 lần
 
 Như vậy, để tối ưu được vấn đề trên, ta đã có DP, giải trước 1 hàm, lưu kết quả lại, sau đó nếu gặp
 lại hàm này thì ta chỉ lấy kết quả đã lưu ra thôi. Liên hệ tới cache, tại đó ta lưu các thông tin
@@ -56,15 +52,8 @@ cần thiết để có thể tái sử dụng mà ko phải tính toán lấy k
 
 Về cách sử dụng DP, có cả thảy 2 cách:
 
-- **Top-down approach:** Đây là cách tiếp cận "typical" chia để trị, ta tiếp cận tới ví dụ chính ở
-đề bài, chia nhỏ ví dụ đó ra thành các subproblems nhỏ hơn, giải quyết nó (hình tượng hóa giống cấu
-trúc đồ thị ở hình trên). Với cách tiếp cận này, ta implement bằng đệ quy, từ cao đến thấp, như DFS
-vậy. Ở Vn, nhiều ae nói tới concept về đồ thị trong DP, thì có lẽ anh em đang nói tới cách tiếp cận
-top-down đó.
-- **Bottom-up approach:** Trái lại, ta cũng có thể xây dựng "từ dưới lên". Bắt đầu từ index nhỏ nhất
-giải quyết subproblem nhỏ nhất, cộng dồn cho các subproblems lớn hơn, cho tới problem chính cuối
-cùng. Ở Vn, theo tôi thấy ae hay nói tới cách tiếp cận này với thuật ngữ "khử đệ quy", vì ta sẽ
-implement theo bảng (tabular) cho cách tiếp cận bottom-up đó.
+- **Top-down approach:** Đây là cách tiếp cận "typical" chia để trị, ta tiếp cận tới ví dụ chính ở đề bài, chia nhỏ ví dụ đó ra thành các subproblems nhỏ hơn, giải quyết nó (hình tượng hóa giống cấu trúc đồ thị ở hình trên). Với cách tiếp cận này, ta implement bằng đệ quy, từ cao đến thấp, như DFS vậy. Ở Vn, nhiều ae nói tới concept về đồ thị trong DP, thì có lẽ anh em đang nói tới cách tiếp cận top-down đó.
+- **Bottom-up approach:** Trái lại, ta cũng có thể xây dựng "từ dưới lên". Bắt đầu từ index nhỏ nhất giải quyết subproblem nhỏ nhất, cộng dồn cho các subproblems lớn hơn, cho tới problem chính cuối cùng. Ở Vn, theo tôi thấy ae hay nói tới cách tiếp cận này với thuật ngữ "khử đệ quy", vì ta sẽ implement theo bảng (tabular) cho cách tiếp cận bottom-up đó.
 
 Về mẫu giải, ta có thể suy ra pseudocode chung cho 2 cách tiếp cận như sau:
 
@@ -97,7 +86,9 @@ function f(input):
 ```
 
 > Fact: Khi hỏi về các câu hỏi DP, interviewer họ đánh giá rất cao nếu ae diễn giải cho họ lần lượt
-> 3 hướng trên (thứ tự brute force -> memoization -> tabular). Họ tìm kiếm ứng viên có tư duy suy
+> 3 hướng trên (thứ tự brute force -> memoization -> tabular).
+>
+> Họ tìm kiếm ứng viên có tư duy suy
 > nghĩ, chứ ko tìm kiếm 1 máy giải thuật toán. Nếu ae nhảy vô cách tối ưu nhất là bottom-up khử đệ
 > quy thì chưa chắc họ lại ấn tượng bằng giải lần lượt đâu.
 
@@ -105,9 +96,9 @@ function f(input):
 
 ## Tham khảo thêm về cách giải dynamic programming
 
-- [[FeeCodeCamp] Follow these steps to solve any dynamic programming interview problem](https://www.freecodecamp.org/news/follow-these-steps-to-solve-any-dynamic-programming-interview-problem-cc98e508cd0e)
-- [[FeeCodeCamp] Dynamic programming made easy](https://www.freecodecamp.org/news/dynamic-programming-made-easy)
-- [[FeeCodeCamp] Demystifying dynamic programming](https://www.freecodecamp.org/news/demystifying-dynamic-programming-3efafb8d4296/)
+- [(FeeCodeCamp) Follow these steps to solve any dynamic programming interview problem](https://www.freecodecamp.org/news/follow-these-steps-to-solve-any-dynamic-programming-interview-problem-cc98e508cd0e)
+- [(FeeCodeCamp) Dynamic programming made easy](https://www.freecodecamp.org/news/dynamic-programming-made-easy)
+- [(FeeCodeCamp) Demystifying dynamic programming](https://www.freecodecamp.org/news/demystifying-dynamic-programming-3efafb8d4296/)
 
 ## Patterns
 

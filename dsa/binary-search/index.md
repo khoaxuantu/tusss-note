@@ -29,8 +29,7 @@ Về chi tiết, đầu tiên binary search được dùng để giải quyết 
 được sắp xếp (nhớ nhé, sorted, sorted, sorted, đừng quên để đến lúc áp dụng vô mà chưa sorted lại ko
 biết sai vì đâu 💀). Nó tuân thủ 2 nguyên tắc sau:
 
-- Lấy ra 1 element ở giữa trong 1 khoảng, nếu nó có giá trị bé hơn giá trị cần tìm (x), có nghĩa là
-x nằm trong khoảng bên phải của element đó (nghĩa là trong khoảng toàn giá trị lớn hơn).
+- Lấy ra 1 element ở giữa trong 1 khoảng, nếu nó có giá trị bé hơn giá trị cần tìm (x), có nghĩa là x nằm trong khoảng bên phải của element đó (nghĩa là trong khoảng toàn giá trị lớn hơn).
 - Ngược lại, nếu nó có giá trị lớn hơn x, thì nghĩa là x nằm trong khoảng bên trái của element đó
 
 Áp dụng vào pseudocode, ta sẽ được như sau:
@@ -80,13 +79,9 @@ bool binary_search(int start, int end) {
 
 ## Follow up
 
-- Chú ý để tính mid tôi hay dùng start + (end - start) / 2 mà ko dùng (start + end) / 2  cho C++. Đó
-là vì ta cần tránh interger overflow, ví dụ end đề bài cho là `INTERGER_MAX`, thì như vậy
-start + end nó sinh ra lỗi rồi.
-- Nhiều bài sẽ khó họ sẽ ko show hẳn cái list ra, cốt lõi ta cần nhận ra cái khoảng giá trị mà ta
-cần search là gì.
-- Độ phức tạp O(logn), đây là độ phức tạp gần như là tốt nhất cho bài toán tìm giá trị trong 1 list
-đc sorted rồi, nếu muốn tốt hơn thì ta chỉ có cách dùng hash table thoy :v
+- Chú ý để tính mid tôi hay dùng start + (end - start) / 2 mà ko dùng (start + end) / 2  cho C++. Đó là vì ta cần tránh interger overflow, ví dụ end đề bài cho là `INTERGER_MAX`, thì như vậy start + end nó sinh ra lỗi rồi.
+- Nhiều bài sẽ khó họ sẽ ko show hẳn cái list ra, cốt lõi ta cần nhận ra cái khoảng giá trị mà ta cần search là gì.
+- Độ phức tạp O(logn), đây là độ phức tạp gần như là tốt nhất cho bài toán tìm giá trị trong 1 list đc sorted rồi, nếu muốn tốt hơn thì ta chỉ có cách dùng hash table thoy :v
 
 ## Sample questions
 

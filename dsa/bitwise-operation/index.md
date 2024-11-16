@@ -33,9 +33,7 @@ lừa tẹo.
 
 Có 4 logical operator đc sử dụng phổ biến trong dạng này:
 
-- NOT (`~`) - đc gọi là unary operator. Nếu 1 argument là 1-bit, operator này sẽ thay nó thành bit
-nghịch đảo (1 thành 0, 0 thành 1). Nếu argument là 1 chuỗi các bits, tất cả các bits trong chuỗi sẽ
-đc nghịch đảo.
+- NOT (`~`) - đc gọi là unary operator. Nếu 1 argument là 1-bit, operator này sẽ thay nó thành bit nghịch đảo (1 thành 0, 0 thành 1). Nếu argument là 1 chuỗi các bits, tất cả các bits trong chuỗi sẽ đc nghịch đảo.
 - AND (`&`) - Nếu cả 2 bits là 1, thì kết quả là 1. Nếu ko thì kết quả là 0.
 - OR (`|`) - Nếu ít nhất 1 trong 2 bits là 1, thì kết quả là 1. Nếu ko thì kết quả là 0.
 - XOR (`^`) - Nếu cả 2 bits bằng nhau, thì kết quả là 0. Ngược lại thì kết quả là 1.

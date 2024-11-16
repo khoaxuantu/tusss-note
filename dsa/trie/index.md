@@ -5,10 +5,10 @@ author: Xuan Khoa Tu Nguyen
 unlisted: true
 ---
 
+# Luận bàn về Trie
+
 [image /img/dsa/trie.png]
     Trie illustration (Credit: educative.io)
-
-# Luận bàn về Trie
 
 **Trie** là ứng dụng mở rộng của cấu trúc dữ liệu dạng tree được sử dụng rộng rãi cho việc giải quyết
 vấn đề liên quan tới lưu trữ và locating các keys từ set cho trước. Các keys này thường đc biểu diễn

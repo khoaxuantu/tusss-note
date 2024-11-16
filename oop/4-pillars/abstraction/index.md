@@ -8,7 +8,7 @@ date: 2023-04-05
 
 # 4 Pillars - Abstractions
 
-_**Abstraction** là một concept định nghĩa cho việc lọc ra các đặc điểm của object mà sẽ có ích
+**Abstraction** là một concept định nghĩa cho việc lọc ra các đặc điểm của object mà sẽ có ích
 trong việc sử dụng bên ngoài object đó_
 
 Cái concept này nó không liên quan nhiều lắm tới việc code như thế nào, mà thực chất ở đây nó định

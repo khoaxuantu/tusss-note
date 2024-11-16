@@ -12,8 +12,7 @@ unlisted: true
 Đầu tiền tìm hiểu về định nghĩa của Longest Common Substring (LCS) phát:
 
 - 1 LCS được định nghĩa như là substring lớn nhất có trong 2 input strings.
-- 1 substring `X`, được gọi là LCS của `S1` và `S2` khi nó tồn tại ở trong cả 2 strings và ko có
-substring chung nào khác có độ dài lớn hơn nó.
+- 1 substring `X`, được gọi là LCS của `S1` và `S2` khi nó tồn tại ở trong cả 2 strings và ko có substring chung nào khác có độ dài lớn hơn nó.
 
 > substring phải liền nhau.
 
@@ -41,13 +40,9 @@ với 1 char của string còn lại. Ta có thể bắt đầu chạy từ char
 ta sẽ phân ra được những trường hợp sau cần xử lý để xác định đc substring, và lấy ra giá trị lớn
 nhất ở những trường hợp này:
 
-- Nếu 2 char của 2 string là giống nhau, ta hoàn toàn có thể đưa vào LCS, như vậy ta sẽ cần dịch cả
-char index của cả 2 string về trước 1 index và tăng độ dài cho LCS lên 1 =>
-`f(index1 - 1, index2 - 1, lcsLength + 1)`
-- Dịch index ở string 1 về trước, ta reset lại `lcsLength` (tìm substring mới) và ở hàm tiếp theo ta
-sẽ đối chiếu `index1 - 1` với `index2` => `f(index1 - 1, index2, 0)`
-- Dịch index ở string 2 về trước, ta reset lại `lcsLength` và ở hàm tiếp theo ta sẽ đối chiếu `index1`
-với `index2 - 1` => `f(index1, index2 - 1, 0)`
+- Nếu 2 char của 2 string là giống nhau, ta hoàn toàn có thể đưa vào LCS, như vậy ta sẽ cần dịch cả char index của cả 2 string về trước 1 index và tăng độ dài cho LCS lên 1 => `f(index1 - 1, index2 - 1, lcsLength + 1)`
+- Dịch index ở string 1 về trước, ta reset lại `lcsLength` (tìm substring mới) và ở hàm tiếp theo ta sẽ đối chiếu `index1 - 1` với `index2` => `f(index1 - 1, index2, 0)`
+- Dịch index ở string 2 về trước, ta reset lại `lcsLength` và ở hàm tiếp theo ta sẽ đối chiếu `index1` với `index2 - 1` => `f(index1, index2 - 1, 0)`
 
 ```cpp
 if S1[index1] == S2[index2]
@@ -122,11 +117,8 @@ mỗi ô trong mảng tượng trưng cho độ dài substring chung lớn nhấ
 
 Ý tưởng để chạy bảng là như sau:
 
-- Vì khi chạy 2 string đều có trường hợp là substring bị ngắt quãng sang substring khác, nên ta sẽ
-cần 1 giá trị để lưu lại substring lớn nhất qua các bước => `maxLength`
-- Tưởng tượng ở mỗi ô, ta đã có 1 "substring" ảo được build cho tới index trước ô đó, vì vậy ta sẽ
-có thể "cộng dồn" char hiện tại vào "substring" => `dp[index1-1][index2-1] + 1`. Cuối cùng ta sẽ
-lấy max giữa `maxLength` với giá trị cộng dồn để lưu độ dài lớn nhất
+- Vì khi chạy 2 string đều có trường hợp là substring bị ngắt quãng sang substring khác, nên ta sẽ cần 1 giá trị để lưu lại substring lớn nhất qua các bước => `maxLength`
+- Tưởng tượng ở mỗi ô, ta đã có 1 "substring" ảo được build cho tới index trước ô đó, vì vậy ta sẽ có thể "cộng dồn" char hiện tại vào "substring" => `dp[index1-1][index2-1] + 1`. Cuối cùng ta sẽ lấy max giữa `maxLength` với giá trị cộng dồn để lưu độ dài lớn nhất
 
 Nói chung thì khó giải thích luồng logic cho cái này để mọi ng hiểu lắm, phải chăng nếu có vid mô
 phỏng lại thì dễ hiểu hơn 🙁

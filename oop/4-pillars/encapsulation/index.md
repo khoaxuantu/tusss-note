@@ -47,12 +47,9 @@ private int var;
 protected void bruh();
 ```
 
-- `public`: là keyword giúp cho compiler biết rằng method/var là public. Qua keyword này, các
-method/var sẽ truy cập được ở bên ngoài `Class`
-- `private`: ngược lại với `public`. Các method/var của `Class` vs keyword này sẽ chỉ có thể được
-truy cập ở bên trong cái `Class` đó.
-- `protected`: Gần giống với `private`, nhưng các method/var vs keyword này có thể được truy cập ở
-các `Subclass` của `Class`.
+- `public`: là keyword giúp cho compiler biết rằng method/var là public. Qua keyword này, các method/var sẽ truy cập được ở bên ngoài `Class`
+- `private`: ngược lại với `public`. Các method/var của `Class` vs keyword này sẽ chỉ có thể được truy cập ở bên trong cái `Class` đó.
+- `protected`: Gần giống với `private`, nhưng các method/var vs keyword này có thể được truy cập ở các `Subclass` của `Class`.
 
 ## Về interface và abstract class
 
@@ -104,7 +101,7 @@ private:
 
 ## Getters, setters
 
-1 khía cạnh ngoài lề ae có thể cũng được nghe đến nhiều, đó là `get` và `set`.
+1 khía cạnh ngoài lề ae có thể cũng được nghe đến nhiều, đó là `get` và `set`
 
 Đây là cách để ta sử dụng và chỉnh sửa các thuộc tính `private` hoặc `protected` của 1 object ở
 bên ngoài `Class` định nghĩa nên object đó thôi.

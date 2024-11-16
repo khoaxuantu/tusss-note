@@ -57,13 +57,11 @@ Có rất nhiều cách hashing khác nhau, tất cả nhằm mục đích sao c
 trả về 1 kết quả khác nhau. Trên thế giới ng ta cũng có nhiều nghiên cứu về các hashing function
 rồi. Ae ta newbie nên có thể tham khảo trước bài viết về mấy cái hash function phổ biến sau
 
-https://www.geeksforgeeks.org/hash-functions-and-list-types-of-hash-functions/
+[https://www.geeksforgeeks.org\/hash-functions-and-list-types-of-hash-functions/](https://www.geeksforgeeks.org/hash-functions-and-list-types-of-hash-functions/)
 
 **Các cách sử dụng hash table với một số ngôn ngữ lập trình**
 
-<!-- [codetabs "C++ | Java | Python | JavaScript" languages="cpp | java | python | js"] -->
-[accordion.tabs name="tabs" open]
-
+[accordion.tabs name="tabs"]
   ## C++
 
   ```cpp
@@ -90,6 +88,7 @@ https://www.geeksforgeeks.org/hash-functions-and-list-types-of-hash-functions/
   ```
 
   ## JavaScript
+
   ```js
   // Dùng object và Set
   const map = {key: value};

@@ -13,39 +13,30 @@ blockquote {
   strong {
     background-color: var(--marker);
     font-weight: inherit;
-    padding: .1em .2em;
-    margin-inline: -.2em;
+    padding: 0.1em 0.2em;
+    margin-inline: -0.2em;
   }
 }
 
 .tabs {
-  position: relative;
-  display: flex;
-  gap: 0.5rem;
-
   /* tabs */
   summary {
     cursor: pointer;
     border-radius: 0.25rem;
-    padding: 0.25rem;
+    padding: 0.5rem;
 
-    &::marker { font-size: 0 }
+    &::marker {
+      font-size: 0;
+    }
+
     &:hover {
       background-color: var(--md-sys-color-primary);
       color: var(--md-sys-color-on-primary);
     }
   }
 
-  /* tab panes */
-  div {
-    position: absolute;
-    left: 0;
-    right: 0;
-  }
-
   /* active tab */
   [open] summary {
-    pointer-events: none;
     background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
   }

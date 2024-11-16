@@ -47,7 +47,7 @@ Một số bước có thể yêu cầu cách implementation khác nhau khi ta c
 
 ## Structure
 
-![Builder Structure diagram](oop-design-pattern/builder_1.png)
+![Builder Structure diagram](/img/oop/builder.webp)
 
 1. Cái `Builder` interface khởi tạo các construction steps chung cần có cho tất cả các loại builders của sản phẩm
 2. `Concrete Builder` cung cấp các implementations khác nhau của các construction steps. Concrete builder có thể sản xuất ra các sản phẩm mà ko follow theo interface chung
@@ -66,4 +66,4 @@ director.make(builder2); // Thay vì pass type như dười ta pass thẳng 1 bu
 
 ---
 
-Tham khảo thêm về `Builder` tại [https://refactoring.guru/design-patterns/builder](https://refactoring.guru/design-patterns/builder "https://refactoring.guru/design-patterns/builder")
+Tham khảo thêm về `Builder` tại [https://refactoring.guru/design-patterns/builder](https://refactoring.guru/design-patterns/builder "Builder - Refactoring Guru")

@@ -106,11 +106,8 @@ while(!q.empty()) {
 ## Follow up
 
 - Dạng này áp dụng tốt với directed graph, với indirected graph thì nên cẩn thận.
-- Nhìn thì tự hỏi sao ko gộp chung với BFS, nhưng mà để ý thì thấy ở đây input yêu cầu ta phải tự
-tạo ra 1 graph cho riêng mình.
-- Để ý ở code trên ta có 1 hash table là `inDegree`. Hash table này biểu diễn cho số lượng node cha
-của mỗi node, nhờ đó ta có thể tìm ra đc root node trong graph và kiểm soát ta đã đi qua node đó hay
-chưa.
+- Nhìn thì tự hỏi sao ko gộp chung với BFS, nhưng mà để ý thì thấy ở đây input yêu cầu ta phải tự tạo ra 1 graph cho riêng mình.
+- Để ý ở code trên ta có 1 hash table là `inDegree`. Hash table này biểu diễn cho số lượng node cha của mỗi node, nhờ đó ta có thể tìm ra đc root node trong graph và kiểm soát ta đã đi qua node đó hay chưa.
 
 ## Sample questions
 

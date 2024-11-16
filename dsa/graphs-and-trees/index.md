@@ -84,8 +84,8 @@ Ta áp dụng 2 cách điển hình để duyệt graph là **BFS** và **DFS**,
 với nhau tạo thành hình cây. Điểm khác biệt chính của tree với graph là ở tree, ta có 1 node *root*
 khởi đầu (gốc cây) và quy định hướng di chuyển từ *root* tới các *leaf node* (lá cây).
 
-```
->            RootNode
+```md
+             RootNode
           /            \
       Node               Node
     /      \            /    \
@@ -124,8 +124,8 @@ biệt của binary tree, các giá trị mỗi node của BST phải tuân th�
 
 Ví dụ
 
-```
->          8
+```md
+           8
        /      \
      3          12
    /    \      /  \

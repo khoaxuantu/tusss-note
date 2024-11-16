@@ -23,11 +23,8 @@ Với dạng này, cách xử lý sẽ rất đa dạng vì nó liên quan tới
 lần giải, tôi có thể đúc kết vài tips hay ho như sau:
 
 - Quen thuộc với `Class`
-- Sử dụng các cấu trúc dữ liệu cơ bản (array, linked list, hash table, queue, stack, heap, graph)
-để xây dựng nên các cấu trúc dữ liệu phức tạp hơn
-- Chú ý làm sao để ta có thể tối ưu performance của cấu trúc dữ liệu tốt nhất có thể. Kiểm tra Big O
-trong mỗi method, đáp án tốt nhất trong dạng bài này chính là mỗi method của cấu trúc dữ liệu tối ưu
-cả về thời gian chạy lẫn bộ nhớ tiêu hao
+- Sử dụng các cấu trúc dữ liệu cơ bản (array, linked list, hash table, queue, stack, heap, graph) để xây dựng nên các cấu trúc dữ liệu phức tạp hơn
+- Chú ý làm sao để ta có thể tối ưu performance của cấu trúc dữ liệu tốt nhất có thể. Kiểm tra Big O trong mỗi method, đáp án tốt nhất trong dạng bài này chính là mỗi method của cấu trúc dữ liệu tối ưu cả về thời gian chạy lẫn bộ nhớ tiêu hao
 - Đọc kỹ đề bài 🙂
 
 ## Sample questions

@@ -81,12 +81,10 @@ x:[3,4]  y:[1,2]
 Thế thoy ~
 
 Follow up:
-- Hầu như ở các dạng bài này, input của ta đều cần yêu cầu theo thứ tự thống nhất. Nếu đề bài họ
-cho input đã sorted thì ko sao, còn ko thì ta sẽ phải kiếm các built-in function để đưa input về
-đúng thứ tự thôi
+- Hầu như ở các dạng bài này, input của ta đều cần yêu cầu theo thứ tự thống nhất. Nếu đề bài họ cho input đã sorted thì ko sao, còn ko thì ta sẽ phải kiếm các built-in function để đưa input về đúng thứ tự thôi
 - Có 2 cách để giải quyết các input theo thứ tự:
-  + Dùng `sort()`
-  + Dùng `priority_queue` hoặc `heap`
+  - Dùng `sort()`
+  - Dùng `priority_queue` hoặc `heap`
 - Trong các ví dụ thường thấy cho sort() hay priority_queue, ta chỉ áp dụng đối với 1 kiểu dữ liệu
 đơn như `int`, `char`, etc... nhưng ở đây ta có cả 1 cục `Interval`. Vậy nên ta sẽ cần tới cái mà
 giang hồ gọi là *custom comparator*. Chi tiết gg search trc nhé 💀

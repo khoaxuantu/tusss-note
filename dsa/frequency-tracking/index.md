@@ -26,10 +26,8 @@ Tóm lại, trong pattern **tracking frequency**, ta follow chính 2 bước sau
 
 ## Follow up
 
-- Ta sẽ cần lình hoạt lựa chon key cho hash table, đây có lẽ là phần khó nhất trong hầu hết các bài
-tập về tracking frequency này.
-- Ae có thể để ý, trong pattern **sliding window**, nhiều bài ta cũng sử dụng kỹ thuật
-**tracking frequency**, hầu hết chính là để track frequency của các phần tử nằm trên 1 window.
+- Ta sẽ cần lình hoạt lựa chon key cho hash table, đây có lẽ là phần khó nhất trong hầu hết các bài tập về tracking frequency này.
+- Ae có thể để ý, trong pattern **sliding window**, nhiều bài ta cũng sử dụng kỹ thuật **tracking frequency**, hầu hết chính là để track frequency của các phần tử nằm trên 1 window.
 
 ## Sample questions
 

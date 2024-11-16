@@ -36,7 +36,5 @@ while(left_index < right_index):
 ```
 
 Follow up:
-- 1 số problems khó ta sẽ cần sử dụng nhiều hơn 2 pointers nhưng cùng lắm thì 3 hoặc 4 thôi, 5 thì
-quá đà vl.
-- **Sliding window** và **Fast and slow pointer** cũng là phát triển từ **Two pointers** nhưng tụi
-này đã đc tách ra thành 2 patterns riêng nên sẽ được bàn tới trong các note riêng.
+- 1 số problems khó ta sẽ cần sử dụng nhiều hơn 2 pointers nhưng cùng lắm thì 3 hoặc 4 thôi, 5 thì quá đà vl.
+- **Sliding window** và **Fast and slow pointer** cũng là phát triển từ **Two pointers** nhưng tụi này đã đc tách ra thành 2 patterns riêng nên sẽ được bàn tới trong các note riêng.

@@ -19,25 +19,23 @@ Ví dụ, 1 array [1,2,3]. Ta có các subsets như sau
 
 Ý tưởng là ta sẽ xây dựng nên các subsets từ từng elements trong array. Cụ thể trong ví dụ trên:
 
-1. Ta bắt đầu với 1 tập rỗng {}. Từ tập rỗng này ta generate ra 2 array mới từ 2 option: bỏ qua
-element 1 và thêm element 1 vào trong array. Như vậy ta đc:
+1. Ta bắt đầu với 1 tập rỗng {}. Từ tập rỗng này ta generate ra 2 array mới từ 2 option: bỏ qua element 1 và thêm element 1 vào trong array. Như vậy ta đc:
 
-```md
-{}, {1}
-```
+  ```md
+  {}, {1}
+  ```
 
-2. Ta lưu tập hợp 2 array trên, rồi với mỗi array ta kết hợp với element `2` bằng 2 cách như ở
-bước 1. Ta có;
+2. Ta lưu tập hợp 2 array trên, rồi với mỗi array ta kết hợp với element `2` bằng 2 cách như ở bước 1. Ta có;
 
-```md
-{}, {2}, {1}, {1,2}
-```
+  ```md
+  {}, {2}, {1}, {1,2}
+  ```
 
 3. Áp dụng tương tự với tập hợp các array có đc ở bước 2. Ta sẽ đc:
 
-```md
-{}, {3}, {2}, {2,3}, {1}, {1,3}, {1,2}, {1,2,3}
-```
+  ```md
+  {}, {3}, {2}, {2,3}, {1}, {1,3}, {1,2}, {1,2,3}
+  ```
 
 Như vậy bỏ qua tập rỗng ở đầu đi thì ta có được kết quả rồi.
 
@@ -86,13 +84,8 @@ vector<vector<int>> subsets(vector<vector<int>>& saveArrays, int inputIndex) {
 
 ## Follow up
 
-- Ta có thể áp dụng cách tiếp cận BFS thay vì đệ quy như trên. Gợi ý là trong phần ý tưởng ta đã
-bàn tới phía trên, mỗi bước ta cần lưu từng set arrays một và dùng set đó để thêm element tiếp theo.
-Đặc điểm này ta thấy giống hệt với cách ta sử dụng queue trong BFS rồi.
-- Cách tiếp cận này sẽ tốn của ta tới O(n*2^n) time complexity. Nhìn chung các dạng bài về subsets
-vs combinations đều có độ phức tạp thời gian rất lớn. Ae tiếp cận tới pattern subsets trước tiên
-cũng tạo dựng bước tiền đề để sau này học pattern dynamic programming (quy hoạch động) được dễ dàng
-hơn.
+- Ta có thể áp dụng cách tiếp cận BFS thay vì đệ quy như trên. Gợi ý là trong phần ý tưởng ta đã bàn tới phía trên, mỗi bước ta cần lưu từng set arrays một và dùng set đó để thêm element tiếp theo. Đặc điểm này ta thấy giống hệt với cách ta sử dụng queue trong BFS rồi.
+- Cách tiếp cận này sẽ tốn của ta tới O(n*2^n) time complexity. Nhìn chung các dạng bài về subsets vs combinations đều có độ phức tạp thời gian rất lớn. Ae tiếp cận tới pattern subsets trước tiên cũng tạo dựng bước tiền đề để sau này học pattern dynamic programming (quy hoạch động) được dễ dàng hơn.
 
 ## Sample questions
 

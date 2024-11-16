@@ -138,13 +138,8 @@ các item và các cột là các mức cacacity.
 Ở mỗi level capacity, ta cũng lại có 2 lựa chọn: add item hoặc skip item, ta thử 2 lựa chọn đấy rồi
 lưu giá trị lớn nhất vào 1 ô `[item, capacity]`.
 
-- Với lựa chọn skip item, ta ko cần quan tâm tới item hiện tại, nhưng vẫn cần giữ giá trị lớn nhất
-mà item trước đã hình thành nên. Vậy ta sẽ lấy giá trị ở ô `[item-1, capacity]` (lấy item trước mà ko
-phải thay đổi capacity)
-- Lựa chọn add item thì hơi phức tạp hơn, ta cần phải cộng item đó vào tập hợp của ta, và nó chịu
-ràng buộc bởi mức capacity hiện tại. Như vậy để có thể đưa item vào tập hợp, ta cần capacity đó phải
-chừa ra 1 khoảng cho trọng lượng của item, nói cách khác, ta cộng dồn item này với tập hợp đc
-"hình thành" ở ô `[item-1, capacity-weights[item]]`.
+- Với lựa chọn skip item, ta ko cần quan tâm tới item hiện tại, nhưng vẫn cần giữ giá trị lớn nhất mà item trước đã hình thành nên. Vậy ta sẽ lấy giá trị ở ô `[item-1, capacity]` (lấy item trước mà ko phải thay đổi capacity)
+- Lựa chọn add item thì hơi phức tạp hơn, ta cần phải cộng item đó vào tập hợp của ta, và nó chịu ràng buộc bởi mức capacity hiện tại. Như vậy để có thể đưa item vào tập hợp, ta cần capacity đó phải chừa ra 1 khoảng cho trọng lượng của item, nói cách khác, ta cộng dồn item này với tập hợp đc "hình thành" ở ô `[item-1, capacity-weights[item]]`.
 
 Vậy là ta có đoạn code như sau:
 

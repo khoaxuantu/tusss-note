@@ -117,4 +117,4 @@ class Shop {
 
 ---
 
-Tham khảo về "Abstract Factory" kỹ hơn tại: [https://refactoring.guru/design-patterns/abstract-factory](https://refactoring.guru/design-patterns/abstract-factory "Abstract Factory (Refactoring Guru)")
+Tham khảo về "Abstract Factory" kỹ hơn tại [Refactoring Guru](https://refactoring.guru/design-patterns/abstract-factory).

@@ -5,10 +5,10 @@ author: Xuan Khoa Tu Nguyen
 unlisted: true
 ---
 
+# Luận bàn về Heap
+
 [image /img/dsa/min-max-heap.png]
     Min heap & max heap illustration (source: Internet)
-
-# Luận bàn về Heap
 
 ## Heap
 
@@ -27,7 +27,7 @@ nên thay vào đó ta sẽ sử dụng input là array và mô phỏng array ch
 cách tận dụng index của array (quá trình này còn được gọi là heapify). Chi tiết các operations
 ta có thể tham khảo ở:
 
-https://www.programiz.com/dsa/heap-data-structure#operations
+[https://www.programiz.com/dsa/heap-data-structure#operations](https://www.programiz.com/dsa/heap-data-structure#operations)
 
 ## Priority Queue
 
@@ -39,32 +39,41 @@ ta pop element đầu tiên của nó ra, ta sẽ luôn lấy được giá tr�
 
 > Chi tiết các operations của nó ta tham khảo:
 >
-> https://www.programiz.com/dsa/priority-queue
+> [https://www.programiz.com/dsa/priority-queue](https://www.programiz.com/dsa/priority-queue)
+>
 > Dễ thấy trong article này họ cho vài cách implement priority queue luôn nhưng cách hiệu quả nhất
 > chính là implement với heap.
 
 ## Ví dụ
 
-[codetabs "C++ | Python | Java" languages="cpp | python | java"]
+[accordion.tabs name="tabs"]
+    ## C++
 
+    ```cpp
     #include <queue>
 
     priority_queue<DataType> maxHeap;
     priority_queue<DataType, vector<DataType>, greater<DataType>> minHeap;
-    // Với các DataType có nhiều hơn 1 giá trị, ta cần thay greater bằng 1 custom comparator ta tự viết ra
+    ```
 
-    ---
+    Với các DataType có nhiều hơn 1 giá trị, ta cần thay greater bằng 1 custom comparator ta tự viết ra
 
+    ## Python
+
+    ```py
     import heapq
 
     inputList = []
     heapq.heapify(inputList)
+    ```
 
-    ---
+    ## Java
 
+    ```java
     import java.util.*;
 
     PriorityQueue<DataType> pq = new PriorityQueue<>();
+    ```
 
 ## Chú ý
 
@@ -73,7 +82,7 @@ hay min heap, ta sẽ cần tự viết custom comparator.
 
 Ví dụ trong C++
 
-http://neutrofoton.github.io/blog/2016/12/29/c-plus-plus-priority-queue-with-comparator/
+[http://neutrofoton.github.io/blog/2016/12/29\/c-plus-plus-priority-queue-with-comparator](https://neutrofoton.github.io/blog/cpp/2016/12/29/c-plus-plus-priority-queue-with-comparator.html)
 
 ```cpp
 auto custCmp = [](DataType& x, DataType& y){

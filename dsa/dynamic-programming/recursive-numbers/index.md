@@ -78,7 +78,7 @@ Top-down DP rồi, giờ ta thử hướng bottom-up xem. Bắt đầu từ 0, n
 Chuyển hóa thành dãy số, chương trình của ta có thể chạy như sau:
 
 ```md
-\   [0 1]
+   [0 1]
 -> 0 [1 1]
 -> 0 1 [1 2]
 -> 0 1 1 [2 3]

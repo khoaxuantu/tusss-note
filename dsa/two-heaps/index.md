@@ -18,9 +18,7 @@ sẽ tốn O(logn) time complexity, và để access tới giá trị root của
 
 Ta sẽ cần chọn giữa [1 maxHeap với 1 minHeap], [2 maxHeap] hoặc [2 minHeap], tùy vào yêu cầu đề bài.
 
-- Với bài yêu cầu xử lý các element có giá trị trong khoảng giữa của input/data stream (ví dụ như
-tìm median), ta sẽ cần tới 1 maxHeap và 1 minHeap và đảm bảo giá trị lớn nhất của maxHeap < giá trị
-nhỏ nhất của minHeap.
+- Với bài yêu cầu xử lý các element có giá trị trong khoảng giữa của input/data stream (ví dụ như tìm median), ta sẽ cần tới 1 maxHeap và 1 minHeap và đảm bảo giá trị lớn nhất của maxHeap < giá trị nhỏ nhất của minHeap.
 - Với bài yêu cầu xử lý 2 giá trị lớn nhất, ta có thể sẽ cần tới 2 maxHeap.
 - Với bài yêu cầu xử lý 2 giá trị nhỏ nhất, ta có thể sẽ cần tới 2 minHeap.
 

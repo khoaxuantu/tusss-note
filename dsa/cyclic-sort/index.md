@@ -76,11 +76,8 @@ while (i < arr.size()) {
 
 ## Follow up
 
-- Mẹo để giải quyết mấy bài có các số bị trùng, ta sẽ ko so trực tiếp số với index nữa, thay vì đó
-ta sẽ so số hiện tại với số nằm trong index được tạo bởi giá trị của số hiện tại. Như đoạn code trên,
-ta có thể thay mệnh đề `arr[i] != i + 1` thành `arr[i] != arr[arr[i] - 1]`.
-- **Cyclic sort** đc áp dụng để giải hầu hết các bài tập yêu cầu phải xử lý với dãy số tăng dần đều,
-ví dụ như tìm số còn thiếu trong dãy số => tìm số ko nằm đúng vị trí sau khi sort hoàn thành.
+- Mẹo để giải quyết mấy bài có các số bị trùng, ta sẽ ko so trực tiếp số với index nữa, thay vì đó ta sẽ so số hiện tại với số nằm trong index được tạo bởi giá trị của số hiện tại. Như đoạn code trên, ta có thể thay mệnh đề `arr[i] != i + 1` thành `arr[i] != arr[arr[i] - 1]`.
+- **Cyclic sort** đc áp dụng để giải hầu hết các bài tập yêu cầu phải xử lý với dãy số tăng dần đều, ví dụ như tìm số còn thiếu trong dãy số => tìm số ko nằm đúng vị trí sau khi sort hoàn thành.
 
 ## Sample questions
 

@@ -143,4 +143,4 @@ Cấu trúc chung của factory được diễn tả theo sơ đồ như sau
   alt: Factory Method structure diagram
   caption: Factory Method structure diagram
 
-Tham khảo về **Factory Method** kỹ hơn tại [https://refactoring.guru/design-patterns/factory-method](https://refactoring.guru/design-patterns/factory-method "Factory Method (Refactoring Guru)")
+Tham khảo về **Factory Method** kỹ hơn tại [Refactoring Guru](https://refactoring.guru/design-patterns/factory-method)

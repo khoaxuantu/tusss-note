@@ -18,31 +18,39 @@ unlisted: true
 Mỗi node ở đây ta thấy chứa 1 block data và 1 block next
 
 - Block data sẽ chứa mọi dữ liệu mà ta cần dùng
-- Block next sẽ chứa địa chỉ trỏ tới block tiếp theo. Đây chính là block tạo nên kết nối giữa các
-node với nhau.
+- Block next sẽ chứa địa chỉ trỏ tới block tiếp theo. Đây chính là block tạo nên kết nối giữa các node với nhau.
 
 ***Ví dụ***
 
-[codetabs "C | C++ | Python" languages="c | cpp | python"]
+[accordion.tabs name="tabs"]
+  ## C
 
+  ```c
   struct Node {
       int data;
       struct Node *next;
   };
+  ```
 
-  ---
+  ## C++
+
+  ```cpp
   class Node {
   public:
       Data* data; // from a Data class
       Node* next;
       Node(Data* data) : data(data), next(nullptr) {}
   };
+  ```
 
-  ---
+  ## Python
+
+  ```py
   class Node:
       def __init__(data):
           self.data = data
           self.next = None
+  ```
 
 Để tạo 1 linked list, bước đâu tiên là ta tạo 1 head node để khởi đầu trước
 

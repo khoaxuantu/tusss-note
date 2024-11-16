@@ -12,7 +12,7 @@ với **BFS** duyệt từng level của graph, thì ở **DFS** ta sẽ đi sâ
 cho tới "leaf node" (node mà không còn node liền kề nào có thể đi được nữa).
 
 ```
-\             RootNode
+              RootNode
           /            \
       Node1              Node2
     /      \            /    \

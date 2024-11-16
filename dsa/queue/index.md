@@ -5,10 +5,10 @@ author: Xuan Khoa Tu Nguyen
 unlisted: true
 ---
 
+# Luận bàn về Queue
+
 [image //media.geeksforgeeks.org/wp-content/cdn-uploads/20221213113312/Queue-Data-Structures.png]
     Queue illustration (Credit: GeeksforGeeks)
-
-# Luận bàn về Queue
 
 **Queue** là 1 kiểu cấu trúc dữ liệu rất dễ hiểu. Nó chỉ có quy tắc duy nhất là FIFO, hay còn gọi là
 First In First Out, element đi vô queue đầu tiên thì sẽ ra khỏi queue đầu tiên.
@@ -27,31 +27,44 @@ Các **operations** cơ bản của queue
 
 ***Ví dụ***
 
-[codetabs "C++ | Python | Java | JS/TS" languages="cpp | python | java | ts"]
+```md
+Queue q
+```
 
+[accordion.tabs name="tabs"]
+    ## C++
+
+    ```cpp
     #include<queue>
 
     queue<DataType> q;
+    ```
 
-    ---
+    ## Python
 
+    ```py
     from queue import Queue
 
     q = Queue()
+    ```
 
-    ---
+    ## Java
 
+    ```java
     import java.util.Queue;
     import java.util.LinkedList;
 
     Queue<DataType> q = new LinkedList();
+    ```
 
-    ---
+    ## JS/TS
 
+    ```js
     import { Queue } from '@datastructures-js/queue';
 
     const queue = new Queue();
+    ```
 
 Anh em nào hứng thú với cách 1 queue được implement như nào thì có thể tham khảo của tụi programiz
 
-https://www.programiz.com/dsa/queue#code
+[https://www.programiz.com/dsa/queue#code](https://www.programiz.com/dsa/queue#code)

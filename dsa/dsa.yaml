@@ -31,6 +31,12 @@ sidenav:
     - Greedy: /dsa/greedy
     - Backtracking: /dsa/backtracking
     - Dynamic Programming: /dsa/dynamic-programming
+    - DP Patterns:
+      - Recursive Numbers: /dsa/dynamic-programming/recursive-numbers
+      - 0/1 Knapsack: /dsa/dynamic-programming/0-1-knapsack
+      - Unbounded Knapsack: /dsa/dynamic-programming/unbounded-knapsack
+      - Longest Common Substring: /dsa/dynamic-programming/longest-common-substring
+      - Palindromic Subsequence: /dsa/dynamic-programming/palindromic-subsequence
     - Cyclic Sort: /dsa/cyclic-sort
     - Topological Sort: /dsa/topological-sort
     - Frequency Tracking: /dsa/frequency-tracking
