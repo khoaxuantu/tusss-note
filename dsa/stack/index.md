@@ -3,6 +3,8 @@ title: DSA | Stack
 date: 2023-08-21
 author: Xuan Khoa Tu Nguyen
 unlisted: true
+include:
+  - components/accordion
 ---
 
 # Luận bàn về Stack

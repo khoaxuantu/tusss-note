@@ -3,6 +3,8 @@ title: DSA | Hash Table
 date: 2023-03-04
 author: Xuan Khoa Tu Nguyen
 unlisted: true
+include:
+  - components/accordion
 ---
 
 # Luận bàn về Hash Table

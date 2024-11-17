@@ -2,27 +2,6 @@ li {
   margin-bottom: 1em;
 }
 
-/* Code tabs */
-div[is="aria-tabs"] {
-  ul {
-    padding-inline-start: 0;
-  }
-
-  li[role=tabpanel] {
-    list-style: none;
-  }
-
-  a[role=tab] {
-    padding: 0.25rem;
-    border-radius: 0.25rem;
-  }
-
-  a[aria-selected=true] {
-    background-color: var(--md-sys-color-primary-container);
-    color: var(--md-sys-color-on-primary-container);
-  }
-}
-
 /* syntax highligted code */
 pre {
   code {

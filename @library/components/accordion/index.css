@@ -1,0 +1,26 @@
+.tabs {
+  /* tabs */
+  summary {
+    cursor: pointer;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    transition: padding 200ms;
+
+    &::marker {
+      font-size: 0;
+    }
+
+    &:hover {
+      background-color: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-primary);
+    }
+  }
+
+  /* active tab */
+  [open] summary {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+}
