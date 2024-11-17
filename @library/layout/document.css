@@ -1,10 +1,43 @@
 body {
-  main {
+  > main {
     aside#sidebar,
     aside#toc {
       position: sticky;
       display: none;
       top: 0;
+    }
+
+    article {
+      > footer {
+        nav {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 1rem;
+
+          a {
+            width: 100%;
+          }
+
+          h3 {
+            margin: 0;
+          }
+
+          button[role="next-article"],
+          button[role="prev-article"] {
+            width: 100%;
+            padding: 1rem;
+          }
+
+          button[role="next-article"] {
+            text-align: right;
+          }
+
+          button[role="prev-article"] {
+            text-align: left;
+          }
+        }
+      }
     }
   }
 }
@@ -13,9 +46,27 @@ body {
   display: block;
 }
 
+@media (min-width: 576px) {
+  body {
+    > main {
+      article {
+        > footer {
+          nav {
+            flex-wrap: nowrap;
+
+            a {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: 768px) {
   body {
-    main {
+    > main {
       display: grid;
       grid-template-columns: repeat(10, 1fr);
 
