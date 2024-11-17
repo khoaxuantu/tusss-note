@@ -4,14 +4,44 @@ li {
 
 /* syntax highligted code */
 pre {
+  position: relative;
+
   code {
     background-color: inherit;
     color: inherit;
   }
+
+  &::before {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: small;
+  }
+
+  &:has(code[language="ts"])::before {
+    content: "TS";
+  }
+  &:has(code[language="js"])::before {
+    content: "JS";
+  }
+  &:has(code[language="cpp"])::before {
+    content: "C++";
+  }
+  &:has(code[language="c"])::before {
+    content: "C";
+  }
+  &:has(code[language="java"])::before {
+    content: "Java";
+  }
+  &:has(code[language="py"])::before,
+  &:has(code[language="python"])::before {
+    content: "Python";
+  }
 }
 
 /* images and code blocks */
-img, pre {
+img,
+pre {
   border-radius: 8px;
 }
 
@@ -32,8 +62,6 @@ code {
   line-height: 1.35;
   font-size: 13px;
   border-radius: 4px;
-  background-color: var(--md-sys-color-secondary-container);
-  color: var(--md-sys-color-on-secondary-container);
 }
 
 img {
@@ -50,7 +78,8 @@ table {
   }
 }
 
-th, td {
+th,
+td {
   padding: 6px 13px;
   border: 1px solid var(--md-sys-color-outline);
 }

@@ -13,6 +13,7 @@
   --z-index-4: 40;
   --z-index-5: 50;
   --z-index-max: 9999;
+  --glow-padding: 2rem 1.5rem;
 }
 
 /* consistent whitespace */
