@@ -13,8 +13,7 @@ Với cái thể loại topic này thì ta vẫn nên chia 2 phần:
 - Phần đầu sẽ tập trung về **OOP** trước, ta vẫn phải hiểu cặn kẽ đc mấy cái này trước đã trước khi sang phần sau
 - Phần 2 này là khi ta cảm thấy đã đủ hiểu về **OOP**, ta sẽ nói đến **Design Patterns**.
 
-Chung quy thì trước khi bước vào mồ chôn này thì anh em cần có mindset là: **OOP** là cơ bản nhưng
-bắt buộc phải nghiền ngẫm, còn muốn zô ứng dụng thực tế thì đó là Design Patterns
+Chung quy thì trước khi bước vào mồ chôn này thì anh em cần có mindset là: **OOP** là cơ bản, còn muốn zô ứng dụng thực tế thì đó là **Design Patterns**. Nhưng để dùng được **Design Patterns** thì bắt buộc phải hiểu **OOP**.
 
 Tài liệu thì trên mạng nhan nhản, nhưng tôi có thể suggest 1 số nguồn đọc khá được, anh em sau cần
 tham khảo tra cứu gì thì cũng có thể qua đây check:
@@ -48,16 +47,16 @@ tham khảo tra cứu gì thì cũng có thể qua đây check:
   - [Factory Method](/oop/design-patterns/factory-method)
   - [Abstract Factory](/oop/design-patterns/abstract-factory)
   - [Builder](/oop/design-patterns/builder)
-  - [Prototype](#)
-  - [Singleton](#)
+  - [Prototype](/oop/design-patterns/prototype)
+  - [Singleton](/oop/design-patterns/singleton)
 - [Structural Design Patterns](#)
-  - [Adapter](#)
-  - [Bridge](#)
-  - [Composite](#)
-  - [Decorator](#)
-  - [Facade](#)
-  - [Flyweight](#)
-  - [Proxy](#)
+  - [Adapter](/oop/design-patterns/adapter)
+  - [Bridge](/oop/design-patterns/bridge)
+  - [Composite](/oop/design-patterns/composite)
+  - [Decorator](/oop/design-patterns/decorator)
+  - [Facade](/oop/design-patterns/facade)
+  - [Flyweight](/oop/design-patterns/flyweight)
+  - [Proxy](/oop/design-patterns/proxy)
 - [Behavioral Design Patterns](#)
   - [Chain of Responsibility](#)
   - [Command](#)

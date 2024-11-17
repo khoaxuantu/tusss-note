@@ -1,4 +1,4 @@
-include: [ content, motion, sidebar, layout/document, components/sidebar ]
+include: [ content, motion, layout/document, components/sidebar ]
 
 title_template: "Tusss Notes | OOP | %s"
 
@@ -24,17 +24,17 @@ sidenav:
       - Factory Method: /oop/design-patterns/factory-method
       - Abstract Factory: /oop/design-patterns/abstract-factory
       - Builder: /oop/design-patterns/builder
-      - Prototype
-      - Singleton
+      - Prototype: /oop/design-patterns/prototype
+      - Singleton: /oop/design-patterns/singleton
 
     - Structural Patterns:
-      - Adapter
-      - Bridge
-      - Composite
-      - Decorator
-      - Facade
-      - Flyweight
-      - Proxy
+      - Adapter: /oop/design-patterns/adapter
+      - Bridge: /oop/design-patterns/bridge
+      - Composite: /oop/design-patterns/composite
+      - Decorator: /oop/design-patterns/decorator
+      - Facade: /oop/design-patterns/facade
+      - Flyweight: /oop/design-patterns/flyweight
+      - Proxy: /oop/design-patterns/proxy
 
     - Behavioral Patterns:
       - Chain of Responsibility

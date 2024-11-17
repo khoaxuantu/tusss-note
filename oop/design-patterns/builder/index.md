@@ -6,6 +6,12 @@ tags:
 id:
 unlisted: true
 date: 2023-05-22
+next_article:
+  title: Prototype
+  path: /oop/design-patterns/prototype
+prev_article:
+  title: Abstract Factory
+  path: /oop/design-patterns/abstract-factory
 ---
 
 # Builder
