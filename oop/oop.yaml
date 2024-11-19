@@ -37,15 +37,15 @@ sidenav:
       - Proxy: /oop/design-patterns/proxy
 
     - Behavioral Patterns:
-      - Chain of Responsibility
-      - Command
-      - Iterator
-      - Mediator
-      - Memento
-      - Observer
-      - State
-      - Strategy
-      - Template Method
-      - Visitor
+      - Chain of Responsibility: /oop/design-patterns/chain-of-responsibility
+      - Command: /oop/design-patterns/command
+      - Iterator: /oop/design-patterns/iterator
+      - Mediator: /oop/design-patterns/mediator
+      - Memento: /oop/design-patterns/memento
+      - Observer: /oop/design-patterns/observer
+      - State: /oop/design-patterns/state
+      - Strategy: /oop/design-patterns/strategy
+      - Template Method: /oop/design-patterns/template-method
+      - Visitor: /oop/design-patterns/visitor
 
 
