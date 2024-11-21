@@ -6,6 +6,12 @@ tags:
 id:
 date: 2023-04-19
 unlisted: true
+prev_article:
+  path: /oop/principles/solid
+  title: SOLID principles
+next_article:
+  path: /oop/design-patterns/abstract-factory
+  title: Abstract Factory
 ---
 
 # Factory Method

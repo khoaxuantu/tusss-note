@@ -6,6 +6,12 @@ tags:
 id:
 unlisted: true
 date: 2023-05-14
+prev_article:
+  path: /oop/design-patterns/factory-method
+  title: Factory Method
+next_article:
+  path: /oop/design-patterns/builder
+  title: Builder
 ---
 
 # Abstract Factory

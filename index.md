@@ -20,7 +20,7 @@ ___
 - Việc đưa notes lên đây chỉ là sở thích cá nhân, không nhằm mục đích kinh doanh hay fomo nào.
 - Tất cả đều là kiến thức, không có bài nào là xàm. Trust me bro!
 - Vì lĩnh vực chính của tôi là IT, nên tất cả chủ đề của cái site này cũng chỉ liên quan tới IT thoy nhé.
-- Tailwind rất lỏ. Close topic! Mấy thằng frontend dev biết điều thì nên học tý design cho tôi nhờ 🙂
+- Tailwind rất lỏ. Close topic! Mấy thằng frontend dev biết điều thì nên học CSS cho tử tế vào (và học tý design cho tôi nhờ) 🙂
 - [motherfuckingwebsite.com](https://motherfuckingwebsite.com/)
 
 ___

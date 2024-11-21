@@ -5,6 +5,12 @@ title: Polymorphism
 tags:
   - OOP
 unlisted: true
+next_article:
+  path: /oop/objects-relationship
+  title: Objects Relationship
+prev_article:
+  path: /oop/4-pillars/inheritance
+  title: 4 Pillars | Inheritance
 ---
 
 # 4 Pillars - Polymorphism

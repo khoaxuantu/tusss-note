@@ -36,6 +36,12 @@ body {
           button[role="prev-article"] {
             text-align: left;
           }
+
+          &:not(:has(button[role="prev-article"])) {
+            > a {
+              margin-left: auto;
+            }
+          }
         }
       }
     }

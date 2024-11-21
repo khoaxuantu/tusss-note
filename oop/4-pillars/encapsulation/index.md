@@ -4,6 +4,12 @@ tags:
   - OOP
 date: 2023-04-06
 unlisted: true
+prev_article:
+  path: /oop/4-pillars/abstraction
+  title: 4 Pillars | Abstraction
+next_article:
+  path: /oop/4-pillars/inheritance
+  title: 4 Pillars | Inheritance
 ---
 
 # 4 Pillars - Encapsulation

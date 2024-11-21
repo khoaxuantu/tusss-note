@@ -4,6 +4,9 @@ tags:
   - OOP
 unlisted: true
 date: 2023-04-04
+next_article:
+  path: /oop/4-pillars/abstraction
+  title: 4 Pillars | Abstraction
 ---
 
 # Objects, Classes

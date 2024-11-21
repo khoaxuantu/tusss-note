@@ -5,6 +5,12 @@ tags:
 id:
 date: 2023-04-07
 unlisted: true
+prev_article:
+  path: /oop/4-pillars/encapsulation
+  title: 4 Pillars | Encapsulation
+next_article:
+  path: /oop/4-pillars/polymorphism
+  title: 4 Pillars | Polymorphism
 ---
 
 # 4 Pillars - Inheritance

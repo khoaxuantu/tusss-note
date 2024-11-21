@@ -5,6 +5,12 @@ tags:
 id:
 unlisted: true
 date: 2024-11-10
+prev_article:
+  path: /oop/principles/sofware-design
+  title: Software Design Principles
+next_article:
+  path: /oop/principles/solid
+  title: SOLID Principles
 ---
 
 # Code Design Principles

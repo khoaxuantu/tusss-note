@@ -4,6 +4,12 @@ tags:
   - OOP
 unlisted: true
 date: 2023-04-05
+prev_article:
+  path: /oop/objects-and-classes
+  title: Objects & Classes
+next_article:
+  path: /oop/4-pillars/encapsulation
+  title: 4 Pillars | Encapsulation
 ---
 
 # 4 Pillars - Abstractions

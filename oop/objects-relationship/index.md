@@ -5,6 +5,12 @@ tags:
 id:
 unlisted: true
 date: 2023-04-15
+next_article:
+  path: /oop/principles/software-design
+  title: Software Design Principles
+prev_article:
+  path: /oop/4-pillars/polymorphism
+  title: 4 Pillars | Polymorphism
 ---
 
 # Objects Relationship

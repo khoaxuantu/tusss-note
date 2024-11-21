@@ -134,7 +134,7 @@ duyệt bảng từ tọa độ [n-2][n-1] đi lên trên (ô xanh dưới cùng
 trị cuối cùng ở ô bên phải trên cùng
 
 [image /img/dsa/dp-lps.png alt="Tabular visualization"]
-    Tabular solution visualization (Credit: educative.io)
+  Tabular solution visualization (Credit: educative.io)
 
 ```cpp
 vector<vector<int>> dp (n, vector<int>(n));

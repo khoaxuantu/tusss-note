@@ -5,6 +5,12 @@ tags:
 id:
 unlisted: true
 date: 2024-11-10
+prev_article:
+  path: /oop/objects-relationship
+  title: Objects Relationship
+next_article:
+  path: /oop/principles/code-design
+  title: Code Design Principles
 ---
 
 # Software design principles

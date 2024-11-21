@@ -71,7 +71,7 @@ body {
 
     /* content area: hero and sections */
     article {
-      max-width: 36rem;
+      max-width: 40rem;
       width: 100%;
       margin: 0 auto;
 
@@ -111,5 +111,17 @@ body {
     z-index: calc(var(--z-index-max) - 1);
     background-color: rgba(0,0,0,.333);
     backdrop-filter: blur(4px);
+  }
+}
+
+@media (min-width: 576px) {
+  body {
+    > main {
+      article {
+        > p, li {
+          font-size: 17.2px;
+        }
+      }
+    }
   }
 }

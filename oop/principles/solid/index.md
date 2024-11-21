@@ -5,6 +5,12 @@ tags:
 unlisted: true
 date: 2024-11-10
 title: SOLID Principles
+prev_article:
+  path: /oop/principles/code-design
+  title: Code Design Principles
+next_article:
+  path: /oop/design-patterns/factory-method
+  title: Factory Method
 ---
 
 # SOLID Principles
@@ -102,7 +108,7 @@ class Order {
 
 ## Liskov Substitution Principle
 
-Nguyên lý được đặt tên theo Barbara Liskov, được định nghĩa trong quyển *[Data abstraction and hierarchy](https://www.semanticscholar.org/paper/Data-Abstraction-and-Hierarchy-Liskov/36bebabeb72287ad9490e1ebab84e7225ad6a9e5?p2df)*, năm 1987.
+Nguyên lý được đặt tên theo Barbara Liskov, được định nghĩa trong bài *[Data abstraction and hierarchy](https://www.semanticscholar.org/paper/Data-Abstraction-and-Hierarchy-Liskov/36bebabeb72287ad9490e1ebab84e7225ad6a9e5?p2df)*, năm 1987.
 
 > When extending a class, remember that you should be able to pass objects of the subclass in place of objects of the parent class without breaking the client code.
 
@@ -125,6 +131,8 @@ Nguyên lý này liệt kê ra các yêu cầu formal như sau:
 > Clients shouldn’t be forced to depend on methods they do not use.
 
 Cố gắng thiết kế interface đủ cô đọng sao cho các classes con không phải implement những behavior không cần thiết.
+
+Nói chung là khi tìm kiếm chế độ ăn trên mạng thì ta luôn cần cái `eatFresh()` chứ không phải `eatShjt()`.
 
 ***Cái này thì dễ hiểu nên chắc không cần nói gì nhiều***
 
