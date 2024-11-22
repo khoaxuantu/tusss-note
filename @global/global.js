@@ -17,7 +17,21 @@ class ThemeButton extends HTMLButtonElement {
   }
 }
 
-customElements.define("theme-button", ThemeButton, { extends: "button" })
+customElements.define("theme-button", ThemeButton, { extends: "button" });
+
+class GoTopButton extends HTMLButtonElement {
+  constructor() {
+    super();
+
+    this.onclick = () => {
+      setTimeout(() => {
+        document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    }
+  }
+}
+
+customElements.define("go-top-button", GoTopButton, { extends: "button" });
 
 function toggleTheme() {
   const theme = getTheme();
