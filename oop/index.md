@@ -4,7 +4,7 @@ title_template: Tusss Notes | %s
 date: 2023-04-03
 ---
 
-# Lời mở đầu
+# Lời Mở Đầu
 
 Cho những con người bị xoắn não vì OOP nhưng cần phải try hard để được xã hội trọng vọng hơn (maybe) 🐧
 

@@ -1,0 +1,13 @@
+include: [ content, motion, layout/document, components/sidebar ]
+
+title_template: Tusss Notes | System Design | %s
+
+sidenav:
+  System Design:
+    - Lời mở đầu: /system-design
+    - SDI: /system-design/interview
+    - Abstractions: /system-design/abstractions
+    - Non-functional System Characteristics: /system-design/non-functional-system-characteristics
+    - Back-of-the-envelop Calculations: /system-design/back-of-the-envelop-calculations
+  Components:
+    - Domain Name System: /system-design/dns
