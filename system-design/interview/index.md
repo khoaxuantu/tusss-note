@@ -5,6 +5,9 @@ unlisted: true
 next_article:
   path: /system-design/abstractions
   title: Abstractions
+prev_article:
+  path: /system-design
+  title: Lời Mở Đầu
 ---
 
 # System Design Interview

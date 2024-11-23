@@ -127,7 +127,7 @@ Thông số trên đc ước lượng dựa vào 1 số điều kiện như:
   ```sql
     SELECT * FROM students WHERE age BETWEEN 15 AND 16;
   ```
-- Thông số cụ thể quả máy tính
+- Thông số cụ thể của máy tính
 - Thiết kế database
 - Indexing
 - etc...
@@ -143,10 +143,10 @@ Trước hết, hãy note về 2 loại requests:
 
 Để biết được hiệu năng về xử lý request của 1 server, ta cần có cách để ước lượng RPS với mỗi loại request trên. Ta sẽ tìm hiểu nó thông qua ví dụ sau:
 
-- Server của ta có thông số như bảng ví dụ ở phần @Storage servers
+- Server của ta có thông số như bảng ví dụ ở phần [Storage servers](#storage-servers)
 - Hệ điều hành và các tiến trình chạy ngầm đã tiêu tốn 1 lượng 16 GB RAM
 - Mỗi woker tiêu thụ hết 300 MB RAM để hoàn thành 1 request
-- Để cho đơn giản, ta giả sử CPU thu được dữ liệu từ RAM. Thế nên 1 hệ thống caching giúp đảm bảo ràng tất cả content đc yêu cầu luôn sẵn sàng để gửi đi, mà ko phải truy cập tới lớp storage nữa
+- Để cho đơn giản, ta giả sử CPU thu được dữ liệu từ RAM. Thế nên 1 hệ thống caching giúp đảm bảo rằng tất cả content đc yêu cầu luôn sẵn sàng để gửi đi, mà ko phải truy cập tới lớp storage nữa
 - Mỗi CPU-bound request hết 200ms, trong khi đó memory-bound request hết 50ms
 
 Giờ ta bắt đầu bước tính toán:

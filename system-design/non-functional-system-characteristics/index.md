@@ -25,9 +25,9 @@ A (%) = [(Total time - Amount of time service was down) / Total time] * 100
 ### The Nines of Availability
 
 [image]
-src: /img/system-design/nsc.webp
-alt: The Nines of Availability Table
-caption: "Source: educative.io"
+  src: /img/system-design/nsc.webp
+  alt: The Nines of Availability Table
+  caption: "Source: educative.io"
 
 ## Reliability (R)
 

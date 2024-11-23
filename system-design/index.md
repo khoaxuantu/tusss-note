@@ -2,6 +2,9 @@
 title: System Design | Lời mở đầu
 title_template: Tusss Notes | %s
 date: 2023-04-15
+next_article:
+  path: /system-design/interview
+  title: System Design Interview
 ---
 
 # Lời Mở Đầu
@@ -31,8 +34,8 @@ Ta thiết kế hệ thống nhằm đảm bảo các yếu tố chính về đ�
   - [Back-of-the-envelop Calculations](/system-design/back-of-the-envelop-calculations)
 - Components:
   - [Domain Name System (DNS)](/system-design/dns)
-  - Load Balancers
-  - Databases
+  - [Load Balancers](/system-design/load-balancers)
+  - [Databases](/system-design/databases)
   - Key-value Stores
   - Content Delivery Network (CDN)
   - Sequencer

@@ -96,15 +96,3 @@ Trong các tài liệu, họ đều định nghĩa concept này như 1 cơ chế
 > the bag were pretending to be generic animals.
 >
 > ~ Alexander Shvets - Refactoring Guru ~
-
-## My thoughts about polymorphism
-
-> Vì tôi đang lười tra gg nên đây là những quan sát ban đầu của tôi 🐧
-
-Nó sẽ liên quan tới `pointer`. Để nhận biết được đúng loại `Class` và truy tới đúng fields của nó, địa chỉ sẽ đóng vai trò quan trọng nhất.
-
-Tưởng tượng khi ta declare 1 `Class`, thì trong bộ nhớ của máy tính sẽ tạo 1 `pointer` mang kiểu `Class` đó trỏ tới 1 địa chỉ bất kỳ. Vì ta design cái `Class` đó bao hàm nhiều fields và methods, để giữ connect tới chúng, máy tính sẽ bắt đầu từ cái địa chỉ đc trỏ bởi pointer `Class` đó, tạo ra nhiều `pointer` tương ứng với các fields/methods, và trỏ tới các địa chỉ bất kỳ khác nhau.
-
-Khi ta khởi tạo các `objects` từ `Class`, có thể hiểu rằng ta sẽ tạo các `pointer` mang kiểu `Class` đó trỏ tới các địa chỉ khác nhau (keyword `new`), và từ các địa chỉ đó sẽ trỏ tới các địa chỉ fields/methods tương tự ~
-
-Nghe thì cũng hợp lý ấy nhể 😃

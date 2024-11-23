@@ -11,3 +11,5 @@ sidenav:
     - Back-of-the-envelop Calculations: /system-design/back-of-the-envelop-calculations
   Components:
     - Domain Name System: /system-design/dns
+    - Load Balancers: /system-design/load-balancers
+    - Databases: /system-design/databases

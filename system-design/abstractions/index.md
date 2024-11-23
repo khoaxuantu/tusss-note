@@ -43,9 +43,9 @@ Khi ta tạo 1 rpc, môi trường đang gọi nó đc tạm hoãn và các proc
 Client, client stub, và 1 RPC instance chạy trên client machine. Server, server stub và 1 RPC instance chạy trên server machine
 
 [image]
-src: /img/system-design/abstractions.webp
-alt: The components of an RPC system
-caption: The components of an RPC system
+  src: /img/system-design/abstractions.webp
+  alt: The components of an RPC system
+  caption: The components of an RPC system
 
 Giữa quá trình RPC, các bước sau sẽ lần lượt diễn ra:
 
@@ -61,9 +61,9 @@ Giữa quá trình RPC, các bước sau sẽ lần lượt diễn ra:
 10. Client stub mở bung các kết quả, và thực thi chúng để trả về cho caller
 
 [image]
-src: /img/system-design/abstractions-1.webp
-alt: The workflow of an RPC
-caption: The workflow of an RPC
+  src: /img/system-design/abstractions-1.webp
+  alt: The workflow of an RPC
+  caption: The workflow of an RPC
 
 ## Spectrum of Consistency Models
 
