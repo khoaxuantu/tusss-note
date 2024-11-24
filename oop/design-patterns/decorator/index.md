@@ -33,7 +33,7 @@ Nhưng rồi như lẽ thường tình, ai đó lại hỏi bạn: "Ei bạn ei 
 Ta thử xử lý vấn đề trên bằng cách tạo thêm 1 subclass đặc biệt gom hết các method thông báo lại. Tuy vậy, ta lại nhanh chóng nhận ra cách này sẽ khiến code phồng lên ngày một lớn, ko chỉ code trong thư viện mà còn client code cũng bị. Ta phải tìm 1 cách nào đó khác để cấu trúc các class thông báo để tránh việc khiến cho code của ta phá kỷ lục guiness một ngày nào đó...
 
 [image]
-  src: https://refactoring.guru/images/patterns/diagrams/decorator/problem3.png
+  src: /img/oop/decorator.png
   alt: Social media example diagram
   caption: "Social media example diagram (Source: Refactoring Guru)"
 
@@ -53,7 +53,7 @@ Với cách tiếp cận mới này ta có thể thay thế object "helper" đã
 Vậy khi nào 1 wrapper đơn giản trở thành 1 decorator thực thụ? Như ta đã đề cập, wrapper implements cùng interface với các object được wrapped. Vì thế, từ phía client các objects đó là y hệt nhau, làm cho reference field của wrapper chấp nhật bất kỳ object nào tuân theo inteface đó.
 
 [image]
-  src: https://refactoring.guru/images/patterns/diagrams/decorator/solution2.png
+  src: /img/oop/decorator-1.png
   alt: Solution for social media example
   caption: "Solution for social media example (Source: Refactoring Guru)"
 
