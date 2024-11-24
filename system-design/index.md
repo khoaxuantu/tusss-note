@@ -36,8 +36,8 @@ Ta thiết kế hệ thống nhằm đảm bảo các yếu tố chính về đ�
   - [Domain Name System (DNS)](/system-design/dns)
   - [Load Balancers](/system-design/load-balancers)
   - [Databases](/system-design/databases)
-  - Key-value Stores
-  - Content Delivery Network (CDN)
+  - [Key-value Stores](/system-design/key-value-store)
+  - [Content Delivery Network (CDN)](/system-design/cdn)
   - Sequencer
   - Distributed Monitoring
   - Monitor Server-side Errors

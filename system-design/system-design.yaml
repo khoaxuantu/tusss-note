@@ -13,3 +13,5 @@ sidenav:
     - Domain Name System: /system-design/dns
     - Load Balancers: /system-design/load-balancers
     - Databases: /system-design/databases
+    - Key-value Store: /system-design/key-value-store
+    - Content Delivery Network: /system-design/cdn
