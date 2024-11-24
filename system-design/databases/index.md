@@ -4,6 +4,8 @@ tags:
 id:
 unlisted: true
 date: 2024-01-02
+include:
+  - components/image/able-to-zoom
 next_article:
   path: /system-design/key-value-store
   title: Key-value Store
@@ -116,7 +118,7 @@ Relational databases đảm bảo việc trạng thái của dữ liệu đc đ�
 
 Thông thường, các data model cho relational database sẽ được tổ chức thành các cấu trúc dạng bảng với relations và tuples. Điều này dẫn tới 1 vài hạn chế. Trong nhiều trường hợp thực tế, dữ liệu sẽ cần được tổng hợp thành 1 model rất phức tạp để trả về clients, khiến cho ta phải tương tác với nhiều bảng cùng lúc rất thường xuyên, gia tăng độ phức tạp cho các business logics để đảm bảo ko bị chớ về khía cạnh performance.
 
-[image]
+[image is=able-to-zoom]
   src: /img/system-design/databases.webp
   alt: Complex db model illustration
   caption: Data can be complex model in RDBMS
@@ -269,7 +271,7 @@ Replication hỗ trợ ta trong việc cải thiện tính availability, scalabi
 
 Vì các nodes chính xử lý các write requests 1 cách đồng thời, chúng có thể đang chỉnh sửa cùng 1 dữ liệu, tạo nên conflict.
 
-[image]
+[image is="able-to-zoom"]
   src: /img/system-design/databases-5.webp
   alt: Conflict diagram
 
@@ -343,13 +345,13 @@ Thông thường, có 2 chiến lược để phân bảng như sau:
 
 Mỗi partition đc assigned theo các chuỗi khóa liên tiếp nhau.
 
-[image]
+[image is=able-to-zoom]
   src: /img/system-design/databases-10.webp
   alt: Key-range based sharding illustration
 
 Đôi khi 1 database sẽ bao gồm nhiều bảng đc liên kết với nhau qua các khóa ngoại. Trong trường hợp này, việc shard horizontally cần phải đc thực hiện với cùng các partition key ở mọi bảng đc liên kết. Các bảng có cùng partition key sẽ đc phân tán qua 1 database shard.
 
-[image]
+[image is=able-to-zoom]
   src: /img/system-design/databases-11.webp
   alt: Key-range based sharding illustration
 
@@ -480,7 +482,7 @@ Vấn đề này trong giới còn mang tên là **service discovery**. Ta có t
 
 Ví dụ, ta có 1 query truy cập tới 3 bảng: `Store`, `Product`, và `Sales` nằm ở các nơi host database khác nhau.
 
-[image]
+[image is=able-to-zoom]
   src: /img/system-design/databases-15.webp
   alt: Database example image
 
