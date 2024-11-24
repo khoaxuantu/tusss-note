@@ -16,8 +16,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
-      - name: Setup Nue
-        run: bun install nuekit --global
+      - name: Setup Dependencies
+        run: bun install nuekit@v1.0.0-RC.1 firebase-tools@latest --global
       - name: Build
         run: nue build -p
       - uses: FirebaseExtended/action-hosting-deploy@v0
