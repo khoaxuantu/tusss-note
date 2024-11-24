@@ -42,9 +42,9 @@ số các thuật toán hiện nay):
 - O(logn): logarithmic (ngon)
 - O(n): linear (nah)
 - O(nlogn): logarithmic (but worse than logn) (nah)
-- O(n^k): polynomial (như loz) - phổ biển nhất 2 loại *quadratic: O(n^2)* và *cubic: O(n^3)*
-- O(2^n): exponential (như loz)
-- O(n!): factorial (như loz)
+- O(n^k): polynomial (tệ) - phổ biển nhất 2 loại *quadratic: O(n^2)* và *cubic: O(n^3)*
+- O(2^n): exponential (tệ)
+- O(n!): factorial (tệ)
 
 [image]
     src: https://www.freecodecamp.org/news/content/images/2021/06/1_KfZYFUT2OKfjekJlCeYvuQ.jpeg

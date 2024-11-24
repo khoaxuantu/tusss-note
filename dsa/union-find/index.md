@@ -7,9 +7,6 @@ unlisted: true
 
 # Luận bàn về Union Find (Disjoint Set)
 
-[image https://cgi.luddy.indiana.edu/~yye/c343-2019/images/Figure6.5.png alt="Union find illustration"]
-    Union find illustration (Source: Internet)
-
 Trong các bài toán với graph của coding interviews, ngoài việc sử dụng BFS với DFS ra, thì còn có 1
 phương thức khác khá nổi tiếng đc gọi là **Union Find**. Đây là phương thức chuyên trị các yêu cầu
 xác định sự kết nỗi giữa 2 node, mở rộng ra là 1 nhóm các node kết nối với nhau trong đồ thị. Phương
@@ -42,7 +39,7 @@ id[2] = 0 // node 2 kết nối tới node 0
 id[3] = 3 // node 3 kết nối tới chính nó (root node)
 ```
 
-[image /img/dsa/uf-1.png alt="Union find data structure"]
+[image /img/dsa/uf-1.webp alt="Union find data structure"]
     Union find data structure (Source: Princeton University - Coursera - Algorithms, Part I)
 
 ```cpp
@@ -151,7 +148,7 @@ mỗi node. Khi kết nối 2 node, ta sẽ so sánh độ lớn 2 cái tree: ro
 ***thực hiện*** kết nối root node của tree lớn hơn. Nhờ đó, độ cao của tree sau cùng sẽ chỉ cộng
 thêm rất ít hoặc gần như ko cộng tý nào.
 
-[image /img/dsa/uf-2.png alt="Union find weighting improvement"]
+[image /img/dsa/uf-2.webp alt="Union find weighting improvement"]
     Union find weighting improvement (Source: Princeton University - Coursera - Algorithms, Part I)
 
 Ta sẽ cần 1 array mới `weights` để lưu dữ liệu về độ lớn. Mỗi index trong `weights` sẽ được khởi tạo

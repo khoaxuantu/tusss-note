@@ -7,11 +7,6 @@ unlisted: true
 
 # Luận bàn về Bitwise Operation
 
-[image]
-  src: https://uploads-cdn.omnicalculator.com/images/Philip/bitwise.png?width=425&enlarge=0&format=jpeg
-  alt: Bitwise illustration
-  caption: "Bitwise operation illustration (Source: Omni Calculator)"
-
 > Góc tự nhục, xuyên suốt 10 tháng ôn coding interview với hàng trăm bài luyện tập, thì somehow các
 > bài luyên quan tới bitwise tôi lại chỉ luyện có tầm 10 20 bài gì đó, và hậu quả là thường xuyên bị
 > trớ khi gặp phải những câu hỏi tương tự lúc blind leetcode 🙂 Để mà nói thì đến giờ tôi vẫn chưa

@@ -7,9 +7,6 @@ unlisted: true
 
 # Luận bàn về Topological Sort
 
-[image https://assets.leetcode.com/users/images/63bd7ad6-403c-42f1-b8bb-2ea41e42af9a_1613794080.8115625.png alt="Topological Sort illustration"]
-    Topological sort illustration (Source: Leetcode)
-
 Pattern này sẽ được sử dụng khi ta cần tìm ra 1 thứ tự chính xác cho các phần tử có các phần tử phụ
 thuộc vào nó, hoặc các phần tử mà nó phụ thuộc. Nói theo cách đơn giản, topological order có thể đc
 mô tả như thứ tự 1 phần, khác với thứ tự toàn phần, ta ko nhất thiết phải cho ra đúng 1 thứ tự đúng

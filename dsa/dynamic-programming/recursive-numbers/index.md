@@ -7,9 +7,6 @@ unlisted: true
 
 # Dynamic Programming: Recursive Numbers
 
-[image https://www.simplilearn.com/ice9/free_resources_article_thumb/Recursion_Call_Stack.png alt="Fibonacci program call stack illustration"]
-    Fibonacci sample program illustration (Credit: Simplilearn)
-
 > Đây là phần 1 trong [bộ 5 notes về Dynamic Programming của tôi](/dsa/dynamic-programming)
 
 1 **recursive number** là 1 số mà có thể được tạo ra từ 1 phương trình sử dụng đệ quy để liên kết

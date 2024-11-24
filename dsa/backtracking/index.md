@@ -7,9 +7,6 @@ unlisted: true
 
 # Luận bàn về Backtracking
 
-[image https://ibpublicimages.s3-us-west-2.amazonaws.com/tutorial/backtracking1.png alt="Backtracking illustration"]
-    Backtracking illustration (Credit: InterviewBit)
-
 > 1 pattern "khó" vleu
 
 Kỹ thuật yêu cầu ứng dụng khá rộng việc xử lý đệ quy, anh em nào chưa quen dùng đệ quy lắm thì sẽ

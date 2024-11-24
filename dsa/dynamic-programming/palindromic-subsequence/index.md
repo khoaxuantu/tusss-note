@@ -133,7 +133,7 @@ Vì ta cần lấy kết quả từ [i+1] (ô dưới ô hiện tại) và [j-1]
 duyệt bảng từ tọa độ [n-2][n-1] đi lên trên (ô xanh dưới cùng của tam giác bên phải) vả trả về giá
 trị cuối cùng ở ô bên phải trên cùng
 
-[image /img/dsa/dp-lps.png alt="Tabular visualization"]
+[image /img/dsa/dp-lps.webp alt="Tabular visualization"]
   Tabular solution visualization (Credit: educative.io)
 
 ```cpp

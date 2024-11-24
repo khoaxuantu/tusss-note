@@ -7,9 +7,6 @@ unlisted: true
 
 # Luận bàn về Dynamic Programming (5 parts)
 
-[image /img/dsa/dp.png alt="Dynamic programming illustration"]
-    Dynamic programming illustration (Source: Internet)
-
 > Dynamic Programming, Quy hoạch động, DP, ... Bao nhiêu ông tạch vì topic này rồi 💀
 
 ## Đây là cái gì?
@@ -21,7 +18,7 @@ Chẳng hạn, ta có 1 state gọi là `f("Tuslipid")`, ta giải nó tốn 69 
 ta lưu nó lại trong "bộ nhớ"
 
 [table caption="Memory table"]
-    key      | value     
+    key      | value
     Tuslipid | khoaxuantu
 
 Chương trình của ta sau khi tính đc state đó, chạy tiếp vài bước, thì lại bắt gặp 1 state y hệt
