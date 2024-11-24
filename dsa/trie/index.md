@@ -7,7 +7,7 @@ unlisted: true
 
 # Luận bàn về Trie
 
-[image /img/dsa/trie.png]
+[image /img/dsa/trie.webp]
     Trie illustration (Credit: educative.io)
 
 **Trie** là ứng dụng mở rộng của cấu trúc dữ liệu dạng tree được sử dụng rộng rãi cho việc giải quyết

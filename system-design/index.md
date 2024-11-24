@@ -45,7 +45,7 @@ Ta thiết kế hệ thống nhằm đảm bảo các yếu tố chính về đ�
   - Distributed Cache
   - Distributed Messesing Queue
   - Pub-sub
-  - Rate Limiter
+  - [Rate Limiter](/system-design/rate-limiter)
   - Blob Store
   - Distributed Search
   - Distributed Logging

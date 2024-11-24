@@ -9,9 +9,6 @@ include:
 
 # Luận bàn về Heap
 
-[image /img/dsa/min-max-heap.png]
-    Min heap & max heap illustration (source: Internet)
-
 ## Heap
 
 **Heap** là kiểu cấu trúc dữ liệu đảm bảo mọi dữ liệu luôn được sắp xếp theo theo đúng thứ tự từ cao

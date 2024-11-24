@@ -7,9 +7,6 @@ unlisted: true
 
 # Luận bàn về Breadth First Search (BFS)
 
-[image https://www.guru99.com/images/1/020820_0543_BreadthFirs1.png alt="BFS concept illustration"]
-    BFS concept illustration (Credit: Guru99)
-
 Nay ta sẽ bàn tới 1 pattern mới cực phổ biến cho các bài tập liên quan tới graph. Anh em ai chưa
 quen với graph có thể qua đây ôn lại - [Graph & Tree](/dsa/graphs-and-trees).
 
@@ -17,7 +14,7 @@ quen với graph có thể qua đây ôn lại - [Graph & Tree](/dsa/graphs-and-
 level một. lấy ví dụ 1 tree cho dễ hiểu:
 
 ```
-\             RootNode
+             RootNode
           /            \
       Node1              Node2
     /      \            /    \

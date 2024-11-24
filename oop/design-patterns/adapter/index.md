@@ -31,7 +31,7 @@ Ta có thể đổi code của library để nó hoạt động đc với XML, n
 Quay lại với ví dụ về app chứng khoán trên. Để giải quyết vấn đề về format ko tương thích, ta có thể tạo XML-to-JSON adapter cho mỗi class của cái 3rd-party library. Rồi ta cho code của app liên lạc với cái library thông qua cái adapter này. Khi adapter nhận 1 call, nó sẽ dịch dữ liệu XML đc chuyển tới thành cấu trúc JSON và pass cái call tới method phù hợp của library object
 
 [image]
-  src: https://refactoring.guru/images/patterns/diagrams/adapter/solution-en.png
+  src: /img/oop/adapter-2.webp
   alt: Adapter solution (by refactoring.guru)
   caption: Adapter solution (by Refactoring Guru)
 

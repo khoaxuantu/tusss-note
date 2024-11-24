@@ -14,9 +14,6 @@ include:
 
 ## Singly linked list
 
-[image //cdn.programiz.com/sites/tutorial2program/files/linked-list-concept.png]
-  Linked list illustration (Credit: Programiz)
-
 Mỗi node ở đây ta thấy chứa 1 block data và 1 block next
 
 - Block data sẽ chứa mọi dữ liệu mà ta cần dùng
@@ -117,6 +114,3 @@ public:
 
 Cũng cần chú ý là vì có thêm cái prev node, nên là chi tiết các method insert(), delete(), etc...
 node cũng sẽ thay đổi theo tương ứng nhé 😐
-
-[image /img/dsa/doubly-linked-list.png]
-  Doubly linked list illustration (Credit: GeekforGeeks)

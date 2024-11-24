@@ -9,9 +9,6 @@ include:
 
 # Luận bàn về Queue
 
-[image //media.geeksforgeeks.org/wp-content/cdn-uploads/20221213113312/Queue-Data-Structures.png]
-    Queue illustration (Credit: GeeksforGeeks)
-
 **Queue** là 1 kiểu cấu trúc dữ liệu rất dễ hiểu. Nó chỉ có quy tắc duy nhất là FIFO, hay còn gọi là
 First In First Out, element đi vô queue đầu tiên thì sẽ ra khỏi queue đầu tiên.
 

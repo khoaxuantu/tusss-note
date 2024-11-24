@@ -9,9 +9,6 @@ include:
 
 # Luận bàn về Stack
 
-[image //cdn.programiz.com/sites/tutorial2program/files/stack.png]
-    Stack illustration (credit: Programiz)
-
 Stack là 1 cấu trúc dự liệu dạng thẳng tuân theo quy luật last in, first out (LIFO), có nghĩa là
 phần tử được đưa vào stack mới nhất sẽ là phần tử đầu tiên đc đưa ra khỏi stack.
 
