@@ -2,6 +2,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <link rel="canonical" :href="{ app_url }{ dir && '/' + dir }" />
+  <meta property="og:site_name" :content="{ og.site_name }">
+  <meta property="og:type" :content="{ og.type }" >
+  <meta property="og:locale" :content="{ language }" >
+  <meta property="article:author" :content="{ author }" >
+  <meta name="twitter:card" content="summary_large_image" >
+  <meta name="twitter:title" :content="{ title }" >
+  <meta name="twitter:description" :content="{ description }" >
+  <meta name="twitter:image" :content="{ og_image }" >
 </head>
 
 <header>

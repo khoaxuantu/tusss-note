@@ -20,7 +20,8 @@ jobs:
         run: bun install nuekit@v1.0.0-RC.1 --global
       - name: Build
         run: nue build -p
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TUSLIPID }}
