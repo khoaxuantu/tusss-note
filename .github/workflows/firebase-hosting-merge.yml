@@ -15,7 +15,7 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
       - name: Setup Dependencies
-        run: bun install nuekit@v1.0.0-RC.1 firebase-tools@latest --global
+        run: bun install nuekit@v1.0.0-RC.1 --global
       - name: Build
         run: nue build -p
       - name: Deploy
