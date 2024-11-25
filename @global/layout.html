@@ -3,18 +3,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <link rel="canonical" :href="{ app_url }{ dir && '/' + dir }" />
-  <meta property="og:site_name" :content="{ og.site_name }">
-  <meta property="og:type" :content="{ og.type }" >
-  <meta property="og:locale" :content="{ language }" >
-  <meta property="article:author" :content="{ author }" >
-  <meta name="twitter:card" content="summary_large_image" >
-  <meta name="twitter:title" :content="{ title }" >
-  <meta name="twitter:description" :content="{ description }" >
-  <meta name="twitter:image" :content="{ og_image }" >
+  <meta property="og:site_name" :content="{ og.site_name }" />
+  <meta property="og:type" :content="{ og.type }" />
+  <meta property="og:locale" :content="{ language }" />
+  <meta property="article:author" :content="{ author }" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" :content="{ title }" />
+  <meta name="twitter:description" :content="{ description }" />
+  <meta name="twitter:image" :content="{ og_image }" />
 </head>
 
 <header>
-  <navi :items="navigation.header"/>
+  <navi :items="navigation.header" />
 </header>
 
 <section is="pagehead" @name="pagehead">
@@ -51,6 +51,16 @@
 
 <section @name="bottom">
   <button role="go-top" is="go-top-button">
-    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path></svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="16"
+      width="12"
+      viewBox="0 0 384 512"
+      fill="currentColor"
+    >
+      <path
+        d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+      ></path>
+    </svg>
   </button>
 </section>
