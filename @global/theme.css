@@ -9,6 +9,18 @@
   --glow-accent-color: #c678dd;
 }
 
+::-webkit-scrollbar-track {
+  background: var(--md-sys-color-secondary-container);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--md-sys-color-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-sys-color-primary);
+}
+
 .dark {
   --md-sys-color-primary: rgb(154 204 250);
   --md-sys-color-surface-tint: rgb(154 204 250);
@@ -174,4 +186,3 @@ code {
     display: none;
   }
 }
-

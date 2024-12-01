@@ -1,0 +1,6 @@
+div.note {
+  padding: 0.5rem 1rem;
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  border-left: 5px solid var(--md-sys-color-primary);
+}

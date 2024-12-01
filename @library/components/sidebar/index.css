@@ -14,11 +14,14 @@
   a {
     padding: 0.5rem;
     border-radius: 0.5rem;
+    transition: padding-left 150ms;
 
     &:hover {
-      background-color: var(--md-sys-color-surface-container-highest);
+      background-color: var(--md-sys-color-secondary-container);
+      color: var(--md-sys-color-on-secondary-container);
       font-weight: bold;
       text-decoration: none;
+      padding-left: 1rem;
     }
   }
 }

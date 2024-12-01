@@ -16,7 +16,11 @@ description: I am Tu, a software engineer specialized in web development. And he
 port: 2908
 
 # OG image
-og: /img/seo/og.webp
+og:
+  site_name: Tusss Notes
+  type: article
+
+app_url: https://notes.xuankhoatu.com
 
 theme_color: dark
 
