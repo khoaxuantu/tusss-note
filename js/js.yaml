@@ -1,0 +1,16 @@
+include: [ content, motion, layout/document, components/sidebar ]
+
+title_template: Tusss Notes | JavaScript | %s
+
+sidenav:
+  JAvAsCrIpt:
+    - Introduction: /js
+    - Fundamental: /js/fundamental
+    - Objects: /js/objects
+    - Advanced Working with Functions: /js/functions
+    - "Prototypes, Inheritances": /js/prototypes-inheritances
+    - Classes: /js/classes
+    - Errors Handling: /js/errors-handling
+    - "Promises, Async/await": /js/promises
+    - "Generators, Advanced Iteration": /js/generators
+    - Modules: /js/modules
