@@ -1,0 +1,28 @@
+include: [ content, motion, layout/document, components/sidebar ]
+
+title_template: Tusss Notes | JavaScript | %s
+
+sidenav:
+  JAvAsCrIpt:
+    - Introduction: /js
+    - Fundamental: /js/fundamental
+    - Objects: /js/objects
+    - Advanced Working with Functions: /js/functions
+    - "Prototypes, Inheritances": /js/prototypes-inheritances
+    - Classes: /js/classes
+    - Errors Handling: /js/errors-handling
+    - "Promises, Async/await": /js/promises
+    - "Generators, Advanced Iteration": /js/generators
+    - Modules: /js/modules
+  "Browser: Document":
+    - Browser Environment: /js/browser/browser-environment
+    - DOM Tree: /js/browser/dom-tree
+    - Walking the DOM: /js/browser/walking-the-dom
+    - Node Properties: /js/browser/node-properties
+    - Attributes & Properties: /js/browser/attributes
+    - Modifying the Document: /js/browser/modifying-the-document
+    - Styles & Classes: /js/browser/styles-and-classes
+    - Element Sizes & Scrolling: /js/browser/element-sizes-and-scrolling
+    - Coordinates: /js/browser/coordinates
+  "Browser: Event":
+    - Introduction to browser events: /js/browser/introduction-to-browser-events

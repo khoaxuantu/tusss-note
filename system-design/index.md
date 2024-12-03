@@ -3,7 +3,7 @@ title: System Design | Lời mở đầu
 title_template: Tusss Notes | %s
 date: 2023-04-15
 include:
-  - block/note
+  - components/block/note
 next_article:
   path: /system-design/interview
   title: System Design Interview

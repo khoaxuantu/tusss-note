@@ -118,7 +118,7 @@ body {
   body {
     > main {
       article {
-        > p, li {
+        > p, > ul li {
           font-size: 17.2px;
         }
       }
