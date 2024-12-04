@@ -13,8 +13,7 @@ next_article:
 
 ## Object-oriented Programming
 
-1 kiểu lập trình xoay quanh **Objects** và **Classes**, xuyên suốt những khía cạnh về OOP, chúng ta
-chỉ cần tập trung vào 2 thuật ngữ này là coi như hiểu được đại khái rồi. Vậy cụ thể chúng là gì?
+1 kiểu lập trình xoay quanh **Objects** và **Classes**, xuyên suốt những khía cạnh về OOP, chúng ta chỉ cần tập trung vào 2 thuật ngữ này là coi như hiểu được đại khái rồi. Vậy cụ thể chúng là gì?
 
 ### Objects
 

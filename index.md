@@ -8,9 +8,7 @@ date: 2024-11-24
 
 # Welcome To My Notes
 
-I'm Xuan Khoa Tu Nguyen, a software engineer specialized in web development, here is my notes for
-all the knowledge that I have learned so far.
-
+I'm Tu, a software engineer specialized in web development, here is my notes for all the knowledge that I have learned so far.
 
 ## Motivation
 
