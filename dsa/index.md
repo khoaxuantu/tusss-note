@@ -5,8 +5,8 @@ date: 2023-03-23
 
 # Lời Mở Đầu
 
-Nhìn chung thì giải thuật đối với bất cứ ai cũng gặp vấn đề ko ít thì nhiều ở khoản tổng hợp đc kiến
-thức và dạng câu hỏi (me too). Thế nên tôi đã tổng hợp lại các pattern phổ biến cho việc giải thuật
+Nhìn chung thì giải thuật đối với bất cứ ai cũng gặp vấn đề ko ít thì nhiều ở khoản tổng hợp đc kiến thức và dạng câu hỏi (me too).
+Thế nên tôi đã tổng hợp lại các pattern phổ biến cho việc giải thuật
 dễ dàng hơn, anh em hiểu được đống pattern ấy thì cũng giải được kha khá bài thuật toán rồi, và
 trình code cũng lên nhiều as fuck 🐧
 

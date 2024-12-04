@@ -14,7 +14,7 @@ prev_article:
 
 ## Availability
 
-- Là phần trăm thời gian 1 service hoặc cơ sở hạ tầng có thể truy cập tới clients và đc vận hành dưới điều kiện bình thường. Chẳng hạn, khi 1 service có 100% availability, service nó có thể hoạt động trong toàn thời gian
+Là phần trăm thời gian 1 service hoặc cơ sở hạ tầng có thể truy cập tới clients và đc vận hành dưới điều kiện bình thường. Chẳng hạn, khi 1 service có 100% availability, service nó có thể hoạt động trong toàn thời gian
 
 ### Measuring availability
 
