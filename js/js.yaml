@@ -7,7 +7,7 @@ sidenav:
     - Introduction: /js
     - Fundamental: /js/fundamental
     - Objects: /js/objects
-    - Advanced Working with Functions: /js/functions
+    - Advanced Working with Functions: /js/advance-working-with-functions
     - "Prototypes, Inheritances": /js/prototypes-inheritances
     - Classes: /js/classes
     - Errors Handling: /js/errors-handling

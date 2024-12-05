@@ -6,7 +6,7 @@ prev_article:
   path: /js/fundamental
   title: Fundamental
 next_article:
-  path: /js/functions
+  path: /js/advance-working-with-functions
   title: Advanced working with functions
 ---
 
