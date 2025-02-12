@@ -16,3 +16,4 @@ sidenav:
     - Key-value Store: /system-design/key-value-store
     - Content Delivery Network: /system-design/cdn
     - Rate Limiter: /system-design/rate-limiter
+    - Sequencer: /system-design/sequencer

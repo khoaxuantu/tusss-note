@@ -9,6 +9,9 @@ include:
 prev_article:
   path: /system-design/cdn
   title: Content Delivery Network
+next_article:
+  path: /system-design/sequencer
+  title: Sequencer
 ---
 
 # Rate Limiter

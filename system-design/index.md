@@ -43,7 +43,7 @@ Ta thiết kế hệ thống nhằm đảm bảo các yếu tố chính về đ�
   - [Databases](/system-design/databases)
   - [Key-value Stores](/system-design/key-value-store)
   - [Content Delivery Network (CDN)](/system-design/cdn)
-  - Sequencer
+  - [Sequencer](/system-design/sequencer)
   - Distributed Monitoring
   - Monitor Server-side Errors
   - Monitor Client-side Errors
