@@ -10,6 +10,9 @@ include:
 prev_article:
   path: /system-design/rate-limiter
   title: Rate Limiter
+next_article:
+  path: /system-design/distributed-monitoring
+  title: Distributed Monitoring
 description: Trong 1 hệ thống phân tán lớn, mỗi giây sẽ có hàng triệu events xảy ra. Làm sao để thiết kế 1 component có thể định danh từng đấy sự kiện trong một khoảnh khắc?
 ---
 

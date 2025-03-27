@@ -17,3 +17,4 @@ sidenav:
     - Content Delivery Network: /system-design/cdn
     - Rate Limiter: /system-design/rate-limiter
     - Sequencer: /system-design/sequencer
+    - Distributed Monitoring: /system-design/distributed-monitoring
