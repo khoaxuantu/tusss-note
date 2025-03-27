@@ -9,6 +9,7 @@ prev_article:
 date: 2025-02-19
 include:
   - components/block/note
+  - components/image/able-to-zoom
 ---
 
 # Distributed Monitoring
@@ -91,7 +92,10 @@ Alerting bao gồm 2 components chính: điều kiện dựa trên metrics (thre
 - **Data collector service:** fetch các dữ liệu liên quan tới mỗi service và lưu chúng lại trong storage
 - **Querying service:** 1 API để truyền lệnh query tới time-series database và trả về các dữ liệu cần thiết
 
-[image]
+[image is=able-to-zoom]
+  src: /img/system-design/distributed-monitoring-1.webp
+  alt: High-level design of a monitoring system
+  caption: High-level design of a monitoring system
 
 ### Detailed design
 
@@ -139,7 +143,10 @@ Ta sử dụng dashboard để visualize metrics cần thiết.
 - Khi scale up hệ thống này, ta phải thêm nhiều servers cho các monitoring services hơn. Để quản lý nhiều servers và giữ failover servers được đồng bộ với server chính là một thử thách lớn.
 - Hệ thống giám sát thu thập 1 lượng data khổng lồ 24/7, nên ta không thể giữ chúng mãi mãi được. Ta cần cơ chế quản lý dữ liệu hợp lý để tiết kiệm tài nguyên.
 
-[image]
+[image is=able-to-zoom]
+  src: /img/system-design/distributed-monitoring-2.webp
+  alt: Detailed design of monitoring system
+  caption: Detailed design of monitoring system
 
 ### Improve
 
@@ -150,8 +157,6 @@ Khi mà số lượng servers tăng cao, ta có thể scale hệ thống monitor
 Thay vì tất cả servers truyền dữ liệu về 1 cụm data collector service, ta có thể chia service này ra thành nhiều cụm. Mỗi cụm đảm nhiệm giám sát 1 số lượng servers nhất định.
 
 Tiếp theo, ta nhóm bộ storage, database, querying service thành 1 cụm tập trung, gọi là primary monitoring system. Khi các cụm data collector pull dữ liệu từ các servers, chúng sẽ lại push data lên primary monitoring system.
-
-[image]
 
 ## Monitor Client-side Errors
 
