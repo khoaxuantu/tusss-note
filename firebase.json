@@ -1,18 +1,6 @@
 {
   "hosting": {
     "public": ".dist/prod",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**",
-      "@global/*",
-      "@library/*",
-      "dsa/*",
-      "system-design/*",
-      "img/*",
-      "js/*",
-      "oop/*",
-      "system-design/*"
-    ]
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "app/*"]
   }
 }
