@@ -8,6 +8,25 @@
   border-radius: 9999px;
 }
 
+/* consistent whitespace */
+ul,
+ol,
+figure,
+pre {
+  margin: 2em 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a,
+button,
+button-theme {
+  cursor: pointer;
+}
+
 blockquote {
   border-left: 5px solid var(--md-sys-color-outline-variant);
   text-wrap: balance;
@@ -28,6 +47,10 @@ blockquote {
   }
 }
 
+button {
+  border: none;
+}
+
 button[role="go-top"] {
   background-color: var(--md-sys-color-primary-container);
   color: var(--md-sys-color-on-primary-container);
@@ -37,13 +60,21 @@ button[role="go-top"] {
   z-index: var(--z-index-2);
   width: 4rem;
   aspect-ratio: 1;
-  border: none;
   border-radius: 50%;
-  cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
   &:hover {
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
   }
+}
+
+button,
+button-theme {
+  border-radius: 12px;
+}
+
+button-theme {
+  appearance: auto;
+  padding: 2px 6px;
 }

@@ -1,6 +1,7 @@
-class ThemeButton extends HTMLButtonElement {
+class ThemeButton extends HTMLElement {
   constructor() {
     super();
+
     this.onclick = () => {
       const body = getBody();
       body.classList.toggle("light");
@@ -17,7 +18,7 @@ class ThemeButton extends HTMLButtonElement {
   }
 }
 
-customElements.define("theme-button", ThemeButton, { extends: "button" });
+customElements.define("button-theme", ThemeButton);
 
 class GoTopButton extends HTMLButtonElement {
   constructor() {
@@ -27,7 +28,7 @@ class GoTopButton extends HTMLButtonElement {
       setTimeout(() => {
         document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
       }, 100);
-    }
+    };
   }
 }
 
@@ -39,7 +40,7 @@ function toggleTheme() {
 
   if (theme) {
     if (body.classList.contains(theme)) return;
-    body.classList.toggle("light", theme == "light")
+    body.classList.toggle("light", theme == "light");
     body.classList.toggle("dark", theme == "dark");
   } else {
     setTheme("dark");

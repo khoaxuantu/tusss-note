@@ -1,8 +1,8 @@
-include: [ content, motion, layout/document, components/sidebar ]
+include: [content, motion, layout/document, components/sidebar]
 
 title_template: Tusss Notes | System Design | %s
 
-sidenav:
+side_nav:
   System Design:
     - Lời mở đầu: /system-design
     - SDI: /system-design/interview

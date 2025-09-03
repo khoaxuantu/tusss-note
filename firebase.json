@@ -4,7 +4,15 @@
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "@global/*",
+      "@library/*",
+      "dsa/*",
+      "system-design/*",
+      "img/*",
+      "js/*",
+      "oop/*",
+      "system-design/*"
     ]
   }
 }
