@@ -44,7 +44,6 @@ h1 {
 /* links */
 a {
   text-decoration: none;
-  word-break: break-all;
 
   /* navigational links */
   nav & {

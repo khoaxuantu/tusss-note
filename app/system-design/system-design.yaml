@@ -18,3 +18,4 @@ side_nav:
     - Rate Limiter: /system-design/rate-limiter
     - Sequencer: /system-design/sequencer
     - Distributed Monitoring: /system-design/distributed-monitoring
+    - Distributed Cache: /system-design/distributed-cache

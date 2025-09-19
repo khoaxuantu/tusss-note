@@ -6,6 +6,9 @@ unlisted: true
 prev_article:
   path: /system-design/sequencer
   title: Sequencer
+next_article:
+  path: /system-design/distributed-cache
+  title: Distributed Cache
 date: 2025-02-19
 include:
   - components/block/note
@@ -207,14 +210,12 @@ Ta sẽ sử dụng HTTP header để gửi thông tin thích hợp tới collec
 Collector nên nằm ở endpoint khác với các service endpoint được monitor. Nhờ vậy mà nếu client request tới service bị failed, chúng có thể submit error report lên collector.
 
 [table caption="Reaching collectors under faulty conditions"]
-
-  Faulty conditions         | How to reach
-  ------------------------- | ----------------------------------------------
-  1.2.3.4 unreachable       | Different server IP
+  Faulty conditions | How to reach
+  1.2.3.4 unreachable | Different server IP
   Can't resolve example.com | Different domain
-  AS 1234 hijacked          | Different ASN
-  CDN available             | Different/no CDN
-  Last-mile problems        | No readily available fall-back for the service
+  AS 1234 hijacked | Different ASN
+  CDN available | Different/no CDN
+  Last-mile problems | No readily available fall-back for the service
 
 #### Protect user privacy
 
