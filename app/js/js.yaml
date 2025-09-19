@@ -1,8 +1,8 @@
-include: [ content, motion, layout/document, components/sidebar ]
+include: [content, motion, layout/document, components/sidebar]
 
 title_template: Tusss Notes | JavaScript | %s
 
-sidenav:
+side_nav:
   JAvAsCrIpt:
     - Introduction: /js
     - Fundamental: /js/fundamental

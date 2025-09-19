@@ -1,4 +1,3 @@
-
 globals: ["@global"]
 libs: ["@library"]
 
@@ -19,6 +18,8 @@ port: 2908
 og:
   site_name: Tusss Notes
   type: article
+
+robots: noindex
 
 app_url: https://notes.xuankhoatu.com
 

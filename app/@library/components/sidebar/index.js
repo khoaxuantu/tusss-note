@@ -25,4 +25,4 @@ class SidebarMenu extends HTMLElement {
   }
 }
 
-customElements.define("sidebar-menu", SidebarMenu, { extends: "aside" });
+customElements.define("side-nav", SidebarMenu);

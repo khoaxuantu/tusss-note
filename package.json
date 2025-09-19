@@ -1,0 +1,12 @@
+{
+  "name": "tusss-note",
+  "version": "1.0.0",
+  "description": "Here is my notes for all the knowledge that I have learned.",
+  "main": "index.md",
+  "scripts": {
+    "clean": "rm -rf .dist",
+    "dev": "./scripts/dev.sh",
+    "build": "./scripts/build.sh"
+  },
+  "author": "Xuan Khoa Tu Nguyen"
+}

@@ -83,3 +83,19 @@ td {
   padding: 6px 13px;
   border: 1px solid var(--md-sys-color-outline);
 }
+
+dl {
+  > dt {
+    font-weight: bold;
+  }
+
+  > dd {
+    margin-inline-start: 0;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+

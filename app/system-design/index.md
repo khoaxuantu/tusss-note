@@ -45,7 +45,7 @@ Ta thiết kế hệ thống nhằm đảm bảo các yếu tố chính về đ�
   - [Content Delivery Network (CDN)](/system-design/cdn)
   - [Sequencer](/system-design/sequencer)
   - [Distributed Monitoring](/system-design/distributed-monitoring)
-  - Distributed Cache
+  - [Distributed Cache](app/system-design/distributed-cache)
   - Distributed Messesing Queue
   - Pub-sub
   - [Rate Limiter](/system-design/rate-limiter)

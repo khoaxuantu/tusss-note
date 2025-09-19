@@ -1,5 +1,5 @@
-<div @name="custom-navi">
-  <nav :for="[key, group] in Object.entries(items)">
+<side-nav @name="sidenav">
+  <nav :if="typeof items == 'object'" :for="[key, group] in Object.entries(items)">
     <h3>{ key }</h3>
     <div :for="item in group">
       <a :if="typeof Object.values(item)[0] == 'string'" href="{ Object.values(item)[0] }">
@@ -18,4 +18,4 @@
       </span>
     </div>
   </nav>
-</div>
+</side-nav>

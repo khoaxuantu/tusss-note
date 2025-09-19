@@ -16,28 +16,7 @@
   --glow-padding: 1rem;
 }
 
-/* consistent whitespace */
-ul,
-ol,
-figure,
-pre {
-  margin: 2em 0;
-}
 
-img {
-  width: 100%;
-  height: auto;
-}
-
-a,
-button {
-  cursor: pointer;
-}
-
-button {
-  border: none;
-  border-radius: 12px;
-}
 
 /* page layout */
 body {
@@ -109,7 +88,7 @@ body {
 
   &::backdrop {
     z-index: calc(var(--z-index-max) - 1);
-    background-color: rgba(0,0,0,.333);
+    background-color: rgba(0, 0, 0, 0.333);
     backdrop-filter: blur(4px);
   }
 }
@@ -118,7 +97,8 @@ body {
   body {
     > main {
       article {
-        > p, > ul li {
+        > p,
+        > ul li {
           font-size: 17.2px;
         }
       }
