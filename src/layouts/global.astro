@@ -1,5 +1,6 @@
 ---
 import ButtonGoTop from "@/components/global/buttons/go-top.astro";
+import Navbar from "@/components/global/navbar/index.astro";
 import { Tusss } from "@/configs";
 import type { MarkdownLayoutProps } from "astro";
 
@@ -42,10 +43,15 @@ const { frontmatter } = Astro.props;
     <link rel="stylesheet" href="/styles/global/theme.css" />
     <link rel="stylesheet" href="/styles/global/components.css" />
     <link rel="stylesheet" href="/styles/global/typography.css" />
+    <link rel="stylesheet" href="/styles/global/motion.css" />
 
     <slot name="head" />
   </head>
   <body>
+    <header>
+      <Navbar />
+    </header>
+
     <slot />
 
     <ButtonGoTop />
