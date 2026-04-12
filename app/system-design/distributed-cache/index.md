@@ -6,6 +6,9 @@ unlisted: true
 prev_article:
   path: /system-design/distributed-monitoring
   title: Distributed Monitoring
+next_article:
+  path: /system-design/distributed-messaging-queue
+  title: Distributed Messaging Queue
 date: 2025-05-30
 include:
   - components/block/note

@@ -1,12 +1,16 @@
 {
   "name": "tusss-note",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Here is my notes for all the knowledge that I have learned.",
   "main": "index.md",
   "scripts": {
-    "clean": "rm -rf .dist",
-    "dev": "./scripts/dev.sh",
-    "build": "./scripts/build.sh"
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview"
   },
-  "author": "Xuan Khoa Tu Nguyen"
+  "author": "Xuan Khoa Tu Nguyen",
+  "dependencies": {
+    "@astrojs/mdx": "^5.0.3",
+    "astro": "^6.1.5"
+  }
 }
