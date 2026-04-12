@@ -1,20 +1,4 @@
-<script>
-  class GoTopButton extends HTMLButtonElement {
-    constructor() {
-      super();
-
-      this.onclick = () => {
-        setTimeout(() => {
-          document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
-        }, 100);
-      };
-    }
-  }
-
-  customElements.define("button-go-top", GoTopButton, { extends: "button" });
-</script>
-
-<button-go-top>
+<button-go-top title="Go top">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     height="16"
@@ -27,3 +11,7 @@
     ></path>
   </svg>
 </button-go-top>
+
+<script>
+  import "./go-top.js";
+</script>

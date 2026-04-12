@@ -1,5 +1,5 @@
 ---
-import ButtonGoTop from "@/components/buttons/go-top.astro";
+import ButtonGoTop from "@/components/global/buttons/go-top.astro";
 import { Tusss } from "@/configs";
 import type { MarkdownLayoutProps } from "astro";
 
@@ -35,6 +35,7 @@ const { frontmatter } = Astro.props;
     <meta name="twitter:title" content={frontmatter.title || Tusss.site.title} />
     <meta name="twitter:description" content={frontmatter.description || Tusss.site.description} />
     <meta name="twitter:image" content={frontmatter.og?.image || Tusss.site.ogImage} />
+    <title>{frontmatter.title || Tusss.site.title}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/global/layout.css" />

@@ -23,7 +23,8 @@ img {
 
 a,
 button,
-button-theme {
+button-theme,
+button-go-top {
   cursor: pointer;
 }
 
@@ -47,11 +48,15 @@ blockquote {
   }
 }
 
-button {
+button,
+button-go-top {
   border: none;
 }
 
-button[role="go-top"] {
+button-go-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--md-sys-color-primary-container);
   color: var(--md-sys-color-on-primary-container);
   position: fixed;
@@ -61,7 +66,9 @@ button[role="go-top"] {
   width: 4rem;
   aspect-ratio: 1;
   border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  box-shadow:
+    rgba(0, 0, 0, 0.12) 0px 1px 3px,
+    rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
   &:hover {
     background-color: var(--md-sys-color-primary);
