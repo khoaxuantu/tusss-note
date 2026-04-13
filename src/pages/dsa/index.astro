@@ -1,0 +1,10 @@
+---
+import { Content, frontmatter } from "@/articles/dsa/index.md";
+import LayoutArticle from "@/layouts/article.astro";
+
+type Props = Parameters<typeof LayoutArticle>[0];
+---
+
+<LayoutArticle {...Astro.props} frontmatter={{ ...Astro.props.frontmatter, ...frontmatter }}>
+  <Content />
+</LayoutArticle>
