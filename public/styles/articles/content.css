@@ -18,23 +18,23 @@ pre {
     font-size: small;
   }
 
-  &:has(code[language="ts"])::before {
+  &[data-language="ts"]::before {
     content: "TS";
   }
-  &:has(code[language="js"])::before {
+  &[data-language="js"]::before {
     content: "JS";
   }
-  &:has(code[language="cpp"])::before {
+  &[data-language="cpp"]::before {
     content: "C++";
   }
-  &:has(code[language="c"])::before {
+  &[data-language="c"]::before {
     content: "C";
   }
-  &:has(code[language="java"])::before {
+  &[data-language="java"]::before {
     content: "Java";
   }
-  &:has(code[language="py"])::before,
-  &:has(code[language="python"])::before {
+  &[data-language="py"]::before,
+  &[data-language="python"]::before {
     content: "Python";
   }
 }
@@ -43,6 +43,10 @@ pre {
 img,
 pre {
   border-radius: 8px;
+}
+
+pre {
+  padding: 1rem;
 }
 
 figure {
@@ -98,4 +102,3 @@ dl {
     margin: 0;
   }
 }
-

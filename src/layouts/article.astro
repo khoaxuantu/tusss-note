@@ -1,7 +1,5 @@
 ---
 import ButtonTheme from "@/components/global/buttons/theme.astro";
-import Footer from "@/components/global/footer.astro";
-import Navbar from "@/components/global/navbar.astro";
 import type { MarkdownLayoutProps } from "astro";
 import LayoutGlobal from "./global.astro";
 
@@ -18,18 +16,17 @@ const frontmatter = { ...Astro.props.frontmatter, date: dateStr };
 ---
 
 <LayoutGlobal {...Astro.props} frontmatter={frontmatter}>
-  <slot name="head" />
-
-  <header>
-    <Navbar />
-  </header>
+  <Fragment slot={"head"}>
+    <link rel="stylesheet" href="/styles/articles/layout.css" />
+    <link rel="stylesheet" href="/styles/articles/content.css" />
+  </Fragment>
 
   <main>
     <article>
       <section class="pagehead">
-        <br />
-        <br />
         <ButtonTheme />
+        <br />
+        <br />
         <i>
           <time datetime={date.toISOString()}>{dateStr}</time>
         </i>
@@ -37,6 +34,4 @@ const frontmatter = { ...Astro.props.frontmatter, date: dateStr };
       <slot />
     </article>
   </main>
-
-  <Footer />
 </LayoutGlobal>
