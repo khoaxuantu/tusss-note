@@ -1,6 +1,8 @@
 ---
 title: OOP | Lời mở đầu
 title_template: Tusss Notes | %s
+description: Cho những con người bị xoắn não vì OOP nhưng cần phải try hard để được xã hội trọng vọng hơn (maybe) 🐧
+slug: /oop
 date: 2023-04-03
 ---
 
@@ -23,7 +25,7 @@ tham khảo tra cứu gì thì cũng có thể qua đây check:
 
 ## Acknowledgement
 
-*Alexander Shvets - [Refactoring Guru](https://refactoring.guru) - [Dive Into Design Patterns](https://refactoring.guru/design-patterns/book)*
+_Alexander Shvets - [Refactoring Guru](https://refactoring.guru) - [Dive Into Design Patterns](https://refactoring.guru/design-patterns/book)_
 
 ## Catalog
 

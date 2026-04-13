@@ -14,6 +14,7 @@ type Props = MarkdownLayoutProps<{
     type?: "website" | "article";
     image?: string;
   };
+  stylesheets?: string[];
 }>;
 
 const { frontmatter } = Astro.props;
@@ -45,6 +46,7 @@ const { frontmatter } = Astro.props;
     <link rel="stylesheet" href="/styles/global/components.css" />
     <link rel="stylesheet" href="/styles/global/typography.css" />
     <link rel="stylesheet" href="/styles/global/motion.css" />
+    {frontmatter.stylesheets?.map((stylesheet) => <link rel="stylesheet" href={stylesheet} />)}
 
     <slot name="head" />
   </head>

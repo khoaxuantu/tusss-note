@@ -2,9 +2,12 @@
 unlisted: true
 date: 2024-11-24
 layout: "@/layouts/single-container.astro"
+stylesheets:
+  - "/styles/main/gallery.css"
 ---
 
 import ButtonTheme from "@/components/global/buttons/theme.astro";
+import PageList from "@/components/home/page-list.astro";
 
 <section class="pagehead">
   <ButtonTheme />
@@ -66,7 +69,7 @@ This site is for Vietnamese only, no multi-language, so I will speak in Vietname
 
 ## Topics
 
-[page-list]
+<PageList />
 
 ---
 

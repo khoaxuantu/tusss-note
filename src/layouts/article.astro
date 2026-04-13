@@ -1,0 +1,42 @@
+---
+import ButtonTheme from "@/components/global/buttons/theme.astro";
+import Footer from "@/components/global/footer.astro";
+import Navbar from "@/components/global/navbar.astro";
+import type { MarkdownLayoutProps } from "astro";
+import LayoutGlobal from "./global.astro";
+
+type GlobalLayoutProps = Parameters<typeof LayoutGlobal>[0];
+type Props = GlobalLayoutProps & MarkdownLayoutProps<{ date?: string }>;
+
+const date = Astro.props.frontmatter.date ? new Date(Astro.props.frontmatter.date) : new Date();
+const dateStr = date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+const frontmatter = { ...Astro.props.frontmatter, date: dateStr };
+---
+
+<LayoutGlobal {...Astro.props} frontmatter={frontmatter}>
+  <slot name="head" />
+
+  <header>
+    <Navbar />
+  </header>
+
+  <main>
+    <article>
+      <section class="pagehead">
+        <br />
+        <br />
+        <ButtonTheme />
+        <i>
+          <time datetime={date.toISOString()}>{dateStr}</time>
+        </i>
+      </section>
+      <slot />
+    </article>
+  </main>
+
+  <Footer />
+</LayoutGlobal>

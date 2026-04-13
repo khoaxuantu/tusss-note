@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+
+const rawTopics = await getCollection("topic");
+const topics = rawTopics.sort((a, b) => {
+  const aDate = new Date(a.data.date);
+  const bDate = new Date(b.data.date);
+  return bDate.getTime() - aDate.getTime();
+});
+---
+
+<ul>
+  {
+    topics.map((topic: any) => (
+      <li>
+        <time datetime={new Date(topic.data.date).toISOString()}>
+          {new Date(topic.data.date).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+        </time>
+        <a href={topic.data.slug}>
+          <h2>{topic.data.title}</h2>
+          {topic.data.description && <p>{topic.data.description}</p>}
+        </a>
+      </li>
+    ))
+  }
+</ul>

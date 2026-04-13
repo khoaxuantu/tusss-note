@@ -2,6 +2,7 @@
 title: JAvAsCrIpt
 title_template: Tusss Notes | %s
 description: JavaScript is super complicated, like a pain in your ass.
+slug: /js
 date: 2023-06-16
 next_article:
   path: /js/fundamental
