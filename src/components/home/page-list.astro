@@ -20,7 +20,7 @@ const topics = rawTopics.sort((a, b) => {
             day: "numeric",
           })}
         </time>
-        <a href={topic.data.slug}>
+        <a href={topic.id}>
           <h2>{topic.data.title}</h2>
           {topic.data.description && <p>{topic.data.description}</p>}
         </a>

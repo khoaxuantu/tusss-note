@@ -2,7 +2,6 @@
 title: System Design | Lời mở đầu
 title_template: Tusss Notes | %s
 description: Cho những con người có định hướng đào sâu về mảng Backend và có thể mở rộng ra DevOps sau này 💀
-slug: /system-design
 date: 2023-04-15
 include:
   - components/block/note

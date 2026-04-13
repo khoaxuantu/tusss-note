@@ -2,7 +2,6 @@
 title: DSA | Lời mở đầu
 date: 2023-03-23
 description: Nhìn chung thì giải thuật đối với bất cứ ai cũng gặp vấn đề ko ít thì nhiều ở khoản tổng hợp đc kiến thức và dạng câu hỏi (me too).
-slug: /dsa
 ---
 
 # Lời Mở Đầu

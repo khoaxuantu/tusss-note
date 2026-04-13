@@ -8,7 +8,6 @@ const topicColl = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     date: z.coerce.date(),
-    slug: z.string(),
   }),
 });
 

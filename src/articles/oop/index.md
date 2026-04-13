@@ -2,7 +2,6 @@
 title: OOP | Lời mở đầu
 title_template: Tusss Notes | %s
 description: Cho những con người bị xoắn não vì OOP nhưng cần phải try hard để được xã hội trọng vọng hơn (maybe) 🐧
-slug: /oop
 date: 2023-04-03
 ---
 
