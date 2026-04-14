@@ -32,7 +32,7 @@ articleDir.forEach((dir) => {
   articleColl[key] = defineCollection({
     loader: glob({
       base: `./src/articles/${dir}`,
-      pattern: [`**/*.{md,mdx}`, "!index.{md,mdx}"],
+      pattern: [`**/*.{md,mdx}`, "!{index,manifest}.*"],
       retainBody: false,
     }),
     schema: ArticleSchema,
@@ -48,4 +48,22 @@ const topicColl = defineCollection({
   }),
 });
 
-export const collections = { topic: topicColl, ...articleColl };
+const topicManifestColl = defineCollection({
+  loader: glob({
+    base: "./src/articles",
+    pattern: "*/*.{yaml,yml}",
+    generateId: (opts) => {
+      const m = new RegExp("([^/]*)/manifest.yaml").exec(opts.entry);
+      return m?.at(1) || opts.entry;
+    },
+  }),
+  schema: z.object({
+    catalog: z.record(z.string(), z.any()),
+  }),
+});
+
+export const collections = {
+  topic: topicColl,
+  "topic.manifest": topicManifestColl,
+  ...articleColl,
+};

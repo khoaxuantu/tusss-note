@@ -1,10 +1,13 @@
 ---
 import { Content, frontmatter, getHeadings } from "@/articles/dsa/index.md";
 import LayoutArticle from "@/layouts/article.astro";
+import { getEntry } from "astro:content";
 
 type Props = Parameters<typeof LayoutArticle>[0];
 
 const headings = getHeadings();
+
+const catalog = await getEntry("topic.manifest", "dsa");
 ---
 
 <LayoutArticle

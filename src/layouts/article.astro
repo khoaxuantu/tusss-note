@@ -15,7 +15,6 @@ const dateStr = date.toLocaleDateString("en-US", {
 });
 const frontmatter = { ...Astro.props.frontmatter, date: dateStr };
 const headings = Astro.props.headings;
-console.log("🚀 ~ Astro.props:", Astro.props);
 ---
 
 <LayoutGlobal {...Astro.props} frontmatter={frontmatter}>
