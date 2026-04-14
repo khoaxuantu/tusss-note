@@ -15,12 +15,13 @@ const { id } = Astro.params;
 const article = await getEntry("articles.dsa", id);
 if (!article) return Astro.redirect("/404");
 
-const { Content, remarkPluginFrontmatter } = await render(article);
+const { Content, remarkPluginFrontmatter, headings } = await render(article);
 ---
 
 <LayoutArticle
   {...Astro.props}
   frontmatter={{ ...Astro.props.frontmatter, ...remarkPluginFrontmatter }}
+  headings={headings}
 >
   <Content />
 </LayoutArticle>

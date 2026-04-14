@@ -1,0 +1,16 @@
+---
+import SidenavGroup from "./group.astro";
+import type { SidenavProps } from "./types";
+
+interface Props extends SidenavProps {}
+
+const { data } = Astro.props;
+---
+
+<sidenav>
+  {
+    data.map((grp) => {
+      return <SidenavGroup data={grp} />;
+    })
+  }
+</sidenav>

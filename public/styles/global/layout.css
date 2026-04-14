@@ -16,8 +16,6 @@
   --glow-padding: 1rem;
 }
 
-
-
 /* page layout */
 body {
   margin: 0;
@@ -80,6 +78,12 @@ body {
         transform: scale(1.1);
       }
     }
+  }
+
+  h1,
+  h2,
+  h3 {
+    scroll-margin-top: 1rem;
   }
 }
 

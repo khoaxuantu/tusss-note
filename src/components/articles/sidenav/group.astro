@@ -1,0 +1,27 @@
+---
+import SidenavDetail from "./detail.astro";
+import type { SidenavItemProps } from "./types";
+
+interface Props {
+  data: SidenavItemProps;
+}
+
+const { data } = Astro.props;
+---
+
+<nav>
+  <h3>{data.label}</h3>
+  {
+    data.items?.map((item) => {
+      if (item.items?.length) {
+        return <SidenavDetail summary={item.label} items={item.items} />;
+      }
+
+      return (
+        <div>
+          <a href={item.href}>{item.label}</a>
+        </div>
+      );
+    })
+  }
+</nav>

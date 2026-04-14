@@ -1,10 +1,16 @@
 ---
-import { Content, frontmatter } from "@/articles/system-design/index.md";
+import { Content, frontmatter, getHeadings } from "@/articles/system-design/index.md";
 import LayoutArticle from "@/layouts/article.astro";
 
 type Props = Parameters<typeof LayoutArticle>[0];
+
+const headings = getHeadings();
 ---
 
-<LayoutArticle {...Astro.props} frontmatter={{ ...Astro.props.frontmatter, ...frontmatter }}>
+<LayoutArticle
+  {...Astro.props}
+  frontmatter={{ ...Astro.props.frontmatter, ...frontmatter }}
+  headings={headings}
+>
   <Content />
 </LayoutArticle>
