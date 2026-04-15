@@ -1,4 +1,5 @@
 ---
+import SidebarMobile from "@/components/articles/sidebar-mobile/index.astro";
 import { SidenavPropsBuilder } from "@/components/articles/sidenav/helpers";
 import Sidenav from "@/components/articles/sidenav/index.astro";
 import type { SidenavProps } from "@/components/articles/sidenav/types";
@@ -34,6 +35,14 @@ if (manifest) {
     <link rel="stylesheet" href="/styles/articles/content.css" />
   </Fragment>
 
+  {
+    !!sidenavProps && (
+      <section class="subheader">
+        <SidebarMobile title={frontmatter.title || ""} sidenavProps={sidenavProps} />
+      </section>
+    )
+  }
+
   <main>
     {
       !!sidenavProps && (
@@ -54,7 +63,7 @@ if (manifest) {
       <slot />
     </article>
     {
-      !!headings?.length && (
+      !!headings?.length && headings.length > 1 && (
         <aside id="toc">
           <Toc data={headings} />
         </aside>

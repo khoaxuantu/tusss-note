@@ -88,7 +88,7 @@
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
 
-    button[role="close"] {
+    button[popovertargetaction="hide"] {
       position: absolute;
       top: 1rem;
       right: 1rem;
@@ -97,7 +97,7 @@
     }
   }
 
-  button[role="open"] {
+  button[popovertargetaction="show"] {
     padding: 1rem 0;
     background: none;
     font-weight: bold;

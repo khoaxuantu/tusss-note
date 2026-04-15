@@ -1,0 +1,19 @@
+---
+import Sidenav from "../sidenav/index.astro";
+import type { SidenavProps } from "../sidenav/types";
+
+interface Props {
+  title: string;
+  sidenavProps: SidenavProps;
+}
+
+const { title, sidenavProps } = Astro.props;
+---
+
+<nav id="mobile">
+  <button popovertarget="sidebar" popovertargetaction="show">{title}</button>
+  <aside id="sidebar" popover>
+    <button popovertarget="sidebar" popovertargetaction="hide">&times;</button>
+    <Sidenav {...sidenavProps} />
+  </aside>
+</nav>
