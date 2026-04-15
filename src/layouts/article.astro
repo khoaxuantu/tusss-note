@@ -1,11 +1,15 @@
 ---
+import { SidenavPropsBuilder } from "@/components/articles/sidenav/helpers";
+import Sidenav from "@/components/articles/sidenav/index.astro";
+import type { SidenavProps } from "@/components/articles/sidenav/types";
 import Toc from "@/components/articles/toc.astro";
 import ButtonTheme from "@/components/global/buttons/theme.astro";
 import type { MarkdownLayoutProps } from "astro";
+import { getEntry } from "astro:content";
 import LayoutGlobal from "./global.astro";
 
 type GlobalLayoutProps = Parameters<typeof LayoutGlobal>[0];
-type Props = GlobalLayoutProps & MarkdownLayoutProps<{ date?: string }>;
+type Props = GlobalLayoutProps & MarkdownLayoutProps<{ date?: string; catalog_id?: string }>;
 
 const date = Astro.props.frontmatter.date ? new Date(Astro.props.frontmatter.date) : new Date();
 const dateStr = date.toLocaleDateString("en-US", {
@@ -15,6 +19,12 @@ const dateStr = date.toLocaleDateString("en-US", {
 });
 const frontmatter = { ...Astro.props.frontmatter, date: dateStr };
 const headings = Astro.props.headings;
+
+const manifest = await getEntry("topic.manifest", Astro.props.frontmatter.catalog_id || "");
+let sidenavProps: SidenavProps | undefined;
+if (manifest) {
+  sidenavProps = new SidenavPropsBuilder(manifest.data.catalog).build().product;
+}
 ---
 
 <LayoutGlobal {...Astro.props} frontmatter={frontmatter}>
@@ -25,6 +35,13 @@ const headings = Astro.props.headings;
   </Fragment>
 
   <main>
+    {
+      !!sidenavProps && (
+        <aside id="sidebar">
+          <Sidenav {...sidenavProps} />
+        </aside>
+      )
+    }
     <article>
       <section class="pagehead">
         <ButtonTheme />

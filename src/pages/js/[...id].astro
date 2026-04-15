@@ -20,7 +20,7 @@ const { Content, remarkPluginFrontmatter, headings } = await render(article);
 
 <LayoutArticle
   {...Astro.props}
-  frontmatter={{ ...Astro.props.frontmatter, ...remarkPluginFrontmatter }}
+  frontmatter={{ ...Astro.props.frontmatter, ...remarkPluginFrontmatter, catalog_id: "js" }}
   headings={headings}
 >
   <Content />

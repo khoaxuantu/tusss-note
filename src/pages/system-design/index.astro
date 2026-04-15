@@ -9,7 +9,7 @@ const headings = getHeadings();
 
 <LayoutArticle
   {...Astro.props}
-  frontmatter={{ ...Astro.props.frontmatter, ...frontmatter }}
+  frontmatter={{ ...Astro.props.frontmatter, ...frontmatter, catalog_id: "system-design" }}
   headings={headings}
 >
   <Content />

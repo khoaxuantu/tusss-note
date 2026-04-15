@@ -11,10 +11,15 @@
     padding-right: 0.5rem;
   }
 
-  a {
+  summary {
+    cursor: pointer;
+  }
+
+  a,
+  summary {
     padding: 0.5rem;
     border-radius: 0.5rem;
-    transition: transform 150ms;
+    transition: padding-left 150ms;
 
     &:hover {
       background-color: var(--md-sys-color-secondary-container);
@@ -26,39 +31,43 @@
 }
 
 #sidebar {
-  a {
-    display: block;
-
+  a,
+  summary {
     &:hover {
-      transform: translateX(1rem);
+      padding-left: 1rem;
     }
   }
 
-  [aria-haspopup] {
-    a[aria-expanded="true"] {
-      & + nav {
-        display: flex;
-      }
+  a {
+    display: block;
+  }
 
-      &::after {
-        content: " -";
-      }
+  details {
+    nav {
+      padding-left: 1rem;
+      padding-top: 0.5rem;
     }
 
-    a[aria-expanded="false"] {
-      & + nav {
-        display: none;
-      }
+    &::details-content {
+      opacity: 0;
+      border-radius: 16px;
+      transition: all 400ms ease-in-out;
+    }
+
+    &[open]::details-content {
+      opacity: 1;
+    }
+
+    summary {
+      display: block;
 
       &::after {
         content: " +";
       }
     }
 
-    nav {
-      padding-left: 1rem;
-      padding-top: 0.5rem;
-      animation: fadeInDown 200ms;
+    &[open] summary::after {
+      content: " -";
     }
   }
 }
