@@ -1,4 +1,5 @@
 ---
+import FooterNav from "@/components/articles/footer-nav.astro";
 import SidebarMobile from "@/components/articles/sidebar-mobile/index.astro";
 import { SidenavPropsBuilder } from "@/components/articles/sidenav/helpers";
 import Sidenav from "@/components/articles/sidenav/index.astro";
@@ -10,7 +11,13 @@ import { getEntry } from "astro:content";
 import LayoutGlobal from "./global.astro";
 
 type GlobalLayoutProps = Parameters<typeof LayoutGlobal>[0];
-type Props = GlobalLayoutProps & MarkdownLayoutProps<{ date?: string; catalog_id?: string }>;
+type Props = GlobalLayoutProps &
+  MarkdownLayoutProps<{
+    date?: string;
+    catalog_id?: string;
+    prev_article?: { path: string; title: string };
+    next_article?: { path: string; title: string };
+  }>;
 
 const date = Astro.props.frontmatter.date ? new Date(Astro.props.frontmatter.date) : new Date();
 const dateStr = date.toLocaleDateString("en-US", {
@@ -61,6 +68,13 @@ if (manifest) {
         </i>
       </section>
       <slot />
+      {
+        (frontmatter.prev_article || frontmatter.next_article) && (
+          <footer>
+            <FooterNav prev={frontmatter.prev_article} next={frontmatter.next_article} />
+          </footer>
+        )
+      }
     </article>
     {
       !!headings?.length && headings.length > 1 && (

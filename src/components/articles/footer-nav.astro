@@ -1,0 +1,41 @@
+---
+interface Props {
+  prev?: {
+    path: string;
+    title: string;
+  };
+  next?: {
+    path: string;
+    title: string;
+  };
+}
+
+const { prev, next } = Astro.props;
+---
+
+<nav>
+  {
+    !!prev && (
+      <a href={prev.path}>
+        <button class="prev">
+          <small>Previous</small>
+          <br />
+          <br />
+          <b>{prev.title}</b>
+        </button>
+      </a>
+    )
+  }
+  {
+    !!next && (
+      <a href={next.path}>
+        <button class="next">
+          <small>Next</small>
+          <br />
+          <br />
+          <b>{next.title}</b>
+        </button>
+      </a>
+    )
+  }
+</nav>

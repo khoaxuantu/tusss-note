@@ -24,22 +24,22 @@ body {
             width: 100%;
           }
 
-          button[role="next-article"],
-          button[role="prev-article"] {
+          button.next,
+          button.prev {
             width: 100%;
             padding: 1rem;
             height: 100%;
           }
 
-          button[role="next-article"] {
+          button.next {
             text-align: right;
           }
 
-          button[role="prev-article"] {
+          button.prev {
             text-align: left;
           }
 
-          &:not(:has(button[role="prev-article"])) {
+          &:not(:has(button.prev)) {
             > a {
               margin-left: auto;
             }
