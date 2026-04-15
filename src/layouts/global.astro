@@ -4,6 +4,7 @@ import Footer from "@/components/global/footer.astro";
 import Navbar from "@/components/global/navbar.astro";
 import { Tusss } from "@/configs";
 import type { MarkdownLayoutProps } from "astro";
+import { ClientRouter } from "astro:transitions";
 
 type Props = MarkdownLayoutProps<{
   title?: string;
@@ -22,6 +23,7 @@ const { frontmatter } = Astro.props;
 
 <html class="light">
   <head>
+    <ClientRouter />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />

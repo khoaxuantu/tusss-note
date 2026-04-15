@@ -7,4 +7,7 @@ export default defineConfig({
   server: {
     port: 2908,
   },
+  prefetch: {
+    defaultStrategy: "tap",
+  },
 });

@@ -23,7 +23,7 @@ const ArticleSchema = z.object({
 
 const articleDir = ["dsa", "js", "oop", "system-design"] as const;
 const articleColl: Record<
-  `articles.${(typeof articleDir)[number]}`,
+  `articles.${(typeof articleDir)[number]}` | (string & {}),
   CollectionConfig<typeof ArticleSchema>
 > = {} as Record<string, CollectionConfig<typeof ArticleSchema>>;
 
