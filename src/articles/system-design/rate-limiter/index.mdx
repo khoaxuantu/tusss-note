@@ -105,7 +105,7 @@ descriptors:
 Trong phần này ta sẽ thảo luận về các components trọng yếu cấu tạo nên rate limiter:
 
 <Image
-  src="https://ik.imagekit.io/tuslipid/system-design/rate-limiter-1.webp"
+  src="https://ik.imagekit.io/tuslipid/system-designs/rate-limiter-1.webp"
   alt="Rate limiter components"
 />
 
@@ -159,7 +159,7 @@ Ban đầu, khi nhận 1 request đc gửi từ client, hệ thống sẽ tính 
 ### Token bucket algorithm
 
 <Image
-  src="https://ik.imagekit.io/tuslipid/system-design/rate-limiter-2.webp"
+  src="https://ik.imagekit.io/tuslipid/system-designs/rate-limiter-2.webp"
   alt="Token bucket algorithm illustration"
   title="Token bucket algorithm illustration"
 />
@@ -192,7 +192,7 @@ Giả sử ta có một rate limit đã đc định nghĩa _R_ và sức chứa 
 ### The leaking bucket algorithm
 
 <Image
-  src="https://ik.imagekit.io/tuslipid/system-design/rate-limiter-3.webp"
+  src="https://ik.imagekit.io/tuslipid/system-designs/rate-limiter-3.webp"
   alt="Leaking bucket algorithm illustration"
   title="Leaking bucket algorithm illustration"
 />
@@ -221,7 +221,7 @@ Giả sử ta có một rate limit đã đc định nghĩa _R_ và sức chứa 
 ### Fixed window counter algorithm
 
 <Image
-  src="https://ik.imagekit.io/tuslipid/system-design/rate-limiter-4.webp"
+  src="https://ik.imagekit.io/tuslipid/system-designs/rate-limiter-4.webp"
   alt="Fixed window counter algorithm illustration"
   title="Fixed window counter algorithm illustration"
 />
@@ -245,7 +245,7 @@ Thuật toán chia chia thời gian chạy thành các quãng liên tục (đư�
 ### Sliding window log algorithm
 
 <Image
-  src="https://ik.imagekit.io/tuslipid/system-design/rate-limiter-5.webp"
+  src="https://ik.imagekit.io/tuslipid/system-designs/rate-limiter-5.webp"
   alt="Sliding window log algorithm illustration"
   title="Sliding window log algorithm illustration"
 />
@@ -269,7 +269,7 @@ Thuật toán này theo dõi từng request đi đến. Khi 1 request tới nơi
 ### Sliding window counter algorithm
 
 <Image
-  src="https://ik.imagekit.io/tuslipid/system-design/rate-limiter-6.webp"
+  src="https://ik.imagekit.io/tuslipid/system-designs/rate-limiter-6.webp"
   alt="Sliding window counter algorithm illustration"
   title="Sliding window counter algorithm illustration"
 />

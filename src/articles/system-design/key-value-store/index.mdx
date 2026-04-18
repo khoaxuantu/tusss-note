@@ -106,7 +106,7 @@ Với các requests tới storage, ta sẽ áp 1 quá trình tương tự. Mỗi
 Mỗi khi 1 node được thêm vào vòng, node tiếp theo ở chiều kim đồng hồ sẽ bị ảnh hưởng, còn các node còn lại thì ko bị. Như vậy, ta đã giữ cho số lượng nodes bị ảnh hưởng về mức tối thiểu, giúp cho việc scale đc dễ dàng hơn.
 
 <Image
-  src="https://ik.imagekit.io/tuslipid/system-design/key-value-store.webp"
+  src="https://ik.imagekit.io/tuslipid/system-designs/key-value-store.webp"
   alt="Consistent hashing illustration"
   title="Consistent hashing illustration"
 />
@@ -114,7 +114,7 @@ Mỗi khi 1 node được thêm vào vòng, node tiếp theo ở chiều kim đ�
 Nhược điểm của cách hash này là lượng tải trên thực tế ko đc phân bổ thực sự đều. Bất kỳ server nào nhận lượng lớn dữ liệu đều có thể thành nút thắt cổ chai trong hệ thống phân tán.
 
 <Image
-  src="https://ik.imagekit.io/tuslipid/system-design/key-value-store-1.webp"
+  src="https://ik.imagekit.io/tuslipid/system-designs/key-value-store-1.webp"
   alt="Consistent hashing illustration"
   title="Các node có thể phân bố không được đồng đều với consistent hashing"
 />
@@ -153,7 +153,7 @@ Mỗi node, khi được sau lưu dữ liệu tới các nodes khác, sẽ gọi
 Như hình dưới đây, ta có _n_ là 3. Với khóa `K`, việc sao lưu sẽ đc thực hiện bởi 3 node: B, C, D. Tương tự với khóa `L`, 3 node C, D, E sẽ chịu trách nhiệm sao lưu.
 
 <Image
-  src="https://ik.imagekit.io/tuslipid/system-design/key-value-store-2.webp"
+  src="https://ik.imagekit.io/tuslipid/system-designs/key-value-store-2.webp"
   alt="Peer-to-peer approach illustration"
   title="Peer-to-peer approach illustration"
 />
