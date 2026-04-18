@@ -3,7 +3,13 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [mdx()],
+  markdown: {
+    syntaxHighlight: "shiki",
+    shikiConfig: {
+      theme: "one-dark-pro",
+    },
+  },
+  integrations: [mdx({})],
   server: {
     port: 2908,
   },

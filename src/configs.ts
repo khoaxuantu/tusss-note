@@ -5,7 +5,7 @@ export const Tusss = {
     title: "Tusss Notes",
     description:
       "I am Tu, a software engineer specialized in web development. And here is my notes for all the knowledge I have learned",
-    ogImage: "/img/seo/og.webp",
+    ogImage: "https://ik.imagekit.io/tuslipid/seo/og.webp",
   },
   author: "Xuan Khoa Tu Nguyen",
 } as const;
