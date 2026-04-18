@@ -3,8 +3,8 @@ title: DSA | Hash Table
 date: 2023-03-04
 author: Xuan Khoa Tu Nguyen
 unlisted: true
-include:
-  - components/accordion
+stylesheets:
+  - /styles/articles/accordion.css
 ---
 
 # Luận bàn về Hash Table
@@ -63,39 +63,52 @@ rồi. Ae ta newbie nên có thể tham khảo trước bài viết về mấy c
 
 **Các cách sử dụng hash table với một số ngôn ngữ lập trình**
 
-[accordion.tabs name="tabs"]
-  ## C++
+<div class="accordion">
+  <details open name="lang">
+    <summary>C++</summary>
+    <span>
+      ```cpp
+      unordered_map<KeyType, ValType> map;
+      map<KeyType, ValType> map;
+      unordered_set<KeyType> set;
+      set<KeyType> set;
+      ```
+    </span>
+  </details>
 
-  ```cpp
-  unordered_map<KeyType, ValType> map;
-  map<KeyType, ValType> map;
-  unordered_set<KeyType> set;
-  set<KeyType> set;
-  ```
+  <details name="lang">
+    <summary>Java</summary>
+    <span>
+      ```java
+      // Theo giới giang hồ
+      Map<KeyType, ValType> map = new HashMap<KeyType, ValType>();
+      Set<KeyType> set = new HashSet<KeyType>();
+      ```
+    </span>
+  </details>
 
-  ## Java
+  <details name="lang">
+    <summary>Python</summary>
+    <span>
+      ```py
+      # Dùng dict và set
+      map = {key: value}
+      set = set()
+      ```
+    </span>
+  </details>
 
-  ```java
-  // Theo giới giang hồ
-  Map<KeyType, ValType> map = new HashMap<KeyType, ValType>();
-  Set<KeyType> set = new HashSet<KeyType>();
-  ```
-
-  ## Python
-
-  ```py
-  # Dùng dict và set
-  map = {key: value}
-  set = set()
-  ```
-
-  ## JavaScript
-
-  ```js
-  // Dùng object và Set
-  const map = {key: value};
-  const set = new Set()
-  ```
+  <details name="lang">
+    <summary>JavaScript</summary>
+    <span>
+      ```js
+      // Dùng object và Set
+      const map = {key: value};
+      const set = new Set()
+      ```
+    </span>
+  </details>
+</div>
 
 ## Sample questions
 

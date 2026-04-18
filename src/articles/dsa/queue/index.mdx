@@ -3,8 +3,8 @@ title: DSA | Queue
 date: 2023-03-27
 author: Xuan Khoa Tu Nguyen
 unlisted: true
-include:
-  - components/accordion
+stylesheets:
+  - /styles/articles/accordion.css
 ---
 
 # Luận bàn về Queue
@@ -24,45 +24,70 @@ Các **operations** cơ bản của queue
 - **isFull:** check xem cái queue nó có đạt tới giới hạn cho trước ko
 - **Peek:** lấy giá trị của element đầu tiên của queue mà ko xóa nó đi
 
-***Ví dụ***
+**_Ví dụ_**
 
 ```md
 Queue q
 ```
 
-[accordion.tabs name="tabs"]
-    ## C++
+<div class="accordion">
+  <details open name="tabs">
+    <summary>C++</summary>
+    <span>
 
-    ```cpp
-    #include<queue>
+```cpp
+#include<queue>
 
-    queue<DataType> q;
-    ```
+queue<DataType> q;
+```
 
-    ## Python
+    </span>
 
-    ```py
-    from queue import Queue
+  </details>
 
-    q = Queue()
-    ```
+  <details name="tabs">
+    <summary>Python</summary>
+    <span>
 
-    ## Java
+```py
+from queue import Queue
 
-    ```java
-    import java.util.Queue;
-    import java.util.LinkedList;
+q = Queue()
+```
 
-    Queue<DataType> q = new LinkedList();
-    ```
+    </span>
 
-    ## JS/TS
+  </details>
 
-    ```js
-    import { Queue } from '@datastructures-js/queue';
+  <details name="tabs">
+    <summary>Java</summary>
+    <span>
 
-    const queue = new Queue();
-    ```
+```java
+import java.util.Queue;
+import java.util.LinkedList;
+
+Queue<DataType> q = new LinkedList();
+```
+
+    </span>
+
+  </details>
+
+  <details name="tabs">
+    <summary>JS/TS</summary>
+    <span>
+
+```js
+import { Queue } from "@datastructures-js/queue";
+
+const queue = new Queue();
+```
+
+    </span>
+
+  </details>
+</div>
 
 Anh em nào hứng thú với cách 1 queue được implement như nào thì có thể tham khảo của tụi programiz
 
