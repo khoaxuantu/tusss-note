@@ -67,8 +67,7 @@ Mỗi server có thể tự gen ID của riêng no và gán ID vào các event l
 
 Sử dụng 1 database tập trung để gen unique IDs.
 
-[.note]
-
+<div className="note">
   Nhằm tránh việc giải pháp này có thể trở thành 1 single point failure, ta có thể đối phó như sau:
 
   Chỉnh sửa tính năng auto-increment của database. Thay vì cộng dồn 1 đơn vị như thường lệ, ta sẽ cộng dồn dựa theo 1 giá trị `m`, với `m` là số database servers mà ta có.
@@ -76,6 +75,7 @@ Sử dụng 1 database tập trung để gen unique IDs.
   Mỗi server gen 1 ID, và cộng dồn ID tiếp theo với step là `m`.
 
   Ví dụ nếu ta có 3 database servers, thì server đầu sẽ gen ID theo thứ tự 1 -> 4 -> 7 -> 10 -> ...
+</div>
 
 #### Hạn chế
 
@@ -113,9 +113,9 @@ Khả năng gen ID theo ms cho phép ta có thể gen 1000 IDs/s ⇒ Trong 1 ng�
 24(hour) * 60(min/hour) * 60*(sec/min) * 1000 (ID/sec) = 86400000 (IDs)
 ```
 
-[.note]
-
+<div className="note">
   Nhằm tránh server gen ID có thể trở thành 1 single point of failure, ta có thể thêm nhiều server gen ID cùng lúc. Mỗi server đảm bảo việc gen ra unique ID bằng cách thêm 1 prefix độc nhất của server đó cùng với time stamps vào ID.
+</div>
 
 #### Ưu điểm
 

@@ -252,11 +252,13 @@ let range = {
 })()
 ```
 
-[table caption="Differences between **Iterators** and **Async iterators**"]
-  | Iterators | Async iterators
-  Object method to provide iterator | `Symbol.iterator` | `Symbol.asyncIterator`
-  `next()` return value is | any value | `Promise`
-  to loop, use | `for...of` | `for await...of`
+| Iterators         | Async iterators        |
+| ----------------- | ---------------------- |
+| `Symbol.iterator` | `Symbol.asyncIterator` |
+| any value         | `Promise`              |
+| `for...of`        | `for await...of`       |
+
+_Table: Differences between **Iterators** and **Async iterators**_
 
 ### Recall generators
 

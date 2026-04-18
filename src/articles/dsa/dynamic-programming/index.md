@@ -17,9 +17,9 @@ state/subproblem và tái sử dụng nó khi phải lặp lại 1 state/problem
 Chẳng hạn, ta có 1 state gọi là `f("Tuslipid")`, ta giải nó tốn 69 bước, đc giá trị `khoaxuantu`,
 ta lưu nó lại trong "bộ nhớ"
 
-[table caption="Memory table"]
-    key      | value
-    Tuslipid | khoaxuantu
+| key      | value      |
+| -------- | ---------- |
+| Tuslipid | khoaxuantu |
 
 Chương trình của ta sau khi tính đc state đó, chạy tiếp vài bước, thì lại bắt gặp 1 state y hệt
 `f("Tuslipid")`, bình thường nếu muốn giải quyết tiếp bước này, chương trình ta phải chạy tới 69
@@ -59,27 +59,27 @@ Về mẫu giải, ta có thể suy ra pseudocode chung cho 2 cách tiếp cận
 ```md
 Memoization table -> dp[]
 function f(state):
-  check base case, return value
-  if state is solved in dp, return dp[state]
+check base case, return value
+if state is solved in dp, return dp[state]
 
-  dp[state] = f(next_state) with f(another_next_state) with ...
-  return dp[state]
+dp[state] = f(next_state) with f(another_next_state) with ...
+return dp[state]
 ```
 
 - **Bottom-up**
 
 ```md
 function f(input):
-  tabular -> dp[]
+tabular -> dp[]
 
-  preset some base cases, dp[] at index 0 or 1 or something like this...
+preset some base cases, dp[] at index 0 or 1 or something like this...
 
-  traverse dp[], repeat:
-    dp[state] = dp[prev_state] with dp[another_prev_state] with ...
-    state -> next_state
-  end repeat
+traverse dp[], repeat:
+dp[state] = dp[prev_state] with dp[another_prev_state] with ...
+state -> next_state
+end repeat
 
-  return dp[input]
+return dp[input]
 ```
 
 > Fact: Khi hỏi về các câu hỏi DP, interviewer họ đánh giá rất cao nếu ae diễn giải cho họ lần lượt
