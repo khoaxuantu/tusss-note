@@ -2,8 +2,8 @@
 unlisted: true
 title: DOM Tree
 date: 2023-09-03
-include:
-  - components/block/note
+stylesheets:
+  - /styles/articles/block.css
 prev_article:
   path: /js/browser/browser-environment
   title: Browser Environment Specifications
@@ -78,30 +78,33 @@ As an example, if the HTML file is the single word `"Hello"`, the browser will w
 </html>
 ```
 
-[block.note]
-  An interesting "special case" is tables. by DOM specification they must have `<tbody>` tag, but HTML
-  text may omit it. Then the browser creates `<tbody>` in the DOM automatically
+<div class="note">
 
-  ```html
-  <table id="table">
+An interesting "special case" is tables. by DOM specification they must have `<tbody>` tag, but HTML
+text may omit it. Then the browser creates `<tbody>` in the DOM automatically
+
+```html
+<table id="table">
+  <tr>
+    <td>1</td>
+  </tr>
+</table>
+```
+
+```html
+<table>
+  |---
+  <tbody>
+    | |---
     <tr>
-      <td>1</td>
+      | | |---
+      <td>| | | |--- text "1"</td>
     </tr>
-  </table>
-  ```
+  </tbody>
+</table>
+```
 
-  ```html
-  <table>
-    |---
-    <tbody>
-      | |---
-      <tr>
-        | | |---
-        <td>| | | |--- text "1"</td>
-      </tr>
-    </tbody>
-  </table>
-  ```
+</div>
 
 ## Other node types
 

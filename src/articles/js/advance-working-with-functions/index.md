@@ -2,8 +2,8 @@
 unlisted: true
 title: Advance Working with Functions
 date: 2023-06-16
-include:
-  - components/block/note
+stylesheets:
+  - /styles/articles/block.css
 prev_article:
   path: /js/objects
   title: Objects
@@ -22,8 +22,9 @@ next_article:
 function f(...args) {} // args is the name of the array -> parameters array
 ```
 
-[block.note]
+<div class="note">
   The rest parameters must be at the end
+</div>
 
 - The `arguments` variable
 
@@ -39,8 +40,9 @@ f(1, 2); // Show 1, 2
 f(1); // Show 1, undefined (no second argument)
 ```
 
-[block.note]
-  Arrow functions do not have `arguments`
+<div class="note">
+Arrow functions do not have `arguments`
+</div>
 
 - Spread syntax
 
@@ -53,9 +55,10 @@ Math.max(...arr, ...arr1); // 4
 Math.max(...arr, 5, ...arr1, 6); // 6
 ```
 
-[block.note]
-  The spread syntax internally uses iterators to gather elements,
-  the same way as `for...of` does. So it can be used with any iterable.
+<div class="note">
+The spread syntax internally uses iterators to gather elements,
+the same way as `for...of` does. So it can be used with any iterable.
+</div>
 
 - Copy an array/object
 
@@ -105,8 +108,9 @@ function sayHi() {
 }
 ```
 
-[block.note]
-  Declarations are hoisted, but assignments are not
+<div class="note">
+Declarations are hoisted, but assignments are not
+</div>
 
 - IIFE\
   In the past, as there was only `var`, and it has no block-level

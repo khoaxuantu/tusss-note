@@ -2,8 +2,8 @@
 unlisted: true
 title: Prototypes, inheritances
 date: 2023-06-16
-include:
-  - components/block/note
+stylesheets:
+  - /styles/articles/block.css
 prev_article:
   path: /js/functions
   title: Advanced working with functions
@@ -33,8 +33,9 @@ console.log(rabbit.eats); // true
 console.log(rabbit.jumps); // true
 ```
 
-[block.note]
+<div class="note">
   The `__proto__` must be an object or null
+</div>
 
 ## F.prototype
 
@@ -80,8 +81,9 @@ console.log(obj.toString === obj.__proto__.toString); // true
 console.log(obj.toString === Object.prototype.toString); // true
 ```
 
-[block.note]
-  There is no more `[[Prototype]]` in the chain above `Object.prototype`
+<div class="note">
+There is no more `[[Prototype]]` in the chain above `Object.prototype`
+</div>
 
 - Other built-in prototypes
 

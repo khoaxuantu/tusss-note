@@ -2,8 +2,8 @@
 unlisted: true
 title: Promises
 date: 2023-06-16
-include:
-  - components/block/note
+stylesheets:
+  - /styles/articles/block.css
 prev_article:
   path: /js/errors-handling
   title: Errors Handling
@@ -189,9 +189,10 @@ these internal properties
 - `result` - initially `undefined`, then changes to `value` when
   `resolve(value)` is called or `error` when `reject(error)` is called.
 
-[block.note]
+<div class="note">
   Only the first call of `resolve/reject` is taken into account.
   Further calls are ignored.
+</div>
 
 ### Consumers: then, catch
 
@@ -204,7 +205,7 @@ promise.then(
   },
   function (error) {
     /* handle an error */
-  }
+  },
 );
 ```
 
@@ -330,15 +331,17 @@ Promise.all([
 ]).then(alert); // 1,2,3 when promises are ready
 ```
 
-[block.note]
-  If one promise rejects, `Promise.all` immediately rejects,
-  completely forgetting about the other ones in the list. Their result
-  are ignored.
+<div class="note">
+If one promise rejects, `Promise.all` immediately rejects,
+completely forgetting about the other ones in the list. Their result
+are ignored.
+</div>
 
 ### Promise.allSettled
 
-[block.note]
-  This is a recent addition to the language. Old browsers may need polyfills.
+<div class="note">
+This is a recent addition to the language. Old browsers may need polyfills.
+</div>
 
 For example, we'd like to fetch the information about multiple users.
 Even if one request fails, we're still interested in the others.
@@ -534,10 +537,11 @@ f = promisify(f, true);
 f(...).then(arrayOfResults => ..., err => ...);
 ```
 
-[block.note]
-  There are also modules with a bit more flexible promisification
-  functions, e.g. [es6.promisify](https://github.com/digitaldesignlabs/es6-promisify).
-  In Node.js, there's a built-in `util.promisify` function for that.
+<div class="note">
+There are also modules with a bit more flexible promisification
+functions, e.g. [es6.promisify](https://github.com/digitaldesignlabs/es6-promisify).
+In Node.js, there's a built-in `util.promisify` function for that.
+</div>
 
 ## Microtasks
 

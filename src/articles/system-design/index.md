@@ -3,8 +3,8 @@ title: System Design | Lời mở đầu
 title_template: Tusss Notes | %s
 description: Cho những con người có định hướng đào sâu về mảng Backend và có thể mở rộng ra DevOps sau này 💀
 date: 2023-04-15
-include:
-  - components/block/note
+stylesheets:
+  - /styles/articles/block.css
 next_article:
   path: /system-design/interview
   title: System Design Interview
@@ -12,8 +12,9 @@ next_article:
 
 # Lời Mở Đầu
 
-[block.note]
+<div class="note">
 Tôi vẫn đang trong tiến trình học system design nên vẫn chưa có đầy đủ các notes nhé.
+</div>
 
 Cho những con người có định hướng đào sâu về mảng Backend và có thể mở rộng ra DevOps sau này 💀
 

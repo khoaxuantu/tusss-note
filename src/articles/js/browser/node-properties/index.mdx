@@ -2,8 +2,8 @@
 unlisted: true
 title: Node Properties
 date: 2023-09-03
-include:
-  - components/block/note
+stylesheets:
+  - /styles/articles/block.css
 prev_article:
   path: /js/browser/walking-the-dom
   title: Walking the DOM
@@ -32,13 +32,14 @@ and other DOM nodes inherit from it.
   title="DOM node classes"
 />
 
-[block.note]
+<div class="note">
   To see the DOM node class name, we can recall that an object ususally has the `constructor` property.
   It references the class constructor, and `constructor.name` is its name:
 
   ```js
   alert(document.body.constructor.name); // HTMLBodyElement
   ```
+</div>
 
 ## The "nodeType" property
 
@@ -112,7 +113,7 @@ itself.
 </script>
 ```
 
-[block.note]
+<div class="note">
   Unlike `innerHTML`, writing to `outerHTML` does not change the element. Instead, it replaces it in the
   DOM
 
@@ -135,6 +136,7 @@ itself.
   - `div` was removed from the document.
   - Another piece of HTML `<p>A new element</p>` was inserted in its place.
   - `div` still has its old value. The new HTML wasn't saved to any variable.
+</div>
 
 ## nodeValue/data: text node content
 
