@@ -1,0 +1,27 @@
+---
+import LayoutArticle from "@/layouts/article.astro";
+import type { GetStaticPaths } from "astro";
+import { getCollection, getEntry, render } from "astro:content";
+
+type Props = Parameters<typeof LayoutArticle>[0];
+
+export const getStaticPaths = (async () => {
+  const articles = await getCollection("articles.dsa");
+  return articles.map((article) => ({ params: { id: article.id } }));
+}) satisfies GetStaticPaths;
+
+const { id } = Astro.params;
+
+const article = await getEntry("articles.dsa", id);
+if (!article) return Astro.redirect("/404");
+
+const { Content, remarkPluginFrontmatter, headings } = await render(article);
+---
+
+<LayoutArticle
+  {...Astro.props}
+  frontmatter={{ ...Astro.props.frontmatter, ...remarkPluginFrontmatter, catalog_id: "dsa" }}
+  headings={headings}
+>
+  <Content />
+</LayoutArticle>

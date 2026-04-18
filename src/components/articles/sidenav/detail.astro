@@ -1,0 +1,22 @@
+---
+import type { SidenavItemProps } from "./types";
+
+interface Props {
+  open?: boolean;
+  summary: string;
+  items: SidenavItemProps[];
+}
+
+const { open, summary, items } = Astro.props;
+---
+
+<details open={open}>
+  <summary>{summary}</summary>
+  <nav>
+    {
+      items.map((item) => {
+        return <a href={item.href}>{item.label}</a>;
+      })
+    }
+  </nav>
+</details>

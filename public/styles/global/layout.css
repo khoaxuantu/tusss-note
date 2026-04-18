@@ -1,0 +1,110 @@
+/* all reset/normalization you need */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --z-index-0: 0;
+  --z-index-1: 10;
+  --z-index-2: 20;
+  --z-index-3: 30;
+  --z-index-4: 40;
+  --z-index-5: 50;
+  --z-index-max: 9999;
+}
+
+/* page layout */
+body {
+  margin: 0;
+
+  > header nav {
+    padding: 0 1rem;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+      padding: 1em 0;
+    }
+  }
+
+  /* Style for subheader */
+  section.subheader {
+    padding: 0 1rem;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-index-5);
+    background-color: inherit;
+    background-color: var(--md-sys-color-surface-container-highest);
+    color: var(--md-sys-color-on-surface);
+  }
+
+  > main {
+    margin-top: 4rem;
+    padding: 0 1rem;
+
+    /* content area: hero and sections */
+    article {
+      max-width: 40rem;
+      width: 100%;
+      margin: 0 auto;
+
+      > header {
+        margin-bottom: 2rem;
+      }
+
+      > footer {
+        margin-top: 4rem;
+      }
+    }
+  }
+
+  /* global footer */
+  > footer {
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+    justify-content: space-between;
+    margin-top: 6rem;
+    padding: 1rem 2rem;
+    display: flex;
+
+    /* social icons */
+    > :last-child {
+      display: flex;
+      gap: 0.5em;
+      a:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    scroll-margin-top: 1rem;
+  }
+}
+
+[popover] {
+  z-index: var(--z-index-max);
+
+  &::backdrop {
+    z-index: calc(var(--z-index-max) - 1);
+    background-color: rgba(0, 0, 0, 0.333);
+    backdrop-filter: blur(4px);
+  }
+}
+
+@media (min-width: 576px) {
+  body {
+    > main {
+      article {
+        > p,
+        > ul li {
+          font-size: 17.2px;
+        }
+      }
+    }
+  }
+}

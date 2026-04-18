@@ -1,0 +1,104 @@
+li {
+  margin-bottom: 1em;
+}
+
+/* syntax highligted code */
+pre {
+  position: relative;
+
+  code {
+    background-color: inherit;
+    color: inherit;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: small;
+  }
+
+  &[data-language="ts"]::before {
+    content: "TS";
+  }
+  &[data-language="js"]::before {
+    content: "JS";
+  }
+  &[data-language="cpp"]::before {
+    content: "C++";
+  }
+  &[data-language="c"]::before {
+    content: "C";
+  }
+  &[data-language="java"]::before {
+    content: "Java";
+  }
+  &[data-language="py"]::before,
+  &[data-language="python"]::before {
+    content: "Python";
+  }
+}
+
+/* images and code blocks */
+img,
+pre {
+  border-radius: 8px;
+}
+
+pre {
+  padding: 1rem;
+}
+
+figure {
+  text-align: center;
+
+  figcaption {
+    font-style: italic;
+    text-align: center;
+  }
+}
+
+code {
+  padding: 0.2em 0.4em;
+  line-break: anywhere;
+  display: inline-block;
+  line-height: 1.35;
+  font-size: 13px;
+  border-radius: 4px;
+}
+
+img {
+  width: unset;
+  max-width: 100%;
+}
+
+table {
+  padding: 1rem 0;
+  display: block;
+  overflow: auto;
+
+  caption {
+    font-style: italic;
+  }
+}
+
+th,
+td {
+  padding: 6px 13px;
+  border: 1px solid var(--md-sys-color-outline);
+}
+
+dl {
+  > dt {
+    font-weight: bold;
+  }
+
+  > dd {
+    margin-inline-start: 0;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    margin: 0;
+  }
+}

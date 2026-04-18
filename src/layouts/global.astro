@@ -1,0 +1,65 @@
+---
+import ButtonGoTop from "@/components/global/buttons/go-top.astro";
+import Footer from "@/components/global/footer.astro";
+import Navbar from "@/components/global/navbar.astro";
+import { Tusss } from "@/configs";
+import type { MarkdownLayoutProps } from "astro";
+import { ClientRouter } from "astro:transitions";
+
+type Props = MarkdownLayoutProps<{
+  title?: string;
+  description?: string;
+  language?: string;
+  og?: {
+    site_name?: string;
+    type?: "website" | "article";
+    image?: string;
+  };
+  stylesheets?: string[];
+}>;
+
+const { frontmatter } = Astro.props;
+---
+
+<html class="light">
+  <head>
+    <ClientRouter />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+    <link rel="canonical" href={frontmatter.url || Tusss.site.url} />
+    <meta property="og:site_name" content={frontmatter.og?.site_name || Tusss.site.name} />
+    <meta property="og:type" content={frontmatter.og?.type || "article"} />
+    <meta property="og:locale" content={frontmatter.language || "vi"} />
+    <meta property="og:url" content={frontmatter.url || Tusss.site.url} />
+    <meta property="og:title" content={frontmatter.title || Tusss.site.title} />
+    <meta property="og:description" content={frontmatter.description || Tusss.site.description} />
+    <meta property="og:image" content={frontmatter.og?.image || Tusss.site.ogImage} />
+    <meta property="article:author" content={Tusss.author} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={frontmatter.title || Tusss.site.title} />
+    <meta name="twitter:description" content={frontmatter.description || Tusss.site.description} />
+    <meta name="twitter:image" content={frontmatter.og?.image || Tusss.site.ogImage} />
+    <title>{frontmatter.title || Tusss.site.title}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/global/layout.css" />
+    <link rel="stylesheet" href="/styles/global/theme.css" />
+    <link rel="stylesheet" href="/styles/global/components.css" />
+    <link rel="stylesheet" href="/styles/global/typography.css" />
+    <link rel="stylesheet" href="/styles/global/motion.css" />
+    {frontmatter.stylesheets?.map((stylesheet) => <link rel="stylesheet" href={stylesheet} />)}
+
+    <slot name="head" />
+  </head>
+  <body>
+    <header>
+      <Navbar />
+    </header>
+
+    <slot />
+
+    <Footer />
+    <ButtonGoTop />
+  </body>
+</html>

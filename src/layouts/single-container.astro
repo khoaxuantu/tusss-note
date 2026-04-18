@@ -1,0 +1,16 @@
+---
+import LayoutGlobal from "./global.astro";
+
+type GlobalLayoutProps = Parameters<typeof LayoutGlobal>[0];
+type Props = GlobalLayoutProps;
+---
+
+<LayoutGlobal {...Astro.props}>
+  <slot name="head" />
+
+  <main>
+    <article>
+      <slot />
+    </article>
+  </main>
+</LayoutGlobal>

@@ -1,0 +1,28 @@
+---
+interface Props {
+  src: string;
+  alt?: string;
+  title?: string;
+}
+
+const { src, alt, title } = Astro.props;
+---
+
+<figure>
+  <img src={src} alt={alt} title={`${title} (Click to zoom in/out)`} loading="lazy" />
+  <figcaption>{title}</figcaption>
+</figure>
+
+<link rel="stylesheet" href="/styles/articles/image.css" />
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const figures = document.getElementsByTagName("figure");
+
+    for (const figure of figures) {
+      figure.onclick = () => {
+        figure.classList.toggle("zoom");
+      };
+    }
+  });
+</script>

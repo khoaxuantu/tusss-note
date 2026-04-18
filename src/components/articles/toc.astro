@@ -1,0 +1,44 @@
+---
+import type { MarkdownHeading } from "astro";
+
+type Props = {
+  data: MarkdownHeading[];
+};
+
+const { data } = Astro.props;
+
+const headings = data.filter((heading) => heading.depth > 1 && heading.depth <= 3);
+const blocks: MarkdownHeading[][] = [];
+
+for (const heading of headings) {
+  if (heading.depth == 2) {
+    blocks.push([heading]);
+    continue;
+  }
+
+  const lastBlock = blocks.at(-1);
+  if (!lastBlock) blocks.push([heading]);
+  else lastBlock.push(heading);
+}
+---
+
+<h3>On this page</h3>
+{
+  blocks.map((block) => {
+    return (
+      <nav>
+        {block.map((heading) => {
+          const { depth, slug, text } = heading;
+          if (depth == 2) {
+            return (
+              <a href={`#${slug}`}>
+                <strong>{text}</strong>
+              </a>
+            );
+          }
+          return <a href={`#${slug}`}>{text}</a>;
+        })}
+      </nav>
+    );
+  })
+}

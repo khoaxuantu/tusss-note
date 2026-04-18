@@ -1,0 +1,16 @@
+---
+import { Content, frontmatter, getHeadings } from "@/articles/oop/index.md";
+import LayoutArticle from "@/layouts/article.astro";
+
+type Props = Parameters<typeof LayoutArticle>[0];
+
+const headings = getHeadings();
+---
+
+<LayoutArticle
+  {...Astro.props}
+  frontmatter={{ ...Astro.props.frontmatter, ...frontmatter, catalog_id: "oop" }}
+  headings={headings}
+>
+  <Content />
+</LayoutArticle>

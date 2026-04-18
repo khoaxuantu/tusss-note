@@ -1,0 +1,117 @@
+#sidebar,
+#toc {
+  max-height: calc(100dvh - 7rem);
+  overflow: auto;
+  border: none;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    padding-right: 0.5rem;
+  }
+
+  summary {
+    cursor: pointer;
+  }
+
+  a,
+  summary {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: padding-left 150ms;
+
+    &:hover {
+      background-color: var(--md-sys-color-secondary-container);
+      color: var(--md-sys-color-on-secondary-container);
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}
+
+#sidebar {
+  a,
+  summary {
+    &:hover {
+      padding-left: 1rem;
+    }
+  }
+
+  a {
+    display: block;
+  }
+
+  details {
+    nav {
+      padding-left: 1rem;
+      padding-top: 0.5rem;
+    }
+
+    &::details-content {
+      opacity: 0;
+      border-radius: 16px;
+      transition: all 400ms ease-in-out;
+    }
+
+    &[open]::details-content {
+      opacity: 1;
+    }
+
+    summary {
+      display: block;
+
+      &::after {
+        content: " +";
+      }
+    }
+
+    &[open] summary::after {
+      content: " -";
+    }
+  }
+}
+
+#toc {
+  a:not(:has(strong)) {
+    padding-left: 1rem;
+  }
+}
+
+#mobile {
+  #sidebar {
+    width: 100dvw;
+    max-width: 425px;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0 1rem 1rem 1rem;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+
+    button[popovertargetaction="hide"] {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 24px;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  button[popovertargetaction="show"] {
+    padding: 1rem 0;
+    background: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--md-sys-color-on-surface);
+    width: 100%;
+
+    &::before {
+      content: url(https://ik.imagekit.io/tuslipid/icons/menu-light.svg);
+      line-height: 1;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

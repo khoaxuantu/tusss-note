@@ -1,0 +1,87 @@
+---
+import FooterNav from "@/components/articles/footer-nav.astro";
+import SidebarMobile from "@/components/articles/sidebar-mobile/index.astro";
+import { SidenavPropsBuilder } from "@/components/articles/sidenav/helpers";
+import Sidenav from "@/components/articles/sidenav/index.astro";
+import type { SidenavProps } from "@/components/articles/sidenav/types";
+import Toc from "@/components/articles/toc.astro";
+import ButtonTheme from "@/components/global/buttons/theme.astro";
+import type { MarkdownLayoutProps } from "astro";
+import { getEntry } from "astro:content";
+import LayoutGlobal from "./global.astro";
+
+type GlobalLayoutProps = Parameters<typeof LayoutGlobal>[0];
+type Props = GlobalLayoutProps &
+  MarkdownLayoutProps<{
+    date?: string;
+    catalog_id?: string;
+    prev_article?: { path: string; title: string };
+    next_article?: { path: string; title: string };
+  }>;
+
+const date = Astro.props.frontmatter.date ? new Date(Astro.props.frontmatter.date) : new Date();
+const dateStr = date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+const frontmatter = { ...Astro.props.frontmatter, date: dateStr };
+const headings = Astro.props.headings;
+
+const manifest = await getEntry("topic.manifest", Astro.props.frontmatter.catalog_id || "");
+let sidenavProps: SidenavProps | undefined;
+if (manifest) {
+  sidenavProps = new SidenavPropsBuilder(manifest.data.catalog).build().product;
+}
+---
+
+<LayoutGlobal {...Astro.props} frontmatter={frontmatter}>
+  <Fragment slot={"head"}>
+    <link rel="stylesheet" href="/styles/articles/layout.css" />
+    <link rel="stylesheet" href="/styles/articles/aside.css" />
+    <link rel="stylesheet" href="/styles/articles/content.css" />
+  </Fragment>
+
+  {
+    !!sidenavProps && (
+      <section class="subheader">
+        <SidebarMobile title={frontmatter.title || ""} sidenavProps={sidenavProps} />
+      </section>
+    )
+  }
+
+  <main>
+    {
+      !!sidenavProps && (
+        <aside id="sidebar">
+          <Sidenav {...sidenavProps} />
+        </aside>
+      )
+    }
+    <article>
+      <section class="pagehead">
+        <ButtonTheme />
+        <br />
+        <br />
+        <i>
+          <time datetime={date.toISOString()}>{dateStr}</time>
+        </i>
+      </section>
+      <slot />
+      {
+        (frontmatter.prev_article || frontmatter.next_article) && (
+          <footer>
+            <FooterNav prev={frontmatter.prev_article} next={frontmatter.next_article} />
+          </footer>
+        )
+      }
+    </article>
+    {
+      !!headings?.length && headings.length > 1 && (
+        <aside id="toc">
+          <Toc data={headings} />
+        </aside>
+      )
+    }
+  </main>
+</LayoutGlobal>
