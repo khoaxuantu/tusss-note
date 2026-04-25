@@ -15,3 +15,10 @@ catalog:
     Sequencer: /system-design/sequencer
     Distributed Monitoring: /system-design/distributed-monitoring
     Distributed Cache: /system-design/distributed-cache
+  Samples:
+    Design a Photo Gallery Service:
+      Introduction: /system-design/samples/photo-gallery
+      Requirement specifications: /system-design/samples/photo-gallery/requirements
+      High-level design components: /system-design/samples/photo-gallery/high-level-designs
+      Data model & API designs: /system-design/samples/photo-gallery/api-designs
+      Photo processing designs: /system-design/samples/photo-gallery/photo-processing

@@ -1,4 +1,5 @@
 ---
+import { Tusss } from "@/configs";
 import LayoutArticle from "@/layouts/article.astro";
 import type { GetStaticPaths } from "astro";
 import { getCollection, getEntry, render } from "astro:content";
@@ -16,6 +17,11 @@ const article = await getEntry("articles.system-design", id);
 if (!article) return Astro.redirect("/404");
 
 const { Content, remarkPluginFrontmatter, headings } = await render(article);
+
+if (!remarkPluginFrontmatter.title?.includes("System Designs")) {
+  remarkPluginFrontmatter.title = `System Designs | ${remarkPluginFrontmatter.title}`;
+}
+remarkPluginFrontmatter.url = `${Tusss.site.url}/system-design/${id}`;
 ---
 
 <LayoutArticle

@@ -1,0 +1,279 @@
+---
+title: GDG Hanoi photo gallery | Data model & API designs
+date: 2026-04-18
+id: api-designs
+prev_article:
+  path: /system-design/samples/photo-gallery/high-level-designs
+  title: High-level design components
+next_article:
+  path: /system-design/samples/photo-gallery/photo-processing
+  title: Photo processing designs
+stylesheets:
+  - /styles/articles/block.css
+language: en
+---
+
+import Image from "@/components/articles/image.astro";
+
+##### _GDG Hanoi photo gallery_
+
+# Data model & API designs
+
+<div class="note">
+
+This post is a part of a series of posts about my design process for a photo gallery service for
+GDG Hanoi. You can find the introduction post here: [Introduction](/system-design/samples/photo-gallery).
+
+</div>
+
+## Overview
+
+The data flow plays an essential role in forming the bonding structure between components of the
+service.
+
+The diagrams below illustrate the photo entity's journey in uploading, deleting and reading
+operations.
+
+### Uploading
+
+<Image
+  src="https://ik.imagekit.io/tuslipid/system-designs/samples/photo-gallery/data-designs-upload.webp"
+  alt="Photo gallery data flow - upload operation"
+  title="Photo gallery data flow - upload operation"
+/>
+
+### Deleting
+
+<Image
+  src="https://ik.imagekit.io/tuslipid/system-designs/samples/photo-gallery/data-designs-delete.webp"
+  alt="Photo gallery data flow - delete operation"
+  title="Photo gallery data flow - delete operation"
+/>
+
+### Reading
+
+<Image
+  src="https://ik.imagekit.io/tuslipid/system-designs/samples/photo-gallery/data-designs-read.webp"
+  alt="Photo gallery data flow - read operation"
+  title="Photo gallery data flow - read operation"
+/>
+
+## Responsive image data
+
+Before diving into the data model, I will briefly introduce how I ultilize responsive images on a
+browser.
+
+Because the gallery is designed to serve many images while each image comes with different rendered
+sizes depending on the screen breakpoints, I decide to use responsive images with resolution
+switching technique (using HTML `<img>`'s `srcset` and `sizes` attributes).
+
+An example HTML code for this technique is as follows:
+
+```html
+<img
+  alt="Alt description"
+  decoding="async"
+  loading="lazy"
+  sizes="34vw"
+  srcset="
+    /galleries/2026/bwai/sample.gdghanoi.320.webp   320w,
+    /galleries/2026/bwai/sample.gdghanoi.512.webp   512w,
+    /galleries/2026/bwai/sample.gdghanoi.768.webp   768w,
+    /galleries/2026/bwai/sample.gdghanoi.1024.webp 1024w,
+    /galleries/2026/bwai/sample.gdghanoi.1280.webp 1280w,
+    /galleries/2026/bwai/sample.gdghanoi.1600.webp 1600w,
+    /galleries/2026/bwai/sample.gdghanoi.2048.webp 2048w,
+    /galleries/2026/bwai/sample.gdghanoi.2560.webp 2560w
+  "
+  src="/galleries/2026/bwai/sample.gdghanoi.webp"
+/>
+```
+
+<div class="note">
+
+For people who may not familiar with this concept, responsive images with resolution switching are
+images that help you to solve the problem:
+
+_**How to tell the browser to only load the images that provide "just enough" size & quality for the
+user's device and network condition, not too big or not too small?**_
+
+Imagine on a mobile device with only 360px viewport width, there is no reason to load the image
+with 2560px width. Right?
+
+You can learn more about the responsive images at
+[MDN's guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images).
+
+</div>
+
+## Schema
+
+Up to this point, I can list the factors that influence the photo entity data:
+
+- The gallery layout needs photos' aspect ratio, width, and height to properly display them.
+- The responsive images need a list of sources and their metadata (width and height) to construct
+  the `srcset`.
+- The infinite scroll pagination needs a timestamp data to perform the traversal.
+- The page-based pagination needs a manual page attribute due to Firestore's limitation to perform
+  documents query by page.
+- The photo entity need:
+  - An event code attribute to perform query by a GDG Hanoi's event.
+  - A base source URL to assign to the `src` attribute of the image element.
+
+Based on the factors, I will design the schema via the table below:
+
+| Fields         | Data types | Descriptions                     |
+| -------------- | ---------- | -------------------------------- |
+| src            | string     | A base source URL                |
+| w              | int        | Photo's natural width in pixels  |
+| h              | int        | Photo's natural height in pixels |
+| ts             | int        | Unix timestamp of photo upload   |
+| page           | int        | Page number                      |
+| code           | string     | GDG Hanoi's event code           |
+| srcsets        | array      | List of srcset images            |
+| srcsets.[].w   | int        | Width of a srcset image          |
+| srcsets.[].h   | int        | Height of a srcset image         |
+| srcsets.[].url | string     | URL of a srcset image            |
+
+## Key naming convention
+
+On the blob storage side, to look up the source URLs and the files themselves easily, I come up
+with the following convention:
+
+```yaml
+galleries/{year}/{event_code}/{photo_id}{?size_enum}.{ext}
+```
+
+Where:
+
+- `year`: is the 4-digit year of the event
+- `event_code`: is the event code, which is a short string that represents the event
+- `photo_id`: is the photo id, which is a unique identifier for the photo
+- `size_enum`: is the size enum, which is a string that represents the size of the photo
+- `ext`: is the file extension
+
+Here is a typical example of a photo entity:
+
+```yaml
+Original key: galleries/2026/bwai/abcxyz.png
+Resized keys:
+  - galleries/2026/bwai/abcxyz.gdghanoi.webp
+  - galleries/2026/bwai/abcxyz.gdghanoi.320.webp
+  - galleries/2026/bwai/abcxyz.gdghanoi.512.webp
+  - galleries/2026/bwai/abcxyz.gdghanoi.768.webp
+  - galleries/2026/bwai/abcxyz.gdghanoi.1024.webp
+  - galleries/2026/bwai/abcxyz.gdghanoi.1280.webp
+  - galleries/2026/bwai/abcxyz.gdghanoi.1600.webp
+  - galleries/2026/bwai/abcxyz.gdghanoi.2048.webp
+  - galleries/2026/bwai/abcxyz.gdghanoi.2560.webp
+```
+
+## API
+
+There are 4 major operations for the gallery service, I will design an API specification for each
+of them:
+
+- Uploading photos
+- Deleting photos
+- Listing photos by a cursor timestamp
+- Listing photos by a page number
+
+<div class="note">
+
+The API implementation may be varied depending on the communication protocol between frameworks.
+Thus, in this section, I conveniently describe the specifications by a consistent language, which is
+Porotocol Buffers.
+
+</div>
+
+### Uploading photos
+
+This API is used on the
+[uploader frontend component][link.high_level.uploader],
+in which the admin can upload photos directly to the cloud storage with presigned URLs that follow
+the object key naming convention described earlier.
+
+```proto
+edition = "2023";
+
+message UploadRequest {
+  repeated bytes files = 1;
+}
+
+message UploadResponse {
+  bool ok = 1;
+}
+```
+
+### Deleting photos
+
+This API is used on the [uploader frontend component][link.high_level.uploader],
+in which the admin can delete photos from the service.
+
+It takes the object original key to perform the delete operation of
+
+```proto
+edition = "2023";
+
+message DeleteRequest {
+  string key = 1;
+}
+
+message DeleteResponse {
+  bool ok = 1;
+}
+```
+
+### Listing photos by a cursor timestamp
+
+This API is used on the [gallery frontend component][link.high_level.fe], in which the gallery is
+rendered as infinite-scroll mode.
+
+It takes a cursor timestamp as the input, and returns a list of photos ordered by the timestamp in
+descending order. If the cursor is omitted, it fallbacks to the pre-defined latest timestamp and
+retrieves the first chunk of photos.
+
+Beside the photos list, it also returns the next cursor timestamp to be used for the next query.
+
+```proto
+edition = "2023";
+
+message Image {
+  ...
+}
+
+message ListRequest {
+  int64 cursor = 1;
+}
+
+message ListResponse {
+  repeated Image records = 1;
+  int64 next = 2 [default = -1];
+}
+```
+
+### Listing photos by a page number
+
+This API is used on the [gallery frontend component][link.high_level.fe], in which the gallery is
+rendered as page-based mode.
+
+Because the page is set statically into a photo document in the database, this API only takes the
+page number as the input, and returns a list of photos containing the given page number.
+
+```proto
+edition = "2023";
+
+message Image {
+  ...
+}
+
+message ListRequest {
+  int64 page = 1;
+}
+
+message ListResponse {
+  repeated Image records = 1;
+}
+```
+
+[link.high_level.fe]: /system-design/samples/photo-gallery/high-level-designs#gallery-backend--frontend
+[link.high_level.uploader]: /system-design/samples/photo-gallery/high-level-designs#uploader-frontend

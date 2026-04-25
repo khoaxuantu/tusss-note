@@ -37,6 +37,12 @@ pre {
   &[data-language="python"]::before {
     content: "Python";
   }
+  &[data-language="proto"]::before {
+    content: "Proto";
+  }
+  &[data-language="yaml"]::before {
+    content: "YAML";
+  }
 }
 
 /* images and code blocks */

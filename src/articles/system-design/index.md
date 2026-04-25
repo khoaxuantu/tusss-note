@@ -47,7 +47,7 @@ Ta thiết kế hệ thống nhằm đảm bảo các yếu tố chính về đ�
   - [Content Delivery Network (CDN)](/system-design/cdn)
   - [Sequencer](/system-design/sequencer)
   - [Distributed Monitoring](/system-design/distributed-monitoring)
-  - [Distributed Cache](app/system-design/distributed-cache)
+  - [Distributed Cache](/system-design/distributed-cache)
   - Distributed Messesing Queue
   - Pub-sub
   - [Rate Limiter](/system-design/rate-limiter)
@@ -58,6 +58,7 @@ Ta thiết kế hệ thống nhằm đảm bảo các yếu tố chính về đ�
   - Sharded Counter
   - Spectacular Failures
 - Sample designs:
+  - [Design a photo gallery service](/system-design/samples/photo-gallery)
   - Design Youtube
   - Design Quora
   - Design Google Maps
