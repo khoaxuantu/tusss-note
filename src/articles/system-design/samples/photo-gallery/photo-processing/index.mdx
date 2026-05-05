@@ -1,0 +1,237 @@
+---
+title: GDG Hanoi photo gallery | Photo processing designs
+date: 2026-05-01
+id: photo-processing-designs
+prev_article:
+  path: /system-design/samples/photo-gallery/api-designs
+  title: Data model & API designs
+stylesheets:
+  - /styles/articles/block.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css
+language: en
+---
+
+import Image from "@/components/articles/image.astro";
+
+##### _GDG Hanoi photo gallery_
+
+# Photo processing designs
+
+<div class="note">
+
+This post is a part of a series of posts about my design process for a photo gallery service for
+GDG Hanoi. You can find the introduction post here: [Introduction](/system-design/samples/photo-gallery).
+
+</div>
+
+This is the critical component of our gallery service, which peform write operations for a photo
+entity to the gallery's database and storage. It is the only component I had to build from scratch.
+
+In this post, I would like to share how I design to implement and build it.
+
+## Functionalities
+
+For triggering endpoint, the worker plays a role of a consumer in the system pub/sub pattern. Its
+source code provides a client that pull messages from the remote message queue and forward them to
+handler methods.
+
+For registering a photo entity, the worker has to:
+
+- Download the original photo from the upload storage bucket.
+- Resize the photo to various versions and formats.
+- Upload the resized copies back to the bucket.
+- Construct a photo entity record and insert it to the photo database.
+
+For deregistering a photo entity, it has to:
+
+- Extract the original object key and transform it to the corresponding derived object keys.
+- Delete all copies of the photo from the storage according to the derived object keys, as well as
+  the original one.
+- Remove the photo entity record from the database.
+
+## Implementation drafts
+
+### Sketch diagram
+
+<Image
+  src="https://ik.imagekit.io/tuslipid/system-designs/samples/photo-gallery/photo-process.webp"
+  alt="Photo processing diagram"
+  title="Photo processing diagram"
+/>
+
+### Programming language
+
+I choose [Golang](https://go.dev/), besides my interest in trying this programming language, it also
+provides many great utilities:
+
+- Performance in compute-intensive operations.
+- Small (optimized) memory footprint.
+- Concurrency friendly and simple to implement via its goroutines and channels.
+- Simple CLI tools and packages orchestration.
+- Strict data types and data safety builds.
+- Complete support of standard libraries, including file handling, logging, JSON data serialization,
+  etc.
+- Complete support of cloud client libraries.
+
+### Image processing library
+
+I choose [libvips](https://www.libvips.org/), which offers me low execution time and low memory
+usage for image operations.
+
+### Concurrency keynotes
+
+By choosing Golang, I would like to deprecate the whole concurrency channels orchestration to its
+goroutines on the application level.
+
+It's worth to mention here because libvips also offers its own concurrency model, so I
+have to keep it in mind to make sure the library not to multi-thread internally to prevent CPU
+thrashing.
+
+Another aspect that is significant to consider is managing the concurrencies in message pulling.
+We can utilize pulling message to multi-channel depending on the number of CPU threads that are
+available in the underlying compute instance.
+
+### Processing metrics estimation
+
+#### Memory consumption
+
+I will calculate the maximum memory consumption per execution task (concurrent goroutine)
+based on this formula:
+
+$$
+m_{perTask} = (m_{goRuntime} + m_{gcsBuffer} + m_{vipsOverhead}) * (1 + r_{safeBuffer})
+$$
+
+Where:
+
+- $m_{goRuntime}$: The memory required for Go runtime, assuming it is around 20MB.
+- $m_{gcsBuffer}$: The memory required for cloud storage client, assuming it is around 5MB.
+- $m_{vipsOverhead}$: The memory required for libvips overhead. By default, libvips use
+  [_Random Access_ mode](https://www.libvips.org/API/8.17/ctor.Image.new_from_file.html#:~:text=VIPS_ACCESS_RANDOM%20means%20you%20can%20fetch%20pixels%20randomly%20from%20the%20image.%20This%20is%20the%20default%20mode)
+  to open image. It means it may allocate the threshold memory (100MB by default) and load the image
+  into the memory when processing.
+- $r_{safeBuffer}$: The safe buffer ratio to account for unexpected memory usage. I choose
+  20% (0.2) for this.
+
+Therefore, the maximum memory consumption per execution task is:
+
+$(20 + 5 + 100) * (1 + 0.2) = 150 \text{(MB)}$
+
+Having the memory consuming estimation, I can sketch a table of memory estimation for the hosting
+machine:
+
+| Items                                     | Units    | Quantities |
+| ----------------------------------------- | -------- | ---------- |
+| RAM per concurrent goroutine              | MB       | 150        |
+| Max concurrent tasks per 8GBs pool        | tasks    | 53         |
+| Max concurrent tasks per 2GBs pool        | tasks    | 13         |
+| Concurrency assumption                    | channels | 16         |
+| RAM reservation by concurrency assumption | MB       | 2400       |
+
+#### Execution time
+
+I did an experiment to measure the execution time of a single task on my local machine (Intel(R) Core(TM) i7-14700F CPU @ 5.40GHz, 28 threads).
+
+```bash
+#!/bin/bash
+
+hyperfine -w 3 \
+	"time vipsthumbnail test.jpg -o test.webp -s 320" \
+	"time vipsthumbnail test.jpg -o test.webp -s 512" \
+	"time vipsthumbnail test.jpg -o test.webp -s 768" \
+	"time vipsthumbnail test.jpg -o test.webp -s 1024" \
+	"time vipsthumbnail test.jpg -o test.webp -s 1280" \
+	"time vipsthumbnail test.jpg -o test.webp -s 1600" \
+	"time vipsthumbnail test.jpg -o test.webp -s 2048" \
+	"time vipsthumbnail test.jpg -o test.webp -s 2560" \
+	"time vips webpsave test.jpg test.webp"
+```
+
+It gave me the following mean metrics:
+
+| Metrics                  | Values (approximately) |
+| ------------------------ | ---------------------- |
+| Photo size               | 6MB                    |
+| Resized photo total size | 2.417MB                |
+| Download time (235 Mbps) | 204ms                  |
+| Upload time (16 Mbps)    | 1209ms                 |
+| Resize time (320px)      | 150ms                  |
+| Resize time (512px)      | 175ms                  |
+| Resize time (768px)      | 240ms                  |
+| Resize time (1024px)     | 270ms                  |
+| Resize time (1280px)     | 360ms                  |
+| Resize time (1600px)     | 400ms                  |
+| Resize time (2048px)     | 430ms                  |
+| Resize time (2560px)     | 500ms                  |
+| Convert time (original)  | 850ms                  |
+| Total                    | 4788ms                 |
+
+## Deployment
+
+Following up the estimation, now I can make a decision on designing a runner capacity for the
+photo processing worker.
+
+As quoted from the [high-level design](/system-design/samples/photo-gallery/high-level-designs#what-ive-already-had),
+I consider deploying on Google Cloud services only. Up to this moment, there are two options
+that appear in my mind:
+
+- Deploying on GCE instances
+- Deploying on Cloud Run functions (formerly known as Cloud Functions)
+
+### Deploying on GCE instances
+
+The event day is usually one-day event, so it is fair enough to assume that we just need to keep
+the worker alive for 24 hours.
+
+Therefore, I can consider cherry picking a pretty high-end instance to host the worker.
+
+In the Build with AI Hanoi 2026 event day, I chose a c2d-standard-4 spot instance to deploy the
+worker. This instance features:
+
+- C2D machine series, which are best-suited for high performance computing.
+- 4 vCPUs that I can set up to 4 message polling channels concurrently.
+- 16GB RAM.
+- An AMD processor that is cheaper on average than Intel's CPUs.
+- AVX2 instruction set implementation that is robust enough for standard image processing tasks.
+- Around 4 USD for running on 24 hours as a spot instance.
+
+<div class="note">
+
+##### Why that much of RAM?
+
+1. There are a lot of GCP credits left.
+2. I want to try a hack that mounts the libvips' temporary directory to the RAM, so it can
+   boost up the performance rapidly when performing file handling tasks directly on memory instead
+   of disk.
+
+</div>
+
+For c2d-standard-4 instance, I can calculate the image throughput per hour as:
+
+$$
+t_{machine} = \frac{3600}{t_{oneTask} * c_{vCPU}} = \frac{3600}{4.788 * 4} \approx \text{188} \text{ photos/h}
+$$
+
+Where:
+
+- $t_{machine}$: The image throughput of a machine.
+- $t_{oneTask}$: Processing time of one task.
+- $c_{vCPU}$: The number of vCPUs of the machine.
+
+### Deploying on Cloud Run functions
+
+The GCE approach is not really a good fit for long-term runs due to its cost, especially
+applying to the current usage & traffic amount. Lol I'm still not that rich to throw money away easily
+-\_-.
+
+In the future, when the GCP credits are expired, I will consider moving to the Cloud Run functions,
+which only charges mostly on CPU time consumption. I'm not gonna confirm it's a dramatically
+cheaper choice, but it potentially is.
+
+By setting up the functions, I can utilize:
+
+- Easier automatic horizontal scaling.
+- Smaller capacity per instance, but it still can work well with Golang concurrency.
+
+At this time, I have not tried this approach in practices, so I won't give any more details about
+the technique specifications.

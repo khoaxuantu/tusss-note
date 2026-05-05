@@ -1,6 +1,6 @@
 ---
 title: GDG Hanoi photo gallery | High-level design components
-date: 2026-04-18
+date: 2026-04-20
 id: high-level-designs
 language: en
 prev_article:
@@ -118,8 +118,8 @@ I choose to use Google Cloud Firestore (Firebase Firestore). The reasons are:
     worry about the database scalability and availability.
 
 The only drawback that I can come up with is that Firestore does not support offset-based
-pagination, so I have to implement the schema more manually to support the paging mode properly.
-I will dive deeper into the schema in the next post.
+pagination query, so I have to implement the schema more manually to support the paging mode
+properly. I will dive deeper into the schema in the next post.
 
 ### Photo worker
 

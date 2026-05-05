@@ -10,9 +10,8 @@ next_article:
   path: /system-design/distributed-cache
   title: Distributed Cache
 date: 2025-02-19
-include:
-  - components/block/note
-  - components/image/able-to-zoom
+stylesheets:
+  - /styles/articles/block.css
 ---
 
 import Image from "@/components/articles/image.astro";
@@ -30,10 +29,11 @@ Bên cạnh đó, hệ thống cần phải có các giá trị threshold cài �
 <div className="note">
   Các cách tiếp cận thông thường để xử lý sự cố trong IT infra là gì?
 
-  1. Reactive approach: xử lý sau khi 1 sự cố xảy ra. Kể cả khi dev có hành động nhanh bao nhiêu đi chăng nữa, thì cách này vẫn phải chấp nhận việc hệ thống có 1 khoảng thời gian downtimes
-  2. Proactive approach: xử lý trước khi 1 sự cố xảy ra, ngăn chặn downtime. Cách tiếp cận này thực hiện dựa trên việc dự đoán lỗi hệ thống có thể xảy ra, và thực hiện các hành động tránh các lỗi đó
+1. Reactive approach: xử lý sau khi 1 sự cố xảy ra. Kể cả khi dev có hành động nhanh bao nhiêu đi chăng nữa, thì cách này vẫn phải chấp nhận việc hệ thống có 1 khoảng thời gian downtimes
+2. Proactive approach: xử lý trước khi 1 sự cố xảy ra, ngăn chặn downtime. Cách tiếp cận này thực hiện dựa trên việc dự đoán lỗi hệ thống có thể xảy ra, và thực hiện các hành động tránh các lỗi đó
 
-  Trong các services hiện đại, việc hoàn toàn tránh lỗi xảy ra là điều bất khả thi. Nên mục tiêu là tìm các vấn đề sẽ có thể xảy ra và thiết kế hệ thống sao cho sự cố ko ảnh hưởng tới end users.
+Trong các services hiện đại, việc hoàn toàn tránh lỗi xảy ra là điều bất khả thi. Nên mục tiêu là tìm các vấn đề sẽ có thể xảy ra và thiết kế hệ thống sao cho sự cố ko ảnh hưởng tới end users.
+
 </div>
 
 ### Metrics
@@ -82,9 +82,10 @@ Alerting bao gồm 2 components chính: điều kiện dựa trên metrics (thre
 <div className="note">
   Các cloud services đều cung cấp 1 trang riêng để cho thấy health status hiện tại của các services
 
-  - AWS: [https://health.aws.amazon.com/health/status](https://health.aws.amazon.com/health/status)
-  - Azure: [https://status.azure.com/en-us/status](https://status.azure.com/en-us/status)
-  - GCP: [https:/\/status.cloud.google.com/](https://status.cloud.google.com/)
+- AWS: [https://health.aws.amazon.com/health/status](https://health.aws.amazon.com/health/status)
+- Azure: [https://status.azure.com/en-us/status](https://status.azure.com/en-us/status)
+- GCP: [https:/\/status.cloud.google.com/](https://status.cloud.google.com/)
+
 </div>
 
 ### Building blocks
@@ -120,8 +121,9 @@ Sau đó, ta truyền các metrics được trích xuất tới data collector. 
 <div className="note">
   #### Hạn chế của push-based approach?
 
-  - Nếu mỗi microservice gửi metric trực tiếp tới hệ thống monitoring, thì chúng có thể gây workload rất cao
-  - Ở mỗi service, ta cũng phải cài đặt daemon riêng để gửi metrics tới hệ thống monitoring, tốn thêm nhiều công sức.
+- Nếu mỗi microservice gửi metric trực tiếp tới hệ thống monitoring, thì chúng có thể gây workload rất cao
+- Ở mỗi service, ta cũng phải cài đặt daemon riêng để gửi metrics tới hệ thống monitoring, tốn thêm nhiều công sức.
+
 </div>
 
 ### Querying service
@@ -213,13 +215,13 @@ Ta sẽ sử dụng HTTP header để gửi thông tin thích hợp tới collec
 
 Collector nên nằm ở endpoint khác với các service endpoint được monitor. Nhờ vậy mà nếu client request tới service bị failed, chúng có thể submit error report lên collector.
 
-| Faulty conditions                     | How to reach                                |
-| ------------------------------------- | ------------------------------------------- |
-| 1.2.3.4 unreachable                   | Different server IP                         |
-| Can't resolve example.com             | Different domain                            |
-| AS 1234 hijacked                      | Different ASN                               |
-| CDN available                         | Different/no CDN                            |
-| Last-mile problems                    | No readily available fall-back for the service|
+| Faulty conditions         | How to reach                                   |
+| ------------------------- | ---------------------------------------------- |
+| 1.2.3.4 unreachable       | Different server IP                            |
+| Can't resolve example.com | Different domain                               |
+| AS 1234 hijacked          | Different ASN                                  |
+| CDN available             | Different/no CDN                               |
+| Last-mile problems        | No readily available fall-back for the service |
 
 _Table: Reaching collectors under faulty conditions_
 
