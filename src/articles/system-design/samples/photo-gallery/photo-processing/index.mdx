@@ -24,23 +24,23 @@ GDG Hanoi. You can find the introduction post here: [Introduction](/system-desig
 
 </div>
 
-This is the critical component of our gallery service, which peform write operations for a photo
+This is the critical component of our gallery service, which peforms write operations for a photo
 entity to the gallery's database and storage. It is the only component I had to build from scratch.
 
-In this post, I would like to share how I design to implement and build it.
+In this post, I would like to share how I design and build it.
 
 ## Functionalities
 
-For triggering endpoint, the worker plays a role of a consumer in the system pub/sub pattern. Its
-source code provides a client that pull messages from the remote message queue and forward them to
-handler methods.
+For the triggered endpoint, the worker plays the role of a consumer in the system pub/sub pattern.
+Its source code provides a client that pulls messages from the remote message queue and forwards
+them to handler methods.
 
 For registering a photo entity, the worker has to:
 
 - Download the original photo from the upload storage bucket.
 - Resize the photo to various versions and formats.
 - Upload the resized copies back to the bucket.
-- Construct a photo entity record and insert it to the photo database.
+- Construct a photo entity record and insert it into the photo database.
 
 For deregistering a photo entity, it has to:
 
@@ -61,13 +61,13 @@ For deregistering a photo entity, it has to:
 
 ### Programming language
 
-I choose [Golang](https://go.dev/), besides my interest in trying this programming language, it also
+I choose [Golang](https://go.dev/); besides my interest in trying this programming language, it also
 provides many great utilities:
 
 - Performance in compute-intensive operations.
 - Small (optimized) memory footprint.
 - Concurrency friendly and simple to implement via its goroutines and channels.
-- Simple CLI tools and packages orchestration.
+- Simple CLI tools and package orchestration.
 - Strict data types and data safety builds.
 - Complete support of standard libraries, including file handling, logging, JSON data serialization,
   etc.
@@ -80,15 +80,15 @@ usage for image operations.
 
 ### Concurrency keynotes
 
-By choosing Golang, I would like to deprecate the whole concurrency channels orchestration to its
+By choosing Golang, I would like to deprecate the whole concurrency channel orchestration to its
 goroutines on the application level.
 
-It's worth to mention here because libvips also offers its own concurrency model, so I
-have to keep it in mind to make sure the library not to multi-thread internally to prevent CPU
+It's worth mentioning here because libvips also offers its own concurrency model, so I
+have to keep it in mind to ensure the library does not multi-thread internally to prevent CPU
 thrashing.
 
 Another aspect that is significant to consider is managing the concurrencies in message pulling.
-We can utilize pulling message to multi-channel depending on the number of CPU threads that are
+We can utilize pulling messages to multi-channel depending on the number of CPU threads that are
 available in the underlying compute instance.
 
 ### Processing metrics estimation
@@ -117,7 +117,7 @@ Therefore, the maximum memory consumption per execution task is:
 
 $(20 + 5 + 100) * (1 + 0.2) = 150 \text{(MB)}$
 
-Having the memory consuming estimation, I can sketch a table of memory estimation for the hosting
+Having the memory-consuming estimation, I can sketch a table of memory estimation for the hosting
 machine:
 
 | Items                                     | Units    | Quantities |
@@ -168,7 +168,7 @@ It gave me the following mean metrics:
 
 ## Deployment
 
-Following up the estimation, now I can make a decision on designing a runner capacity for the
+Following up on the estimation, now I can make a decision on designing a runner capacity for the
 photo processing worker.
 
 As quoted from the [high-level design](/system-design/samples/photo-gallery/high-level-designs#what-ive-already-had),
@@ -180,20 +180,20 @@ that appear in my mind:
 
 ### Deploying on GCE instances
 
-The event day is usually one-day event, so it is fair enough to assume that we just need to keep
+The event day is usually a one-day event, so it is fair enough to assume that we just need to keep
 the worker alive for 24 hours.
 
-Therefore, I can consider cherry picking a pretty high-end instance to host the worker.
+Therefore, I can consider cherry-picking a high-end instance to host the worker.
 
 In the Build with AI Hanoi 2026 event day, I chose a c2d-standard-4 spot instance to deploy the
 worker. This instance features:
 
-- C2D machine series, which are best-suited for high performance computing.
+- C2D machine series, which are best-suited for high-performance computing.
 - 4 vCPUs that I can set up to 4 message polling channels concurrently.
 - 16GB RAM.
 - An AMD processor that is cheaper on average than Intel's CPUs.
 - AVX2 instruction set implementation that is robust enough for standard image processing tasks.
-- Around 4 USD for running on 24 hours as a spot instance.
+- Around 4 USD for running for 24 hours as a spot instance.
 
 <div class="note">
 
@@ -221,11 +221,11 @@ Where:
 ### Deploying on Cloud Run functions
 
 The GCE approach is not really a good fit for long-term runs due to its cost, especially
-applying to the current usage & traffic amount. Lol I'm still not that rich to throw money away easily
+applying to the current usage & traffic amount. Lol, I'm still not that rich to throw money away easily
 -\_-.
 
-In the future, when the GCP credits are expired, I will consider moving to the Cloud Run functions,
-which only charges mostly on CPU time consumption. I'm not gonna confirm it's a dramatically
+In the future, when the GCP credits expire, I will consider moving to the Cloud Run functions,
+which only charge mostly on CPU time consumption. I'm not gonna confirm it's a dramatically
 cheaper choice, but it potentially is.
 
 By setting up the functions, I can utilize:

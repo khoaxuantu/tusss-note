@@ -28,24 +28,23 @@ GDG Hanoi. You can find the introduction post here: [Introduction](/system-desig
 
 ## What I've already had
 
-Let's start with listing the existing resources first before jumping into what components I should
+Let's start with listing the existing resources before jumping into what components I should
 use:
 
 - 1 existing frontend site: [gdghanoi.com](https://event.gdghanoi.com) hosting on Google Cloud Run.
-- ~800 USD Google Cloud credits (gonna be expired in August of this year).
+- Approximately 800 USD in Google Cloud credits, which will expire in August of this year.
 
-Simple as that, I will pick Google Cloud as the primary cloud provider for other components of the
-project.
+I pick Google Cloud as the primary cloud provider for other components of the project.
 
 For the region, the service mostly serves clients in Vietnam, so single region deployments is enough.
 Based on the Google Cloud [latency dashboard](https://docs.cloud.google.com/network-intelligence-center/docs/performance-dashboard/how-to/view-google-cloud-latency),
 I choose Taiwan (asia-east1) as the primary region of the service to minimize the latency
 to Vietnam.
 
-By deploying components in the same region, I can ensure the communication between them to be near
-zero latency. Besides, it also helps to reduce the risk of cross-region latency and cross-region
-bandwidth cost. It is important because the resizing photo flow may require high bandwidth of blob
-data transferring between storage and workers.
+By deploying components in the same region, I can ensure the communication between them experiences
+near-zero latency. It also helps to reduce the risk of cross-region latency and cross-region
+bandwidth cost. It is important because resizing photos may require a high bandwidth of data
+transfer between storage and workers.
 
 ## Back-of-the-envelope metrics
 
@@ -53,11 +52,11 @@ It is obvious that the primary entity of the service is a photo.
 
 Assuming that:
 
-- An orignal photo can be up to 10MB, 6000x4000 pixels, 240 pixels/inch, and in general formats
+- An original photo can be up to 10MB, 6000x4000 pixels, 240 pixels/inch, and in general formats
   (PNG or JPEG).
-- The webp format can reduce up to 85% of the file size.
+- The WebP format can reduce up to 85% of the file size.
 
-I will resize and format it into 9 WEBP versions: 320, 512, 768, 1024, 1280, 1600, 2048, 2560, and
+I will resize and format it into 9 WebP versions: 320, 512, 768, 1024, 1280, 1600, 2048, 2560, and
 original size.
 
 Let me note down some metrics that I have in mind about it.
@@ -66,15 +65,15 @@ Let me note down some metrics that I have in mind about it.
 | ------------------------------------------------------ | ---------------- |
 | Maximum size of an original photo                      | 10MB             |
 | Maximum dimension of a photo (3:2)                     | 6000x4000 pixels |
-| 1 photo (webp, orginal width)                          | 1.5MB            |
-| 1 photo (webp, width 320px)                            | 80KB             |
-| 1 photo (webp, width 512px)                            | 128KB            |
-| 1 photo (webp, width 768px)                            | 192KB            |
-| 1 photo (webp, width 1024px)                           | 256KB            |
-| 1 photo (webp, width 1280px)                           | 320KB            |
-| 1 photo (webp, width 1600px)                           | 400KB            |
-| 1 photo (webp, width 2048px)                           | 512KB            |
-| 1 photo (webp, width 2560px)                           | 640KB            |
+| 1 photo (WebP, orginal width)                          | 1.5MB            |
+| 1 photo (WebP, width 320px)                            | 80KB             |
+| 1 photo (WebP, width 512px)                            | 128KB            |
+| 1 photo (WebP, width 768px)                            | 192KB            |
+| 1 photo (WebP, width 1024px)                           | 256KB            |
+| 1 photo (WebP, width 1280px)                           | 320KB            |
+| 1 photo (WebP, width 1600px)                           | 400KB            |
+| 1 photo (WebP, width 2048px)                           | 512KB            |
+| 1 photo (WebP, width 2560px)                           | 640KB            |
 | Total size of a photo entity                           | 14.028MB         |
 | Average amount of photo entities                       | 1000 entities    |
 | Total storage required                                 | 14.028GB         |
@@ -93,41 +92,41 @@ Let me note down some metrics that I have in mind about it.
 
 ### Storage
 
-I need a blob storage to store the photos. Here, I choose to use Google Cloud Storage (GCS) that
-gives me utilities:
+I need blob storage to store the photos. Here, I choose to use Google Cloud Storage (GCS), which
+provides me utilities:
 
 - Public URLs for serving photos, as long as I choose to open public access to the bucket.
-- Notification subscription for each file uploaded event. This feature helps to simplify the image
+- Notification subscription for each file-uploaded event. This feature helps simplify the image
   processing trigger.
-- Its free tier is generous enough for the amount of GDG Hanoi photos.
+- Its free tier is generous enough for the number of GDG Hanoi photos.
 
 ### Database
 
-The database is where I store photos' metadata, including object ids, event labels, public URLs,
+The database is where I store photos' metadata, including object IDs, event labels, public URLs,
 upload timestamps, etc.
 
 I choose to use Google Cloud Firestore (Firebase Firestore). The reasons are:
 
 - Its design is optimized to read-heavy applications.
-- I can get a (almost) free database with the most sufficient performance for this small scale
-  project as:
-  - It is a serverless document database, so I don't have to deploy it in a dedicated machine.
-  - Its architecture is built on top of GCP, so it takes advantage of network to provide access
+- I can get an (almost) free database with the most sufficient performance for this small-scale
+  project, such as:
+  - It is a serverless document database, so I don't have to deploy it on a dedicated machine.
+  - Its architecture is built on top of GCP, so it takes advantage of the network to provide access
     with minimal latency for the GDG Hanoi's web, which is hosted on GCP already.
-  - It also provides backup and recovery features, and auto scale horizontally, so I don't have to
+  - It also provides backup and recovery features and auto-scales horizontally, so I don't have to
     worry about the database scalability and availability.
 
 The only drawback that I can come up with is that Firestore does not support offset-based
-pagination query, so I have to implement the schema more manually to support the paging mode
+pagination queries, so I have to implement the schema more manually to support the paging mode
 properly. I will dive deeper into the schema in the next post.
 
 ### Photo worker
 
-This worker is essential to responsive image capability of the gallery.
+This worker is essential to the responsive image capability of the gallery.
 
-Because the logic may be varied, I will write a dedicated software to perform this specific task.
+Because the logic may be varied, I will write dedicated software to perform this specific task.
 
-The major process is image resizing, which is a compute-intensive process. At this moment, the
+The major process is image resizing, which is compute-intensive. Currently, the
 actual resource consumption for me is unknown. Thus, I choose to containerize it and deploy on a
 computing instance so that I can customize and evaluate the resource usage easily.
 
@@ -143,12 +142,12 @@ estimation of computing resource capability. Btw, Golang concurrency sounds prom
 Under my observation, for each new photo uploaded to GCS, the worker has to acknowledge the event so
 it can start downloading the newly uploaded file and create various sizes of it.
 
-Therefore, I have to make the worker to "listen" on the GCS events. As a consequence, I have to set
-up a Pub/Sub queue to play a role of a communication channel between GCS and the worker.
+Therefore, I have to make the worker "listen" to the GCS events. As a consequence, I have to set
+up a Pub/Sub queue to play the role of a communication channel between GCS and the worker.
 
 ### Uploader frontend
 
-The media team need a web interface to upload photos in batches. I need to provide a dedicated
+The media team needs a web interface to upload photos in batches. I need to provide a dedicated
 web interface to let them:
 
 - Specify an event to upload.
@@ -158,32 +157,32 @@ web interface to let them:
 
 <div className="note">
 
-Btw, I set this component as the lowest priority to implement so I ought to prepare some apologies
-to media members if there is anything of the site does not follow the design lol.
+Btw, I set this component as the lowest priority to implement so that I ought to prepare some apologies to media members if there is anything about the site that does not follow the design lol.
 
 </div>
 
 ### Gallery backend & frontend
 
-The GDG Hanoi web is built on Next.js, hence in facts, I've already had a server which does 2 tasks:
+The GDG Hanoi website is built on Next.js; therefore, I've already had a server that performs 2
+tasks:
 
-- Serve the static pages & server rendered React components.
+- Serve the static pages & server-rendered React components.
 - Serve some simple HTTP REST API routes.
 
-I will let the web connect to Firestore directly in the server side, and deliver to the client side
+I will let the web connect to Firestore directly on the server side and deliver to the client side
 the gallery pages and open APIs for fetching photos. That will minimize the required efforts to
 implement the gallery pages.
 
 <div className="note">
 
-I did think about if I need a CDN to serve the photos, then I decide not to use it, because:
+I did think about if I needed a CDN to serve the photos, and then I decided not to use it, because:
 
-- The GCS bucket is set to be public accessible, I can use its public URLs to serve the photos
+- The GCS bucket is set to be publicly accessible; I can use its public URLs to serve the photos
   directly.
-- The service at this moment only tends to serve the clients in Vietnam only, the CDN won't give any
-  benefit because Taiwan is one of the closest point of presence to Vietnam.
-- Even when the CDN distributes photos to other PoPs surrounding Vietnam such as Singapore,
-  Malaysia, or Hong Kong, it seems like there will be no latency difference comparing to serving
+- The service at this moment is primarily intended for the clients in Vietnam; the CDN won't give
+  any benefit because Taiwan is one of the closest points of presence to Vietnam.
+- Even when the CDN distributes photos to other PoPs surrounding Vietnam, such as Singapore,
+  Malaysia, or Hong Kong, it seems like there will be no latency difference compared to serving
   from Taiwan.
 - Yeah, it is not free.
 

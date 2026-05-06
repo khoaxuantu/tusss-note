@@ -104,3 +104,8 @@ dl {
     margin: 0;
   }
 }
+
+.katex {
+  overflow: auto;
+  padding-block: 0.25rem;
+}

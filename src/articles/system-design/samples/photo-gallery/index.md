@@ -1,5 +1,5 @@
 ---
-title: A small photo gallery service for GDG Hanoi
+title: Samples | A small photo gallery service for GDG Hanoi
 date: 2026-04-18
 id: samples/photo-gallery
 description: I had a chance to build a photo gallery service for GDG Hanoi's events. This article is a reflection of my design process.

@@ -31,7 +31,7 @@ GDG Hanoi. You can find the introduction post here: [Introduction](/system-desig
 The data flow plays an essential role in forming the bonding structure between components of the
 service.
 
-The diagrams below illustrate the photo entity's journey in uploading, deleting and reading
+The diagrams below illustrate the photo entity's journey in uploading, deleting, and reading
 operations.
 
 ### Uploading
@@ -60,11 +60,11 @@ operations.
 
 ## Responsive image data
 
-Before diving into the data model, I will briefly introduce how I ultilize responsive images on a
+Before diving into the data model, I will briefly introduce how I utilize responsive images on a
 browser.
 
 Because the gallery is designed to serve many images while each image comes with different rendered
-sizes depending on the screen breakpoints, I decide to use responsive images with resolution
+sizes depending on the screen breakpoints, I decide to use responsive images with the resolution
 switching technique (using HTML `<img>`'s `srcset` and `sizes` attributes).
 
 An example HTML code for this technique is as follows:
@@ -91,14 +91,14 @@ An example HTML code for this technique is as follows:
 
 <div class="note">
 
-For people who may not familiar with this concept, responsive images with resolution switching are
-images that help you to solve the problem:
+For those unfamiliar with this concept, responsive images with resolution switching
+are images that are designed to address the problem:
 
 _**How to tell the browser to only load the images that provide "just enough" size & quality for the
 user's device and network condition, not too big or not too small?**_
 
-Imagine on a mobile device with only 360px viewport width, there is no reason to load the image
-with 2560px width. Right?
+Imagine using a mobile device with only a 360px viewport width; there is no reason to load an image
+that is 2560px wide. Right?
 
 You can learn more about the responsive images at
 [MDN's guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images).
@@ -112,27 +112,29 @@ Up to this point, I can list the factors that influence the photo entity data:
 - The gallery layout needs photos' aspect ratio, width, and height to properly display them.
 - The responsive images need a list of sources and their metadata (width and height) to construct
   the `srcset`.
-- The infinite scroll pagination needs a timestamp data to perform the traversal.
+- The infinite scroll pagination needs timestamp data to perform the traversal.
 - The page-based pagination needs a manual page attribute due to Firestore's limitation to perform
-  documents query by page.
-- The photo entity need:
-  - An event code attribute to perform query by a GDG Hanoi's event.
+  document queries by page.
+- The photo entity needs:
+  - An event code attribute enabling querying by a GDG Hanoi's event.
   - A base source URL to assign to the `src` attribute of the image element.
+  - A original key to lookup the original image, which is used to perform downloading or deletion.
 
 Based on the factors, I will design the schema via the table below:
 
-| Attributes     | Data types | Descriptions                     |
-| -------------- | ---------- | -------------------------------- |
-| src            | string     | A base source URL                |
-| w              | int        | Photo's natural width in pixels  |
-| h              | int        | Photo's natural height in pixels |
-| ts             | int        | Unix timestamp of photo upload   |
-| page           | int        | Page number                      |
-| code           | string     | GDG Hanoi's event code           |
-| srcsets        | array      | List of srcset images            |
-| srcsets.[].w   | int        | Width of a srcset image          |
-| srcsets.[].h   | int        | Height of a srcset image         |
-| srcsets.[].url | string     | URL of a srcset image            |
+| Attributes     | Data types | Descriptions                           |
+| -------------- | ---------- | -------------------------------------- |
+| src            | string     | A base source URL                      |
+| w              | int        | Photo's natural width in pixels        |
+| h              | int        | Photo's natural height in pixels       |
+| ts             | int        | Unix timestamp of photo upload         |
+| page           | int        | Page number                            |
+| code           | string     | GDG Hanoi's event code                 |
+| origin_key     | string     | Blob storage key of the original photo |
+| srcsets        | array      | List of srcset images                  |
+| srcsets.[].w   | int        | Width of a srcset image                |
+| srcsets.[].h   | int        | Height of a srcset image               |
+| srcsets.[].url | string     | URL of a srcset image                  |
 
 ## Key naming convention
 
@@ -145,11 +147,11 @@ galleries/{year}/{event_code}/{photo_id}{?size_enum}.{ext}
 
 Where:
 
-- `year`: is the 4-digit year of the event
-- `event_code`: is the event code, which is a short string that represents the event
-- `photo_id`: is the photo id, which is a unique identifier for the photo
-- `size_enum`: is the size enum, which is a string that represents the size of the photo
-- `ext`: is the file extension
+- `year`: the 4-digit year of the event.
+- `event_code`: the event code, which is a short string that represents the event.
+- `photo_id`: the photo ID, which is a unique identifier for the photo.
+- `size_enum`: the size enum, which is a string that represents the size of the photo
+- `ext`: the file extension
 
 Here is a typical example of a photo entity:
 
@@ -167,9 +169,35 @@ Resized keys:
   - galleries/2026/bwai/abcxyz.gdghanoi.2560.webp
 ```
 
+## Maintaining the page attribute
+
+Because the database (Firestore) does not support offset-based queries, I have to maintain the
+paging behavior manually via write operations on the photo collection.
+
+### Inserting operation
+
+On inserting a new document, I have to do the following steps:
+
+1. Query the highest active page number.
+2. Decide to use the highest page number, or increment it by one as registering the document to the
+   next page.
+3. Insert the photo document with the decided page number.
+
+Consequently, the service have to perform 1 read and 1 write operation for a single insert.
+
+### Deleting operation
+
+This operation is a bit tricky. Because it causes a gap in the actual document count per page.
+
+The good thing is, this gap does not cause any serious effect on UX, so I can let it as be on
+production.
+
+Later on, I can set up a batch job to reorganize the page numbers if too many documents are deleted
+and the gap becomes too large to ignore.
+
 ## API
 
-There are 4 major operations for the gallery service, I will design an API specification for each
+There are 4 major operations for the gallery service; I will design an API specification for each
 of them:
 
 - Uploading photos
@@ -181,7 +209,7 @@ of them:
 
 The API implementation may be varied depending on the communication protocol between frameworks.
 Thus, in this section, I conveniently describe the specifications by a consistent language, which is
-Porotocol Buffers.
+Protocol Buffers.
 
 </div>
 
@@ -209,8 +237,7 @@ message UploadResponse {
 This API is used on the [uploader frontend component][link.high_level.uploader],
 in which the admin can delete photos from the service.
 
-It takes the object original key to perform the delete operation of the photo entity. Under the
-hood, the API does:
+It takes the object's original key to perform the delete operation on the photo entity. The API does:
 
 1. Deleting the photo document from the database.
 2. Deleting all the resized photos from the blob storage.
@@ -233,11 +260,11 @@ message DeleteResponse {
 This API is used on the [gallery frontend component][link.high_level.fe], in which the gallery is
 rendered as infinite-scroll mode.
 
-It takes a cursor timestamp as the input, and returns a list of photos ordered by the timestamp in
+It takes a cursor timestamp as the input and returns a list of photos ordered by the timestamp in
 descending order. If the cursor is omitted, it fallbacks to the pre-defined latest timestamp and
 retrieves the first chunk of photos.
 
-Beside the photos list, it also returns the next cursor timestamp to be used for the next query.
+Besides the photos list, it also returns the next cursor timestamp to be used for the next query.
 
 ```proto
 edition = "2023";
@@ -248,6 +275,7 @@ message Image {
 
 message ListRequest {
   int64 cursor = 1;
+  string code = 2;
 }
 
 message ListResponse {
@@ -262,7 +290,7 @@ This API is used on the [gallery frontend component][link.high_level.fe], in whi
 rendered as page-based mode.
 
 Because the page is set statically into a photo document in the database, this API only takes the
-page number as the input, and returns a list of photos containing the given page number.
+page number as the input and returns a list of photos containing the given page number.
 
 ```proto
 edition = "2023";
@@ -273,6 +301,7 @@ message Image {
 
 message ListRequest {
   int64 page = 1;
+  string code = 2;
 }
 
 message ListResponse {
