@@ -9,7 +9,7 @@ const { src, alt, title } = Astro.props;
 ---
 
 <figure>
-  <img src={src} alt={alt} title={`${title} (Click to zoom in/out)`} loading="lazy" />
+  <img src={src} alt={alt} title={`${title || alt || ""} (Click to zoom in/out)`} loading="lazy" />
   <figcaption>{title}</figcaption>
 </figure>
 

@@ -19,9 +19,10 @@ type Props = MarkdownLayoutProps<{
 }>;
 
 const { frontmatter } = Astro.props;
+const language = frontmatter.language || "vi";
 ---
 
-<html class="light">
+<html class="light" lang={language}>
   <head>
     <ClientRouter />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,7 +31,7 @@ const { frontmatter } = Astro.props;
     <link rel="canonical" href={frontmatter.url || Tusss.site.url} />
     <meta property="og:site_name" content={frontmatter.og?.site_name || Tusss.site.name} />
     <meta property="og:type" content={frontmatter.og?.type || "article"} />
-    <meta property="og:locale" content={frontmatter.language || "vi"} />
+    <meta property="og:locale" content={language} />
     <meta property="og:url" content={frontmatter.url || Tusss.site.url} />
     <meta property="og:title" content={frontmatter.title || Tusss.site.title} />
     <meta property="og:description" content={frontmatter.description || Tusss.site.description} />
