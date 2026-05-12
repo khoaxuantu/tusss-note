@@ -47,6 +47,8 @@ For deregistering a photo entity, it has to:
 - Extract the original object key and transform it to the corresponding derived object keys.
 - Delete all copies of the photo from the storage according to the derived object keys, as well as
   the original one.
+- Be able to skip the deletion of the resized photos, because they have already been removed on the
+  original event.
 - Remove the photo entity record from the database.
 
 ## Implementation drafts
