@@ -13,7 +13,7 @@ next_article:
 
 ## Introduction
 
-For someone who might not know, I'm also an event organizer of Google Developer Group Hanoi. Last
+For someone who might not know, I'm also an event organizer of Google Developer Groups Hanoi. Last
 month, I contributed to holding an event called Build with AI Hanoi 2026.
 
 On the preparation for event days, we encountered a challenge: as the media team is going to take
